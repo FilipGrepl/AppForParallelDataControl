@@ -1,0 +1,227 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16.5.2020, 12:18:42
+    Author     : filip
+*/
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    background-color: #939393 !important;
+}
+
+.login-page-body {
+    background-image: url(images/appBackground.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+}
+.view-table-padding {
+    padding-top: 5px !important;
+    padding-bottom: 0 !important;
+    border: 1px solid #585858 !important;
+}
+
+.view-data-margin {
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
+}
+
+.out-label-text {
+    font-weight: bold;
+    text-align: right;
+}
+
+.flex-gap {
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+
+.Aligner {
+    display: flex;
+    align-items: center;
+    min-height: 65em;
+}
+
+
+
+.center-text {
+    text-align: center !important;
+}
+
+.center-items {
+    align-items: center !important;
+}
+
+body .ui-progressbar .ui-progressbar-label{
+    display:block!important;
+}
+
+.text-red {
+    color: red;
+}
+
+.text-green {
+    color: #00a000;
+}
+
+.text-orange {
+    color: orange;
+}
+
+.text-blue {
+    color: #bebc05;
+}
+
+.text-brown {
+    color: brown;
+}
+
+.stop-button {
+    background-color: red !important;
+}
+
+.run-button {
+    background-color: green !important;
+}
+
+.repeat-button {
+    background-color: orangered !important;
+}
+
+.ui-selectonemenu-label {
+    text-align: center !important;
+}
+
+.usage-selector {
+    font-size: 12px !important;
+}
+
+.ShowOnSmallScreen {
+    display: none;
+}
+
+.ShowOnDesktop {
+    display: block;
+}
+
+@media(max-width:1600px) {
+    .ShowOnDesktop {
+        display: none;
+    }
+
+    .ShowOnSmallScreen {
+        display: block;
+    }
+}
+
+.ShowOnMobileLogCheckBox .ShowOnMobileEqualInToOut .ShowSecondOutCheckBox {
+    margin-bottom: 0px;
+}
+
+@media(max-width: 1000px) {
+    .ShowOnMobileLogCheckBox {
+        margin-bottom: 10px !important;
+    }
+    .ShowOnMobileEqualInToOut {
+        margin-bottom: 35px !important;
+    }
+    .ShowSecondOutCheckBox {
+        margin-bottom: 50px !important;
+    }
+}
+
+.ui-fluid .ui-buttonset.ui-buttonset-7 .ui-button{
+    width:14%
+} 
+
+.ui-progressbar-label {
+    color: black !important;
+}
+
+.ui-button {
+    border: 0px !important;
+}
+
+.jqplot-title {
+    color: #dedede;
+}
+
+.jqplot-table-legend {
+    color: #000000;
+}
+
+.jqplot-table-legend-swatch-outline {
+    border-color: black !important;
+}
+
+.jqplot-highlighter-tooltip {
+    color: #000000;
+}
+
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active
+{
+ -webkit-box-shadow: 0 0 0 30px #585858 inset !important;
+ -webkit-text-fill-color: #dedede !important;
+}
+
+.ui-dataview {
+    border: 1px solid #585858 !important;
+}
+.ui-tabs-panel {
+    border: 1px solid #585858 !important;
+}
+.ui-tabs-panels {
+    border: 1px solid #585858 !important;
+}
+.ui-separator {
+    border: 1px solid #585858 !important;
+}
+.ui-tabs-header {
+    border: 1px solid #585858 !important;
+}
+.ui-panel-content {
+    border: 1px solid #585858 !important;
+}
+.ui-panel-titlebar {
+    border: 1px solid #585858 !important;
+}
+.ui-panel{
+    border: 1px solid #585858 !important;
+}
+.ui-panel-footer {
+    border: 1px solid #585858 !important;
+}
+.ui-picklist-list {
+    border: 1px solid #585858 !important;
+}
+.ui-fileupload {
+    border: 1px solid #585858 !important;
+}
+.ui-fileupload-buttonbar {
+    border: 1px solid #585858 !important;
+}
+.ui-fileupload-content {
+    border: 1px solid #585858 !important;
+}
+.ui-selectonemenu {
+    background-color: #585858 !important;
+}
+
+/*
+.ui-state-highlight {
+    background-color: black !important;
+}
+*/

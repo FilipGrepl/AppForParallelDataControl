@@ -1,0 +1,1732 @@
+top - 20:53:06 up 37 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  5.0 us,  4.8 sy,  0.0 ni, 89.9 id,  0.0 wa,  0.2 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7352576 free,  9034720 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091164 free,   164640 used.  7448196 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   1.0  0.0   0:43.18 bash
+14554 filipgr+  20   0   13956    812    696 S   1.0  0.0   0:00.01 sleep
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+ 4515 filipgr+  20   0   17620   1992   1456 S   0.0  0.0   0:03.86 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14543 filipgr+  20   0   17488   1988   1504 S   0.0  0.0   0:00.02 top
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17620   1916   1432 R   0.0  0.0   0:00.01 top
+
+top - 20:53:07 up 37 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  3.7 us,  4.6 sy,  0.0 ni, 91.5 id,  0.0 wa,  0.2 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7352576 free,  9034720 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091164 free,   164640 used.  7448196 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   5.0  0.0   0:43.23 bash
+14552 filipgr+  20   0   17588   1992   1504 R   2.0  0.0   0:00.03 top
+14562 filipgr+  20   0   13956    816    696 S   1.0  0.0   0:00.01 sleep
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+ 4515 filipgr+  20   0   17620   1992   1456 S   0.0  0.0   0:03.86 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14543 filipgr+  20   0   17488   1988   1504 S   0.0  0.0   0:00.02 top
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+
+top - 20:53:08 up 37 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  4.6 us,  5.0 sy,  0.0 ni, 90.4 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7352576 free,  9034720 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091164 free,   164640 used.  7448196 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   1.0  0.0   0:43.24 bash
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+ 4515 filipgr+  20   0   17620   1992   1456 S   0.0  0.0   0:03.86 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14543 filipgr+  20   0   17488   1988   1504 S   0.0  0.0   0:00.02 top
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.03 top
+14571 filipgr+  20   0   13956    816    696 S   0.0  0.0   0:00.00 sleep
+
+top - 20:53:09 up 37 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  2.9 us,  5.2 sy,  0.0 ni, 91.7 id,  0.0 wa,  0.2 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7348612 free,  9038684 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091164 free,   164640 used.  7444232 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   2.0  0.0   0:43.26 bash
+ 4515 filipgr+  20   0   17620   1992   1456 S   2.0  0.0   0:03.88 top
+14543 filipgr+  20   0   17488   1988   1504 S   2.0  0.0   0:00.04 top
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.03 top
+14580 filipgr+  20   0   13956    812    696 S   0.0  0.0   0:00.00 sleep
+
+top - 20:53:10 up 37 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  2.7 us,  3.4 sy,  0.0 ni, 93.5 id,  0.0 wa,  0.4 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7348612 free,  9038684 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091164 free,   164640 used.  7444232 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   3.0  0.0   0:43.29 bash
+14588 filipgr+  20   0   13956    816    696 S   1.0  0.0   0:00.01 sleep
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+ 4515 filipgr+  20   0   17620   1992   1456 S   0.0  0.0   0:03.88 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14543 filipgr+  20   0   17488   1988   1504 S   0.0  0.0   0:00.04 top
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.03 top
+
+top - 20:53:11 up 37 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   2 running,  18 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  2.8 us,  3.8 sy,  0.0 ni, 93.0 id,  0.0 wa,  0.4 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7348612 free,  9038684 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091164 free,   164640 used.  7444232 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   2.0  0.0   0:43.31 bash
+14543 filipgr+  20   0   17488   1988   1504 S   1.0  0.0   0:00.05 top
+14552 filipgr+  20   0   17588   1992   1504 R   1.0  0.0   0:00.04 top
+14597 filipgr+  20   0   12212    668    552 R   1.0  0.0   0:00.01 sleep
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+ 4515 filipgr+  20   0   17620   1992   1456 S   0.0  0.0   0:03.88 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+
+top - 20:53:12 up 37 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  3.4 us,  3.0 sy,  0.0 ni, 93.5 id,  0.0 wa,  0.1 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7350852 free,  9036444 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091164 free,   164640 used.  7446472 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+14543 filipgr+  20   0   17488   1988   1504 S   2.0  0.0   0:00.07 top
+14552 filipgr+  20   0   17588   1992   1504 R   2.0  0.0   0:00.06 top
+14605 filipgr+  20   0   13956    816    696 S   1.0  0.0   0:00.01 sleep
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+  161 filipgr+  20   0   15276   1608   1536 S   0.0  0.0   0:43.31 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+ 4515 filipgr+  20   0   17620   1992   1456 S   0.0  0.0   0:03.88 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+
+top - 20:53:13 up 37 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  3.7 us,  3.2 sy,  0.0 ni, 92.8 id,  0.0 wa,  0.2 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7350852 free,  9036444 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091164 free,   164640 used.  7446472 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   1.0  0.0   0:43.32 bash
+ 4515 filipgr+  20   0   17620   1992   1456 S   1.0  0.0   0:03.89 top
+14613 filipgr+  20   0   13956    816    696 S   1.0  0.0   0:00.01 sleep
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14543 filipgr+  20   0   17488   1988   1504 S   0.0  0.0   0:00.07 top
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.06 top
+
+top - 20:53:14 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  5.0 us,  3.7 sy,  0.0 ni, 91.2 id,  0.0 wa,  0.1 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7350852 free,  9036444 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091164 free,   164640 used.  7446472 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   2.0  0.0   0:43.34 bash
+14543 filipgr+  20   0   17488   1988   1504 S   1.0  0.0   0:00.08 top
+14622 filipgr+  20   0   13956    816    696 S   1.0  0.0   0:00.01 sleep
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+ 4515 filipgr+  20   0   17620   1992   1456 S   0.0  0.0   0:03.89 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.06 top
+
+top - 20:53:15 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  6.7 us,  3.8 sy,  0.0 ni, 89.5 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7353836 free,  9033460 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091164 free,   164640 used.  7449456 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   5.0  0.0   0:43.39 bash
+ 4515 filipgr+  20   0   17620   1992   1456 S   2.0  0.0   0:03.91 top
+14552 filipgr+  20   0   17588   1992   1504 R   1.0  0.0   0:00.07 top
+14630 filipgr+  20   0   13956    812    696 S   1.0  0.0   0:00.01 sleep
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14543 filipgr+  20   0   17488   1988   1504 S   0.0  0.0   0:00.08 top
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+
+top - 20:53:16 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  4.0 us,  3.3 sy,  0.0 ni, 92.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7353836 free,  9033460 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091164 free,   164640 used.  7449456 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   2.0  0.0   0:43.41 bash
+14543 filipgr+  20   0   17488   1988   1504 S   2.0  0.0   0:00.10 top
+14639 filipgr+  20   0   13956    816    696 S   1.0  0.0   0:00.01 sleep
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+ 4515 filipgr+  20   0   17620   1992   1456 S   0.0  0.0   0:03.91 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.07 top
+
+top - 20:53:17 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  3.2 us,  3.1 sy,  0.0 ni, 93.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7353836 free,  9033460 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091164 free,   164640 used.  7449456 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   8.0  0.0   0:43.49 bash
+14552 filipgr+  20   0   17588   1992   1504 R   1.0  0.0   0:00.08 top
+14647 filipgr+  20   0   13956    812    696 S   1.0  0.0   0:00.01 sleep
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+ 4515 filipgr+  20   0   17620   1992   1456 S   0.0  0.0   0:03.91 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14543 filipgr+  20   0   17488   1988   1504 S   0.0  0.0   0:00.10 top
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+
+top - 20:53:18 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  3.4 us,  3.7 sy,  0.0 ni, 92.7 id,  0.0 wa,  0.2 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7353740 free,  9033556 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091164 free,   164640 used.  7449360 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+14543 filipgr+  20   0   17488   1988   1504 S   2.0  0.0   0:00.12 top
+  161 filipgr+  20   0   15276   1608   1536 S   1.0  0.0   0:43.50 bash
+14656 filipgr+  20   0   13956    812    696 S   1.0  0.0   0:00.01 sleep
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+ 4515 filipgr+  20   0   17620   1992   1456 S   0.0  0.0   0:03.91 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.08 top
+
+top - 20:53:19 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  2.5 us,  2.8 sy,  0.0 ni, 94.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7353740 free,  9033556 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091164 free,   164640 used.  7449360 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   2.0  0.0   0:43.52 bash
+14543 filipgr+  20   0   17488   1988   1504 S   1.0  0.0   0:00.13 top
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+ 4515 filipgr+  20   0   17620   1992   1456 S   0.0  0.0   0:03.91 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.08 top
+14664 filipgr+  20   0   13956    816    696 S   0.0  0.0   0:00.00 sleep
+
+top - 20:53:20 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   2 running,  18 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  4.4 us,  2.6 sy,  0.0 ni, 93.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7353740 free,  9033556 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091164 free,   164640 used.  7449360 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   5.0  0.0   0:43.57 bash
+ 4515 filipgr+  20   0   17620   1992   1456 S   2.0  0.0   0:03.93 top
+14552 filipgr+  20   0   17588   1992   1504 R   2.0  0.0   0:00.10 top
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14543 filipgr+  20   0   17488   1988   1504 S   0.0  0.0   0:00.13 top
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14673 filipgr+  20   0    8432    172    104 R   0.0  0.0   0:00.00 sleep
+
+top - 20:53:21 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  5.6 us,  3.5 sy,  0.0 ni, 90.7 id,  0.0 wa,  0.2 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7355412 free,  9031884 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091164 free,   164640 used.  7451032 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   3.0  0.0   0:43.60 bash
+ 4515 filipgr+  20   0   17620   1992   1456 S   2.0  0.0   0:03.95 top
+14543 filipgr+  20   0   17488   1988   1504 S   1.0  0.0   0:00.14 top
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.10 top
+14681 filipgr+  20   0   13956    816    696 S   0.0  0.0   0:00.00 sleep
+
+top - 20:53:22 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  4.9 us,  3.5 sy,  0.0 ni, 91.2 id,  0.0 wa,  0.4 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7355412 free,  9031884 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091164 free,   164640 used.  7451032 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   2.0  0.0   0:43.62 bash
+14690 filipgr+  20   0   13956    816    696 S   1.0  0.0   0:00.01 sleep
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+ 4515 filipgr+  20   0   17620   1992   1456 S   0.0  0.0   0:03.95 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14543 filipgr+  20   0   17488   1988   1504 S   0.0  0.0   0:00.14 top
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.10 top
+
+top - 20:53:23 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   2 running,  18 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  3.4 us,  3.9 sy,  0.0 ni, 92.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7355412 free,  9031884 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091164 free,   164640 used.  7451032 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+ 4515 filipgr+  20   0   17620   1992   1456 S   1.0  0.0   0:03.96 top
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+  161 filipgr+  20   0   15276   1608   1536 S   0.0  0.0   0:43.62 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14543 filipgr+  20   0   17488   1988   1504 S   0.0  0.0   0:00.14 top
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.10 top
+14699 filipgr+  20   0   12268    736    620 R   0.0  0.0   0:00.00 sleep
+
+top - 20:53:24 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  2.7 us,  4.3 sy,  0.0 ni, 92.8 id,  0.0 wa,  0.1 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7351768 free,  9035528 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091164 free,   164640 used.  7447388 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   3.0  0.0   0:43.65 bash
+14543 filipgr+  20   0   17488   1988   1504 S   2.0  0.0   0:00.16 top
+14552 filipgr+  20   0   17588   1992   1504 R   1.0  0.0   0:00.11 top
+14707 filipgr+  20   0   13956    816    696 S   1.0  0.0   0:00.01 sleep
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+ 4515 filipgr+  20   0   17620   1992   1456 S   0.0  0.0   0:03.96 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+
+top - 20:53:25 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   2 running,  18 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  2.7 us,  3.6 sy,  0.0 ni, 93.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7351768 free,  9035528 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091164 free,   164640 used.  7447388 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   3.0  0.0   0:43.68 bash
+ 4515 filipgr+  20   0   17620   1992   1456 S   2.0  0.0   0:03.98 top
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14543 filipgr+  20   0   17488   1988   1504 S   0.0  0.0   0:00.16 top
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.11 top
+14716 filipgr+  20   0   10432    516    408 R   0.0  0.0   0:00.00 sleep
+
+top - 20:53:26 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  3.5 us,  3.0 sy,  0.0 ni, 93.5 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7351768 free,  9035528 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091164 free,   164640 used.  7447388 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   5.0  0.0   0:43.73 bash
+ 4515 filipgr+  20   0   17620   1992   1456 S   1.0  0.0   0:03.99 top
+14543 filipgr+  20   0   17488   1988   1504 S   1.0  0.0   0:00.17 top
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.11 top
+14724 filipgr+  20   0   13956    816    696 S   0.0  0.0   0:00.00 sleep
+
+top - 20:53:27 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  4.2 us,  4.4 sy,  0.0 ni, 91.4 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7352936 free,  9034360 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091164 free,   164640 used.  7448556 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   8.0  0.0   0:43.81 bash
+ 4515 filipgr+  20   0   17620   1992   1456 S   2.0  0.0   0:04.01 top
+14552 filipgr+  20   0   17588   1992   1504 R   2.0  0.0   0:00.13 top
+14732 filipgr+  20   0   13956    812    696 S   1.0  0.0   0:00.01 sleep
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14543 filipgr+  20   0   17488   1988   1504 S   0.0  0.0   0:00.17 top
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+
+top - 20:53:28 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  3.6 us,  4.7 sy,  0.0 ni, 91.4 id,  0.0 wa,  0.2 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7352936 free,  9034360 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091164 free,   164640 used.  7448556 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   4.0  0.0   0:43.85 bash
+ 4515 filipgr+  20   0   17620   1992   1456 S   1.0  0.0   0:04.02 top
+14741 filipgr+  20   0   13956    812    696 S   1.0  0.0   0:00.01 sleep
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14543 filipgr+  20   0   17488   1988   1504 S   0.0  0.0   0:00.17 top
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.13 top
+
+top - 20:53:29 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  4.3 us,  2.9 sy,  0.0 ni, 92.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7352936 free,  9034360 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091164 free,   164640 used.  7448556 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   3.0  0.0   0:43.88 bash
+ 4515 filipgr+  20   0   17620   1992   1456 S   2.0  0.0   0:04.04 top
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14543 filipgr+  20   0   17488   1988   1504 S   0.0  0.0   0:00.17 top
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.13 top
+14749 filipgr+  20   0   13956    816    696 S   0.0  0.0   0:00.00 sleep
+
+top - 20:53:30 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  4.2 us,  4.2 sy,  0.0 ni, 91.4 id,  0.0 wa,  0.1 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7352868 free,  9034428 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091168 free,   164636 used.  7448488 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   3.0  0.0   0:43.91 bash
+ 4515 filipgr+  20   0   17620   1992   1456 S   1.0  0.0   0:04.05 top
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14543 filipgr+  20   0   17488   1988   1504 S   0.0  0.0   0:00.17 top
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.13 top
+14758 filipgr+  20   0   13956    816    696 S   0.0  0.0   0:00.00 sleep
+
+top - 20:53:31 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  1.7 us,  4.2 sy,  0.0 ni, 93.7 id,  0.0 wa,  0.4 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7352868 free,  9034428 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091168 free,   164636 used.  7448488 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   5.0  0.0   0:43.96 bash
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+ 4515 filipgr+  20   0   17620   1992   1456 S   0.0  0.0   0:04.05 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14543 filipgr+  20   0   17488   1988   1504 S   0.0  0.0   0:00.17 top
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.13 top
+14766 filipgr+  20   0   13956    816    696 S   0.0  0.0   0:00.00 sleep
+
+top - 20:53:32 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  2.6 us,  2.3 sy,  0.0 ni, 94.8 id,  0.0 wa,  0.2 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7352868 free,  9034428 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091168 free,   164636 used.  7448488 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   3.0  0.0   0:43.99 bash
+14543 filipgr+  20   0   17488   1988   1504 S   2.0  0.0   0:00.19 top
+14552 filipgr+  20   0   17588   1992   1504 R   2.0  0.0   0:00.15 top
+14775 filipgr+  20   0   13956    816    696 S   1.0  0.0   0:00.01 sleep
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+ 4515 filipgr+  20   0   17620   1992   1456 S   0.0  0.0   0:04.05 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+
+top - 20:53:33 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  4.3 us,  4.1 sy,  0.0 ni, 91.0 id,  0.0 wa,  0.6 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7352284 free,  9035012 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091172 free,   164632 used.  7447904 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   3.0  0.0   0:44.02 bash
+14784 filipgr+  20   0   13956    816    696 S   1.0  0.0   0:00.01 sleep
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+ 4515 filipgr+  20   0   17620   1992   1456 S   0.0  0.0   0:04.05 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14543 filipgr+  20   0   17488   1988   1504 S   0.0  0.0   0:00.19 top
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.15 top
+
+top - 20:53:34 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  5.2 us,  4.7 sy,  0.0 ni, 89.8 id,  0.0 wa,  0.4 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7352284 free,  9035012 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091172 free,   164632 used.  7447904 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   5.0  0.0   0:44.07 bash
+ 4515 filipgr+  20   0   17620   1992   1456 S   2.0  0.0   0:04.07 top
+14552 filipgr+  20   0   17588   1992   1504 R   2.0  0.0   0:00.17 top
+14792 filipgr+  20   0   13956    816    696 S   1.0  0.0   0:00.01 sleep
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14543 filipgr+  20   0   17488   1988   1504 S   0.0  0.0   0:00.19 top
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+
+top - 20:53:35 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  2.9 us,  4.4 sy,  0.0 ni, 92.4 id,  0.0 wa,  0.4 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7352284 free,  9035012 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091172 free,   164632 used.  7447904 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   4.0  0.0   0:44.11 bash
+14543 filipgr+  20   0   17488   1988   1504 S   2.0  0.0   0:00.21 top
+ 4515 filipgr+  20   0   17620   1992   1456 S   1.0  0.0   0:04.08 top
+14801 filipgr+  20   0   13956    816    696 S   1.0  0.0   0:00.01 sleep
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.17 top
+
+top - 20:53:36 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  3.9 us,  3.5 sy,  0.0 ni, 92.4 id,  0.0 wa,  0.2 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7354300 free,  9032996 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091172 free,   164632 used.  7449920 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   3.0  0.0   0:44.14 bash
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+ 4515 filipgr+  20   0   17620   1992   1456 S   0.0  0.0   0:04.08 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14543 filipgr+  20   0   17488   1988   1504 S   0.0  0.0   0:00.21 top
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.17 top
+14810 filipgr+  20   0   13956    812    696 S   0.0  0.0   0:00.00 sleep
+
+top - 20:53:37 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  3.0 us,  3.7 sy,  0.0 ni, 92.8 id,  0.0 wa,  0.5 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7354300 free,  9032996 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091172 free,   164632 used.  7449920 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   3.0  0.0   0:44.17 bash
+14818 filipgr+  20   0   13956    812    696 S   2.0  0.0   0:00.02 sleep
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+ 4515 filipgr+  20   0   17620   1992   1456 S   0.0  0.0   0:04.08 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14543 filipgr+  20   0   17488   1988   1504 S   0.0  0.0   0:00.21 top
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.17 top
+
+top - 20:53:38 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  3.5 us,  3.2 sy,  0.0 ni, 92.9 id,  0.0 wa,  0.4 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7354300 free,  9032996 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091172 free,   164632 used.  7449920 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   4.0  0.0   0:44.21 bash
+ 4515 filipgr+  20   0   17620   1992   1456 S   2.0  0.0   0:04.10 top
+14543 filipgr+  20   0   17488   1988   1504 S   1.0  0.0   0:00.22 top
+14827 filipgr+  20   0   13956    812    696 S   1.0  0.0   0:00.01 sleep
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.17 top
+
+top - 20:53:39 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  3.5 us,  1.8 sy,  0.0 ni, 94.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7353248 free,  9034048 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091172 free,   164632 used.  7448868 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   3.0  0.0   0:44.24 bash
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+ 4515 filipgr+  20   0   17620   1992   1456 S   0.0  0.0   0:04.10 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14543 filipgr+  20   0   17488   1988   1504 S   0.0  0.0   0:00.22 top
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.17 top
+14835 filipgr+  20   0   13956    816    696 S   0.0  0.0   0:00.00 sleep
+
+top - 20:53:40 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  2.9 us,  2.4 sy,  0.0 ni, 94.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7353248 free,  9034048 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091172 free,   164632 used.  7448868 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   3.0  0.0   0:44.27 bash
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+ 4515 filipgr+  20   0   17620   1992   1456 S   0.0  0.0   0:04.10 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14543 filipgr+  20   0   17488   1988   1504 S   0.0  0.0   0:00.22 top
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.17 top
+14843 filipgr+  20   0   13956    816    696 S   0.0  0.0   0:00.00 sleep
+
+top - 20:53:41 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  3.3 us,  1.7 sy,  0.0 ni, 94.7 id,  0.0 wa,  0.2 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7353248 free,  9034048 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091172 free,   164632 used.  7448868 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+14852 filipgr+  20   0   13956    816    696 S   1.0  0.0   0:00.01 sleep
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+  161 filipgr+  20   0   15276   1608   1536 S   0.0  0.0   0:44.27 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+ 4515 filipgr+  20   0   17620   1992   1456 S   0.0  0.0   0:04.10 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14543 filipgr+  20   0   17488   1988   1504 S   0.0  0.0   0:00.22 top
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.17 top
+
+top - 20:53:42 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  3.1 us,  3.2 sy,  0.0 ni, 93.5 id,  0.0 wa,  0.1 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7353312 free,  9033984 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091172 free,   164632 used.  7448932 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+ 4515 filipgr+  20   0   17620   1992   1456 S   2.0  0.0   0:04.12 top
+14543 filipgr+  20   0   17488   1988   1504 S   2.0  0.0   0:00.24 top
+14860 filipgr+  20   0   13956    812    696 S   1.0  0.0   0:00.01 sleep
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+  161 filipgr+  20   0   15276   1608   1536 S   0.0  0.0   0:44.27 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.17 top
+
+top - 20:53:43 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  4.3 us,  3.5 sy,  0.0 ni, 91.6 id,  0.0 wa,  0.6 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7353312 free,  9033984 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091172 free,   164632 used.  7448932 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   5.0  0.0   0:44.32 bash
+14552 filipgr+  20   0   17588   1992   1504 R   1.0  0.0   0:00.18 top
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+ 4515 filipgr+  20   0   17620   1992   1456 S   0.0  0.0   0:04.12 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14543 filipgr+  20   0   17488   1988   1504 S   0.0  0.0   0:00.24 top
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14869 filipgr+  20   0   13956    812    696 S   0.0  0.0   0:00.00 sleep
+
+top - 20:53:44 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  3.1 us,  4.3 sy,  0.0 ni, 92.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7353312 free,  9033984 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091172 free,   164632 used.  7448932 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   7.0  0.0   0:44.39 bash
+ 4515 filipgr+  20   0   17620   1992   1456 S   1.0  0.0   0:04.13 top
+14543 filipgr+  20   0   17488   1988   1504 S   1.0  0.0   0:00.25 top
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.18 top
+14877 filipgr+  20   0   13956    812    696 S   0.0  0.0   0:00.00 sleep
+
+top - 20:53:45 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  3.4 us,  3.1 sy,  0.0 ni, 93.4 id,  0.0 wa,  0.1 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7352700 free,  9034596 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091172 free,   164632 used.  7448320 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   2.0  0.0   0:44.41 bash
+ 4515 filipgr+  20   0   17620   1992   1456 S   2.0  0.0   0:04.15 top
+14552 filipgr+  20   0   17588   1992   1504 R   1.0  0.0   0:00.19 top
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14543 filipgr+  20   0   17488   1988   1504 S   0.0  0.0   0:00.25 top
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14886 filipgr+  20   0   13956    816    696 S   0.0  0.0   0:00.00 sleep
+
+top - 20:53:46 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   2 running,  18 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  3.1 us,  3.2 sy,  0.0 ni, 93.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7352700 free,  9034596 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091172 free,   164632 used.  7448320 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+14543 filipgr+  20   0   17488   1988   1504 S   2.0  0.0   0:00.27 top
+  161 filipgr+  20   0   15276   1608   1536 S   1.0  0.0   0:44.42 bash
+ 4515 filipgr+  20   0   17620   1992   1456 S   1.0  0.0   0:04.16 top
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.19 top
+14895 filipgr+  20   0    8400    124     36 R   0.0  0.0   0:00.00 sleep
+
+top - 20:53:47 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  3.4 us,  3.4 sy,  0.0 ni, 92.9 id,  0.0 wa,  0.4 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7352700 free,  9034596 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091172 free,   164632 used.  7448320 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   6.0  0.0   0:44.48 bash
+14552 filipgr+  20   0   17588   1992   1504 R   2.0  0.0   0:00.21 top
+14903 filipgr+  20   0   13956    816    696 S   1.0  0.0   0:00.01 sleep
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+ 4515 filipgr+  20   0   17620   1992   1456 S   0.0  0.0   0:04.16 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14543 filipgr+  20   0   17488   1988   1504 S   0.0  0.0   0:00.27 top
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+
+top - 20:53:48 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  3.2 us,  3.8 sy,  0.0 ni, 93.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7352252 free,  9035044 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091172 free,   164632 used.  7447872 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+ 4515 filipgr+  20   0   17620   1992   1456 S   2.0  0.0   0:04.18 top
+14543 filipgr+  20   0   17488   1988   1504 S   2.0  0.0   0:00.29 top
+  161 filipgr+  20   0   15276   1608   1536 S   1.0  0.0   0:44.49 bash
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.21 top
+14911 filipgr+  20   0   13956    812    696 S   0.0  0.0   0:00.00 sleep
+
+top - 20:53:49 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  2.2 us,  2.7 sy,  0.0 ni, 94.8 id,  0.0 wa,  0.2 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7352252 free,  9035044 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091172 free,   164632 used.  7447872 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   3.0  0.0   0:44.52 bash
+14552 filipgr+  20   0   17588   1992   1504 R   2.0  0.0   0:00.23 top
+ 4515 filipgr+  20   0   17620   1992   1456 S   1.0  0.0   0:04.19 top
+14920 filipgr+  20   0   13956    812    696 S   1.0  0.0   0:00.01 sleep
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14543 filipgr+  20   0   17488   1988   1504 S   0.0  0.0   0:00.29 top
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+
+top - 20:53:50 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  2.6 us,  3.9 sy,  0.0 ni, 93.4 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7352252 free,  9035044 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091172 free,   164632 used.  7447872 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+14543 filipgr+  20   0   17488   1988   1504 S   1.0  0.0   0:00.30 top
+14928 filipgr+  20   0   13956    812    696 S   1.0  0.0   0:00.01 sleep
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+  161 filipgr+  20   0   15276   1608   1536 S   0.0  0.0   0:44.52 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+ 4515 filipgr+  20   0   17620   1992   1456 S   0.0  0.0   0:04.19 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.23 top
+
+top - 20:53:51 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  3.6 us,  4.2 sy,  0.0 ni, 92.0 id,  0.0 wa,  0.2 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7348980 free,  9038316 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091176 free,   164628 used.  7444600 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   2.0  0.0   0:44.54 bash
+14552 filipgr+  20   0   17588   1992   1504 R   1.0  0.0   0:00.24 top
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+ 4515 filipgr+  20   0   17620   1992   1456 S   0.0  0.0   0:04.19 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14543 filipgr+  20   0   17488   1988   1504 S   0.0  0.0   0:00.30 top
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14937 filipgr+  20   0   13956    816    696 S   0.0  0.0   0:00.00 sleep
+
+top - 20:53:52 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  3.5 us,  3.5 sy,  0.0 ni, 93.1 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7348980 free,  9038316 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091176 free,   164628 used.  7444600 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   6.0  0.0   0:44.60 bash
+14946 filipgr+  20   0   13956    812    696 S   1.0  0.0   0:00.01 sleep
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+ 4515 filipgr+  20   0   17620   1992   1456 S   0.0  0.0   0:04.19 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14543 filipgr+  20   0   17488   1988   1504 S   0.0  0.0   0:00.30 top
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.24 top
+
+top - 20:53:53 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  2.2 us,  3.6 sy,  0.0 ni, 94.1 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7348980 free,  9038316 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091176 free,   164628 used.  7444600 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   6.0  0.0   0:44.66 bash
+14954 filipgr+  20   0   13956    812    696 S   3.0  0.0   0:00.03 sleep
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+ 4515 filipgr+  20   0   17620   1992   1456 S   0.0  0.0   0:04.19 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14543 filipgr+  20   0   17488   1988   1504 S   0.0  0.0   0:00.30 top
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.24 top
+
+top - 20:53:54 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  4.0 us,  4.3 sy,  0.0 ni, 91.5 id,  0.0 wa,  0.1 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7351448 free,  9035848 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091188 free,   164616 used.  7447068 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   5.0  0.0   0:44.71 bash
+14552 filipgr+  20   0   17588   1992   1504 R   2.0  0.0   0:00.26 top
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+ 4515 filipgr+  20   0   17620   1992   1456 S   0.0  0.0   0:04.19 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14543 filipgr+  20   0   17488   1988   1504 S   0.0  0.0   0:00.30 top
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14962 filipgr+  20   0   13956    812    696 S   0.0  0.0   0:00.00 sleep
+
+top - 20:53:55 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  3.0 us,  2.9 sy,  0.0 ni, 93.9 id,  0.0 wa,  0.3 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7351448 free,  9035848 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091188 free,   164616 used.  7447068 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   2.0  0.0   0:44.73 bash
+14543 filipgr+  20   0   17488   1988   1504 S   2.0  0.0   0:00.32 top
+14971 filipgr+  20   0   13956    816    696 S   1.0  0.0   0:00.01 sleep
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+ 4515 filipgr+  20   0   17620   1992   1456 S   0.0  0.0   0:04.19 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.26 top
+
+top - 20:53:56 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  3.1 us,  2.6 sy,  0.0 ni, 94.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7351448 free,  9035848 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091188 free,   164616 used.  7447068 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   3.0  0.0   0:44.76 bash
+ 4515 filipgr+  20   0   17620   1992   1456 S   2.0  0.0   0:04.21 top
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14543 filipgr+  20   0   17488   1988   1504 S   0.0  0.0   0:00.32 top
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.26 top
+14979 filipgr+  20   0   13956    812    696 S   0.0  0.0   0:00.00 sleep
+
+top - 20:53:57 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  2.6 us,  4.0 sy,  0.0 ni, 93.4 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7351168 free,  9036128 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091188 free,   164616 used.  7446788 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   7.0  0.0   0:44.83 bash
+ 4515 filipgr+  20   0   17620   1992   1456 S   2.0  0.0   0:04.23 top
+14543 filipgr+  20   0   17488   1988   1504 S   1.0  0.0   0:00.33 top
+14552 filipgr+  20   0   17588   1992   1504 R   1.0  0.0   0:00.27 top
+14987 filipgr+  20   0   13956    816    696 S   1.0  0.0   0:00.01 sleep
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+
+top - 20:53:58 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  3.3 us,  4.3 sy,  0.0 ni, 92.4 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7351168 free,  9036128 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091188 free,   164616 used.  7446788 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+14996 filipgr+  20   0   13956    816    696 S   3.0  0.0   0:00.03 sleep
+  161 filipgr+  20   0   15276   1608   1536 S   2.0  0.0   0:44.85 bash
+14552 filipgr+  20   0   17588   1992   1504 R   2.0  0.0   0:00.29 top
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+ 4515 filipgr+  20   0   17620   1992   1456 S   0.0  0.0   0:04.23 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14543 filipgr+  20   0   17488   1988   1504 S   0.0  0.0   0:00.33 top
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+
+top - 20:53:59 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  3.6 us,  2.2 sy,  0.0 ni, 94.1 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7351168 free,  9036128 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091188 free,   164616 used.  7446788 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+14543 filipgr+  20   0   17488   1988   1504 S   2.0  0.0   0:00.35 top
+ 4515 filipgr+  20   0   17620   1992   1456 S   1.0  0.0   0:04.24 top
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+  161 filipgr+  20   0   15276   1608   1536 S   0.0  0.0   0:44.85 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.29 top
+15004 filipgr+  20   0   13956    816    696 S   0.0  0.0   0:00.00 sleep
+
+top - 20:54:00 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  3.9 us,  3.4 sy,  0.0 ni, 92.4 id,  0.0 wa,  0.2 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7350568 free,  9036728 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091188 free,   164616 used.  7446188 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   3.0  0.0   0:44.88 bash
+14552 filipgr+  20   0   17588   1992   1504 R   2.0  0.0   0:00.31 top
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+ 4515 filipgr+  20   0   17620   1992   1456 S   0.0  0.0   0:04.24 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14543 filipgr+  20   0   17488   1988   1504 S   0.0  0.0   0:00.35 top
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+15013 filipgr+  20   0   13956    808    696 S   0.0  0.0   0:00.00 sleep
+
+top - 20:54:01 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  3.4 us,  2.3 sy,  0.0 ni, 94.4 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7350568 free,  9036728 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091188 free,   164616 used.  7446188 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+ 4515 filipgr+  20   0   17620   1992   1456 S   2.0  0.0   0:04.26 top
+14543 filipgr+  20   0   17488   1988   1504 S   2.0  0.0   0:00.37 top
+15022 filipgr+  20   0   13956    816    696 S   1.0  0.0   0:00.01 sleep
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+  161 filipgr+  20   0   15276   1608   1536 S   0.0  0.0   0:44.88 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1152    972 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.31 top
+
+top - 20:54:02 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  2.7 us,  3.1 sy,  0.0 ni, 94.2 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7350568 free,  9036728 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091188 free,   164616 used.  7446188 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   4.0  0.0   0:44.92 bash
+15030 filipgr+  20   0   13956    816    696 S   1.0  0.0   0:00.01 sleep
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+ 4515 filipgr+  20   0   17620   1992   1456 S   0.0  0.0   0:04.26 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14543 filipgr+  20   0   17488   1988   1504 S   0.0  0.0   0:00.37 top
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1192    992 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.31 top
+
+top - 20:54:03 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  2.9 us,  4.0 sy,  0.0 ni, 93.1 id,  0.0 wa,  0.1 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7351000 free,  9036296 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091200 free,   164604 used.  7446620 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   2.0  0.0   0:44.94 bash
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+ 4515 filipgr+  20   0   17620   1992   1456 S   0.0  0.0   0:04.26 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14543 filipgr+  20   0   17488   1988   1504 S   0.0  0.0   0:00.37 top
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1192    992 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.31 top
+15039 filipgr+  20   0   13956    812    696 S   0.0  0.0   0:00.00 sleep
+
+top - 20:54:04 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  21 total,   1 running,  19 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  2.5 us,  2.2 sy,  0.0 ni, 95.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7351000 free,  9036296 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091200 free,   164604 used.  7446620 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+15047 filipgr+  20   0   13956    812    696 S   1.0  0.0   0:00.01 sleep
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3500 S   0.0  0.0   0:02.29 bash
+  161 filipgr+  20   0   15276   1608   1536 S   0.0  0.0   0:44.94 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+ 4515 filipgr+  20   0   17620   1992   1456 S   0.0  0.0   0:04.26 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+14543 filipgr+  20   0   17488   1988   1504 S   0.0  0.0   0:00.37 top
+14544 filipgr+  20   0   14804   1260   1016 S   0.0  0.0   0:00.00 grep
+14545 filipgr+  20   0   14860   1192    992 S   0.0  0.0   0:00.01 sed
+14546 filipgr+  20   0   13968    804    680 S   0.0  0.0   0:00.01 cut
+14547 filipgr+  20   0   13960    784    664 S   0.0  0.0   0:00.00 paste
+14549 filipgr+  20   0   11144    828    624 S   0.0  0.0   0:00.00 bc
+14550 filipgr+  20   0   17864   1740   1408 S   0.0  0.0   0:00.00 awk
+14552 filipgr+  20   0   17588   1992   1504 R   0.0  0.0   0:00.31 top
+
+top - 20:54:05 up 38 min,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:  14 total,   1 running,  12 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  3.3 us,  2.5 sy,  0.0 ni, 94.0 id,  0.0 wa,  0.2 hi,  0.0 si,  0.0 st
+KiB Mem : 16616648 total,  7351000 free,  9036296 used,   229352 buff/cache
+KiB Swap: 39255804 total, 39091200 free,   164604 used.  7446620 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  161 filipgr+  20   0   15276   1608   1536 S   1.0  0.0   0:44.95 bash
+14552 filipgr+  20   0   17588   1992   1504 R   1.0  0.0   0:00.32 top
+    1 root      20   0    8324    152    128 S   0.0  0.0   0:00.06 init
+    3 root      20   0    8332    152    116 S   0.0  0.0   0:00.00 init
+    4 filipgr+  20   0   16792   3392   3256 S   0.0  0.0   0:00.11 bash
+   16 root      20   0    8332    152    116 S   0.0  0.0   0:00.01 init
+   17 filipgr+  20   0   16924   3596   3212 S   0.0  0.0   0:02.29 bash
+ 2462 root      20   0    8332    156    120 S   0.0  0.0   0:00.00 init
+ 2463 filipgr+  20   0   16792   3408   3288 S   0.0  0.0   0:00.06 bash
+ 2480 filipgr+  20   0   17620   1944   1408 T   0.0  0.0   0:00.20 top
+ 4515 filipgr+  20   0   17620   1992   1456 S   0.0  0.0   0:04.26 top
+14114 root      20   0    8332    156    120 S   0.0  0.0   0:00.01 init
+14115 filipgr+  20   0   16924   3580   3448 S   0.0  0.0   0:00.11 bash
+15055 filipgr+  20   0   13956    812    696 S   0.0  0.0   0:00.00 sleep

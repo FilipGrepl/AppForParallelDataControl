@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui = "http://java.sun.com/jsf/facelets">
+    <body>
+        <ui:composition>
+            <p:importEnum type="com.app.primaryNodeApp.model.database.enums.StepStatus$StepStatusEnum" var="ENUM_StepStatus" />
+            <script type="text/javascript">
+                function showStatus() {
+                    PF('statusDialog').show();
+                }
+                function hideStatus() {
+                    PF('statusDialog').hide();
+                }
+            </script>
+            <div class="p-col-12 p-sm-12 p-md-12 p-lg-12 p-xl-7 p-xl-offset-3">
+                <p:button outcome="newTask" value="Vytvořit úlohu založenou na této úloze" icon="pi pi-arrow-right">
+                    <f:param name="i" value="4" />
+                    <f:param name="jobID" value="#{PARAM_dataHandleBean.jobID}" />                                        
+                </p:button>                                        
+            </div>
+            <div class="p-col-12 p-sm-12 p-md-12 p-lg-12 p-xl-7 p-xl-offset-3">
+                <p:commandButton onmouseup="OmniFaces.Push.close('#{PARAM_channelName}');"
+                                 class="stop-button" 
+                                 actionListener="#{PARAM_dataHandleBean.deleteTaskHandler()}"
+                                 disabled="#{not empty PARAM_dataHandleBean.savedTaskData.taskStatus and PARAM_dataHandleBean.savedTaskData.taskStatus != ENUM_StepStatus.FINISHED}"
+                                 value="Odstranit úlohu"
+                                 oncomplete="OmniFaces.Push.open('#{PARAM_channelName}');"
+                                 icon="pi pi-trash" >
+                    <p:confirm header="Odstranění úlohy" message="Opravdu chcete odstranit úlohu včetně všech jejich běhů?" icon="pi pi-exclamation-triangle" />
+                </p:commandButton>
+            </div>
+            <div class="p-col-12 p-sm-12 p-md-12 p-lg-12 p-xl-7 p-xl-offset-3">
+                <p:commandButton onmouseup="OmniFaces.Push.close('#{PARAM_channelName}');"
+                                 class="run-button" 
+                                 action="#{PARAM_dataHandleBean.runTaskHandler()}"
+                                 disabled="#{not empty PARAM_dataHandleBean.savedTaskData.taskStatus and PARAM_dataHandleBean.savedTaskData.taskStatus != ENUM_StepStatus.FINISHED}"
+                                 value="Spustit úlohu"
+                                 update="@form messages"
+                                 oncomplete="OmniFaces.Push.open('#{PARAM_channelName}');"
+                                 icon="pi pi-star" >
+                    <p:confirm header="Spustit úlohu" message="Opravdu chcete spustit tuto úlohu?" icon="pi pi-exclamation-triangle" />
+                </p:commandButton>
+            </div>
+            <div class="p-col-12 p-sm-12 p-md-12 p-lg-12 p-xl-7 p-xl-offset-3">
+                <p:button outcome="existTaskEdit"
+                          class="edit-button"
+                          disabled="#{not empty PARAM_dataHandleBean.savedTaskData.lastStartedAt}"
+                          value="Editovat úlohu"
+                          icon="pi pi-star" >
+                    <f:param name="i" value="3" />
+                    <f:param name="jobID" value="#{PARAM_dataHandleBean.jobID}" />    
+                </p:button>
+            </div>
+            <div class="p-col-12 p-sm-12 p-md-12 p-lg-12 p-xl-7 p-xl-offset-3">
+                <p:dialog modal="true" widgetVar="statusDialog" header="Stahování konfigurace úlohy: #{PARAM_dataHandleBean.savedTaskData.taskName}" draggable="false" closable="false">
+                    <p:graphicImage value="resources/images/ajax-loader.gif" />
+                </p:dialog>
+                <p:commandButton value="Exportovat úlohu" ajax="false" onclick="PrimeFaces.monitorDownload(showStatus, hideStatus);" icon="pi pi-download">
+                    <p:fileDownload value="#{PARAM_dataHandleBean.exportedFile}" />
+                </p:commandButton> 
+            </div>
+        </ui:composition>
+    </body>
+</html>

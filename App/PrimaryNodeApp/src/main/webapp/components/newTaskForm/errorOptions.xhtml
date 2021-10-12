@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui = "http://java.sun.com/jsf/facelets">
+    <body>
+        <ui:composition>
+            <div class="p-formgroup p-align-center">
+                <div class="p-field-checkbox p-align-center">
+                    <div class="p-col-12">
+                        <p:selectBooleanCheckbox style="margin-top: 30px;" itemLabel="Uložit obsah standardního chybového výstupu" value="#{PARAM_actStep.saveStderr}"/>                                                    
+                    </div>
+                </div>
+                <div class="p-field-checkbox p-align-center">
+                    <div class="p-col-6 p-sm-6 p-md-6 p-lg-6 p-xl-6">
+                        <p:selectBooleanCheckbox itemLabel="Uložit obsah logu" value="#{PARAM_actStep.saveErrLog}">
+                            <p:ajax process="@this" update="@this @next" />
+                        </p:selectBooleanCheckbox>
+                    </div>
+
+                    <div class="p-col-6 p-sm-6 p-md-6 p-lg-6 p-xl-6">
+                        <h:panelGroup id="pathToErrLogPanel" class="secondOutputPanel_#{PARAM_actStep.stepOrder}" layout="block">
+                            <p:inputText  placeholder="Cesta k logu" value="#{PARAM_actStep.pathToErrLog}"
+                                         disabled="#{not PARAM_actStep.saveErrLog}"
+                                         required="#{PARAM_actStep.stepOrder != 0 and (param['newTaskForm:save'] != null or param['newTaskForm:saveRun'] != null)}"
+                                         requiredMessage="Zadejte cestu k logu #{PARAM_actStep.stepOrder}. kroku, který má být uložen."/>
+                            <p:tooltip for="pathToErrLogPanel" position="bottom" 
+                                       value="Cesta musí odpovídat logu, který bude existovat po dokončení zpracování určitého vstupu daného kroku úlohy, který obsahuje detaily o zpracování daného vstupu.
+                                       Výstup tohoto logu bude načten a uložen do databáze. Jeho obsah bude následně možné zobrazit v přehledu chyb. Parametr $HOSTNAME bude automaticky nahrazen za název 
+                                       odpovídajícího výpočetního uzlu. Parametr $x bude nahrazen odpovídající skupinou znaků, která je vybrána zadaným regulárním výrazem aplikovaným na vstupní cestu 
+                                       (skupiny znaků jsou číslovány od 1)."
+                                       showEffect="clip" hideEffect="fold" />
+                        </h:panelGroup>
+                    </div>
+                </div>
+            </div>
+        </ui:composition>
+    </body>
+</html>

@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui = "http://java.sun.com/jsf/facelets"
+      xmlns:o="http://omnifaces.org/ui">
+
+    <h:head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </h:head>
+    <h:body>   
+
+
+        <h:outputStylesheet library="css" name="primeflex.css"/>
+        <h:outputStylesheet library="css" name="style.css"/>
+
+        <ui:composition template = "templates/common.xhtml">
+            <ui:define name = "filtering">                
+                <ui:insert name='filterForm'>
+                    <ui:include src='components/filtering/historyOfTasksFilterForm/filterForm.xhtml'>
+                        <ui:param name='PARAM_filterBean' value='#{historyOfTasksBean.filterBean}' />
+                        <ui:param name='PARAM_ajaxBean' value='#{historyOfTasksBean}' />
+                        <ui:param name='PARAM_ajaxHandler' value='ajaxFilterHandler' />
+                        <ui:param name='PARAM_filterDeleteHandler' value='deleteFilterOnClick' />
+                        <ui:param name='PARAM_updateComponents' value=':historyTaskDataViewForm' />
+                    </ui:include>
+                </ui:insert>
+            </ui:define>
+
+            <ui:define name = "content">
+                <p:importEnum type="com.app.primaryNodeApp.model.primaryNode.serverPushBean.enums.FirePushEvents$FirePushEventsEnum" var="ENUM_FirePushEvents" />
+                <p:spacer />
+
+                <ui:insert name='sortSelector'>
+                    <ui:include src='components/ajaxSelector/actRunTaskSortForm/sortForm.xhtml'>
+                        <ui:param name='PARAM_itemBean' value='#{historyOfTasksBean.sortBean}' />
+                        <ui:param name='PARAM_ajaxBean' value='#{historyOfTasksBean}' />
+                        <ui:param name='PARAM_ajaxHandler' value='ajaxSortHandler' />
+                        <ui:param name='PARAM_is_add_class' value='false' />
+                        <ui:param name='PARAM_updateComponents' value=':historyTaskDataViewForm' />
+                    </ui:include>
+                </ui:insert>
+
+                <p:spacer />
+                <h:form id="historyTaskDataViewForm">
+                    <o:socket channel="runTaskEventChannel" onmessage="function(message) {}">
+                        <p:ajax process="@form" event="#{ENUM_FirePushEvents.RUN_TASK_EVENT}" listener="#{historyOfTasksBean.update()}"  update="historyTaskDataView" />
+                    </o:socket>
+                    <p:dataView var="task" id="historyTaskDataView" value="#{historyOfTasksBean.tasksDataToDisplay}" paginator="true" rows="6" rowsPerPageTemplate="6,12,16"
+                                paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown} {CurrentPageReport}"
+                                paginatorPosition="bottom" gridIcon="pi pi-th-large" listIcon="pi pi-bars" rendered="#{!empty historyOfTasksBean.tasksDataToDisplay}">
+                        <p:dataViewGridItem>
+                            <p:panel header="#{task.taskName}" >
+                                <ui:insert name='historyTaskGridItem'>
+                                    <ui:include src='components/historyTask/historyTaskGridItem.xhtml'>
+                                        <ui:param name='PARAM_taskData' value='#{task}' />
+                                    </ui:include>
+                                </ui:insert>
+
+                                <f:facet name="footer">
+                                    <div class="p-grid p-nogutter">
+                                        <div class="p-col-12 p-sm-12 p-md-12 p-lg-9 p-xl-5 p-lg-offset-3 p-xl-offset-7">
+                                            <p:button outcome="historyOfTaskDetail" value="Podrobnosti běhu úlohy" icon="pi pi-star">
+                                                <f:param name="runJobID" value="#{task.runJobID}" />  
+                                            </p:button>
+                                        </div>
+                                    </div>
+                                </f:facet>
+                            </p:panel>
+                        </p:dataViewGridItem>
+
+                        <p:dataViewListItem>
+                            <p:panel id="a#{task.runJobID}" header="#{task.taskName}" style="margin-bottom:20px">
+                                <ui:insert name='historyTaskListItem'>
+                                    <ui:include src='components/historyTask/historyTaskListItem.xhtml'>
+                                        <ui:param name='PARAM_taskData' value='#{task}' />
+                                    </ui:include>
+                                </ui:insert>
+
+                                <f:facet name="footer">
+                                    <div class="p-grid p-nogutter">
+                                        <div class="p-col-12 p-sm-12 p-md-6 p-lg-3 p-xl-2 p-md-offset-6 p-lg-offset-9 p-xl-offset-10">
+                                            <p:button outcome="historyOfTaskDetail" value="Podrobnosti běhu úlohy" icon="pi pi-star">
+                                                <f:param name="i" value="2" />
+                                                <f:param name="runJobID" value="#{task.runJobID}" />                                        
+                                            </p:button>                                        
+                                        </div>
+                                    </div>
+                                </f:facet>
+                            </p:panel>
+                        </p:dataViewListItem>
+                    </p:dataView>
+
+                    <p:panel class="center-text" rendered="#{empty historyOfTasksBean.tasksDataToDisplay}" style="margin-bottom:20px">
+                        <div class="p-grid">
+                            <div class="p-col-12">
+                                <h3>Žádné dokončené úlohy nebyly nalezeny</h3>
+                            </div>
+                        </div>
+                    </p:panel>
+                </h:form>
+            </ui:define> 
+
+        </ui:composition> 
+    </h:body>
+</html>

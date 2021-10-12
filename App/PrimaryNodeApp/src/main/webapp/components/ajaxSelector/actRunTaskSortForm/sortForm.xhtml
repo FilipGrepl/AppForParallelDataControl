@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui = "http://java.sun.com/jsf/facelets">
+    <body>
+        <ui:composition>
+            <h:form>
+                <ui:insert name='ajaxSelector'>
+                    <div style='color: #dedede; background-color: #323232; margin-left: 1px; margin-right: 1px;' class="p-field p-grid">
+                        <p:outputLabel for="filterSelector" styleClass="p-col-4 p-sm-4 p-lg-1 p-xl-1" value="Seřadit podle: " />
+                        <div class="p-col-7 p-sm-7 p-lg-11 p-xl-5">
+                            <ui:include src="../ajaxSelector.xhtml"/>
+                        </div>
+                    </div>
+                </ui:insert>
+            </h:form>
+        </ui:composition>
+    </body>
+</html>

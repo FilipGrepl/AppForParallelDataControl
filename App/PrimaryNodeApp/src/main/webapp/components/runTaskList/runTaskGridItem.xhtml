@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui = "http://java.sun.com/jsf/facelets">
+    <body>
+        <ui:composition>
+            <div class="p-grid center-items p-nogutter">
+                <div class="p-col-6 p-sm-12 p-md-12 p-lg-12 p-xl-6">
+                    <h3 class="view-data-margin">Úspěšně dokončené kroky: </h3>
+                </div>
+                <div class="p-col-6 p-sm-12 p-md-12 p-lg-12 p-xl-6">
+                    <p:progressBar class="view-data-margin" value="#{PARAM_taskData.stepsPercentage}" labelTemplate="#{PARAM_taskData.stepsStr}" />
+                </div>
+                <div class="p-col-6 p-sm-12 p-md-12 p-lg-12 p-xl-6">
+                    <h2 class="view-data-margin">Status: </h2>
+                </div>
+                <div class="p-col-6 p-sm-12 p-md-12 p-lg-12 p-xl-6">
+                    <h3  style="text-align:center" class="#{PARAM_taskData.statusClass} view-data-margin">#{PARAM_taskData.taskStatus.getMessage()}</h3>
+                </div>
+            </div>
+        </ui:composition>
+    </body>
+</html>

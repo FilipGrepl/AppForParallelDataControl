@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui = "http://java.sun.com/jsf/facelets">
+    <body>
+        <ui:composition>
+            <p:importEnum type="com.app.primaryNodeApp.model.database.enums.NodeStatus$NodeStatusEnum" var="ENUM_NodeStatus" />
+            <div class="p-grid center-items p-nogutter">
+                <div class="p-col-12">
+                    <ui:fragment rendered="#{!empty PARAM_nodeData.runTaskName}">
+                        <div class="p-grid center-items p-nogutter">
+                            <div class="p-col-12">
+                                <h2 class="view-data-margin center-text">Aktuálně běžící úloha</h2>
+                            </div>
+                            <div class="p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-1 p-xl-offset-1">
+                                <h3 class="view-data-margin">Název: </h3>
+                            </div>
+                            <div class="p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-1">
+                                <h:outputText class="view-data-margin" value="#{PARAM_nodeData.runTaskName}" />
+                            </div>
+
+                            <div class="p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-1">
+                                <h3 class="view-data-margin">Dokončeno kroků: </h3>
+                            </div>
+                            <div class="p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-2">
+                                <p:progressBar class="view-data-margin" value="#{PARAM_nodeData.stepsPercentage}" labelTemplate="#{PARAM_nodeData.stepsStr}" />
+                            </div>
+                            <div class="p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-1 p-xl-offset-2">
+                                <h3 class="view-data-margin">Status: </h3>
+                            </div>
+                            <div class="p-col-6 p-sm-6 p-md-6 p-lg-9 p-xl-2">
+                                <h3 class="#{PARAM_nodeData.stepStatusClass} view-data-margin">#{PARAM_nodeData.stepStatus.getMessage()}</h3>
+                            </div> 
+                            <div class="p-col-0 p-sm-0 p-md-0 p-lg-0 p-xl-1" />
+
+                            <div class="p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-1 p-xl-offset-1">
+                                <h4 class="view-data-margin">Běžící krok: </h4>
+                            </div>
+                            <div class="p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-1" >
+                                <h:outputText class="view-data-margin" value="#{PARAM_nodeData.runningStep}"/>
+                            </div>
+
+                            <div class="p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-1">
+                                <h4 class="view-data-margin">Dokončeno: </h4>
+                            </div>
+                            <div class="p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-2">
+                                <p:progressBar value="#{PARAM_nodeData.finishedPercentage}" labelTemplate="#{PARAM_nodeData.finishedPercentageStr}"/>
+                            </div>
+
+                            <div class="p-col-0 p-sm-0 p-md-0 p-lg-0 p-xl-5" />
+                            <div class="p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-1 p-xl-offset-1">
+                                <h4 class="view-data-margin">Čas spuštění: </h4>
+                            </div>
+                            <div class="p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-1">
+                                <h:outputText class="view-data-margin" value="#{PARAM_nodeData.startDate}">
+                                    <f:convertDateTime pattern="dd.MM.yyyy HH:mm:ss" />
+                                </h:outputText>
+                            </div>
+
+                            <div class="p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-2">
+                                <h4 class="view-data-margin">Zpracováno souborů: </h4>
+                            </div>
+                            <div class="p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-2">
+                                <h:outputText class="view-data-margin" value="#{PARAM_nodeData.finishedFilesStr}"/>
+                            </div>
+                        </div>
+                    </ui:fragment>
+                </div>
+            </div>
+        </ui:composition>
+    </body>
+</html>

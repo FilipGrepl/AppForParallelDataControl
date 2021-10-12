@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui = "http://java.sun.com/jsf/facelets">
+    <body>
+        <ui:composition>
+            <p:dataTable widgetVar="statusTableEachServer"
+                         var="node" 
+                         value="#{PARAM_dataHandleBean.taskStatusOnNodes}"
+                         emptyMessage="Dle zadaných kritérií nebyly žádné výpočetní uzly nalezeny" 
+                         filteredValue="#{PARAM_dataHandleBean.tasksStatusOnNodeFiltered}" 
+                         reflow="true" >
+                <p:column sortBy="#{node.nodeName}" filterBy="#{node.nodeName}"  filterMatchMode="contains" class="center-text view-table-padding" headerText="Název uzlu" priority="1">
+                    <h:outputText value="#{node.nodeName}" />
+                </p:column>
+
+                <p:column sortBy="#{node.runningStep}" filterBy="#{node.stepsStr}" filterMatchMode="startsWith" class="center-text view-table-padding" headerText="Krok" priority="4">
+                    <f:facet name="filter">
+                        <p:selectOneMenu onchange="PF('statusTableEachServer').filter()">
+                            <f:selectItem itemLabel="Vyberte krok" itemValue="#{null}" noSelectionOption="true" />
+                            <f:selectItems value="#{PARAM_dataHandleBean.runningStepsStrs}" />
+                        </p:selectOneMenu>
+                    </f:facet>
+                    <h:outputText value="#{node.stepsStr}" />
+                </p:column>
+
+                <p:column sortBy="#{node.runningStepName}" filterBy="#{node.runningStepName}" class="center-text view-table-padding" headerText="Běžící krok" priority="3">
+                    <f:facet name="filter">
+                        <p:selectOneMenu onchange="PF('statusTableEachServer').filter()">
+                            <f:selectItem itemLabel="Vyberte název" itemValue="#{null}" noSelectionOption="true" />
+                            <f:selectItems value="#{PARAM_dataHandleBean.runningSteps}" />
+                        </p:selectOneMenu>
+                    </f:facet>
+                    <h:outputText value="#{node.runningStepName}" />
+                </p:column>
+
+                <p:column sortBy="#{node.stepStatusStr}" filterBy="#{node.stepStatusStr}" filterMatchMode="in" class="center-text view-table-padding" headerText="Status" priority="1">
+                    <f:facet name="filter">
+                        <p:selectCheckboxMenu label="Status" onchange="PF('statusTableEachServer').filter()" scrollHeight="200">
+                            <f:selectItems value="#{PARAM_dataHandleBean.stepStatuses}" />
+                        </p:selectCheckboxMenu>
+                    </f:facet>
+                    <h4 class="#{node.statusClass}">#{node.stepStatusStr}</h4>
+                </p:column>
+
+                <p:column sortBy="#{node.finishedPercentage}" class="center-text view-table-padding" headerText="Dokončeno [%]" priority="1">
+                    <p:progressBar value="#{node.finishedPercentage}" labelTemplate="#{node.finishedPercentageStr}" />
+                </p:column>
+
+                <p:column sortBy="#{node.finishedFilesStr}" class="center-text view-table-padding" headerText="Zpracováno souborů" priority="6" >
+                    <h:outputText value="#{empty node.finishedFilesStr ? '-' : node.finishedFilesStr}" />
+                </p:column>
+
+                <p:column sortBy="#{node.runningTime}" class="center-text view-table-padding" headerText="Doba běhu" priority="4" >
+                    <h:outputText value="#{node.runningTimeStr}" />
+                </p:column>
+
+                <p:column sortBy="#{node.waitingTime}" class="center-text view-table-padding" headerText="Doba čekání" priority="5" >
+                    <h:outputText value="#{node.waitingTimeStr}" />
+                </p:column>
+
+                <p:column class="center-text view-table-padding" headerText="Možnosti" width="20%"  priority="1">
+                    <div class="p-grid center-items">
+                        <div style='min-width: 80px;' class="p-col-12 p-sm-12 p-md-12 p-lg-12 p-xl-4">
+                            <p:button style="min-height: 50px;" outcome='errorsDetail' value="Detail chyby" rendered="#{node.isRenderDetailErrorBtn}">
+                                <f:param name="runJobID" value="#{PARAM_dataHandleBean.runJobID}"/>
+                                <f:param name="nodeID" value="#{node.nodeID}" />
+                            </p:button>
+                        </div>
+
+                        <div style='min-width: 100px;' class="p-col-12 p-sm-12 p-md-12 p-lg-12 p-xl-4">
+                            <p:commandButton onmouseup="OmniFaces.Push.close('#{PARAM_channelName}');"
+                                             onstart="PF('#{PARAM_disableBlockName}').show();" 
+                                             onsuccess="PF('#{PARAM_disableBlockName}').hide()"  
+                                             class="stop-button" 
+                                             actionListener="#{PARAM_dataHandleBean.stopTaskOnNodeHandler(node.nodeID)}" 
+                                             value="Pozastavit úlohu"
+                                             style="min-height: 50px;"
+                                             oncomplete="PF('statusTableEachServer').filter(); OmniFaces.Push.open('#{PARAM_channelName}');;"
+                                             update="@form messages" 
+                                             rendered="#{node.isRenderStopBtn}">
+                                <p:confirm header="Pozastavení úlohy" message="Opravdu chcete pozastavit úlohu na serveru #{node.nodeName}?" icon="pi pi-exclamation-triangle" />
+                            </p:commandButton>
+                            <p:commandButton onmouseup="OmniFaces.Push.close('#{PARAM_channelName}');"
+                                             onstart="PF('#{PARAM_disableBlockName}').show();" 
+                                             onsuccess="PF('#{PARAM_disableBlockName}').hide()"  
+                                             class="run-button" 
+                                             actionListener="#{PARAM_dataHandleBean.runStoppedTaskOnNodeHandler(node.nodeID)}" 
+                                             value="Spustit úlohu" 
+                                             style="min-height: 50px;"
+                                             update="@form messages"
+                                             oncomplete="PF('statusTableEachServer').filter(); OmniFaces.Push.open('#{PARAM_channelName}');"
+                                             rendered="#{node.isRenderRunButton}">
+                                <p:confirm header="Spuštění úlohy" message="Opravdu chcete spustit úlohu na serveru #{node.nodeName}?" icon="pi pi-exclamation-triangle" />
+                            </p:commandButton>
+                            <p:commandButton onmouseup="OmniFaces.Push.close('#{PARAM_channelName}');"
+                                             onstart="PF('#{PARAM_disableBlockName}').show();" 
+                                             onsuccess="PF('#{PARAM_disableBlockName}').hide()"  
+                                             class="stop-button" 
+                                             actionListener="#{PARAM_dataHandleBean.skipErrOnNodeHandler(node.nodeID)}" 
+                                             value="Přeskočit chybné" 
+                                             style="min-height: 50px;"
+                                             update="@form messages"
+                                             oncomplete="PF('statusTableEachServer').filter(); OmniFaces.Push.open('#{PARAM_channelName}');"
+                                             rendered="#{node.isRenderErrSkipButton}">
+                                <p:confirm header="Přeskočit chybné vstupy" message="Opravdu chcete přeskočit zpracování chybných vstupů na serveru #{node.nodeName}?" icon="pi pi-exclamation-triangle" />
+                            </p:commandButton>
+                        </div>
+
+                        <ui:fragment rendered="#{node.isRenderErrRepeatButton}">
+                            <div style='min-width: 100px;' class="p-col-12 p-sm-12 p-md-12 p-lg-12 p-xl-4">
+                                <p:commandButton onmouseup="OmniFaces.Push.close('#{PARAM_channelName}');"
+                                                 onstart="PF('#{PARAM_disableBlockName}').show();" 
+                                                 onsuccess="PF('#{PARAM_disableBlockName}').hide()"
+                                                 class="repeat-button"
+                                                 actionListener="#{PARAM_dataHandleBean.repeatTaskOnNodeHandler(node.nodeID)}" 
+                                                 value="Opakovat chybné" 
+                                                 style="min-height: 50px;"
+                                                 update="@form messages" 
+                                                 oncomplete="PF('statusTableEachServer').filter(); OmniFaces.Push.open('#{PARAM_channelName}');"
+                                                 rendered="#{node.isRenderErrRepeatButton}">
+                                    <p:confirm header="Opakování chybných vstupů" message="Opravdu chcete znovu zpracovat chybné vstupy na serveru #{node.nodeName}?" icon="pi pi-exclamation-triangle" />
+                                </p:commandButton>
+                            </div>
+                        </ui:fragment>
+                    </div>
+                </p:column>
+            </p:dataTable> 
+        </ui:composition>
+    </body>
+</html>

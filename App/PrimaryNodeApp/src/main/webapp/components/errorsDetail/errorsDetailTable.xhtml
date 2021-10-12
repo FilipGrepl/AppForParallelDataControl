@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui = "http://java.sun.com/jsf/facelets">
+    <body>
+        <ui:composition>
+            <p:dataTable widgetVar="errorsDetailTable" 
+                         var="errorDetail" 
+                         value="#{PARAM_dataHandleBean.errorsDetail}"
+                         emptyMessage="Žádné chyby nebyly nalezeny"
+                         reflow="true" >
+                <p:column sortBy="#{errorDetail.error.pathToInputFile}" width="25%" class="center-text" headerText="Název vstupního souboru" priority="1">
+                    <h:outputText value="#{errorDetail.error.pathToInputFile}" />
+                </p:column>
+                
+                <p:column sortBy="#{errorDetail.error.pathToInputFile}" width="35%" class="center-text" headerText="Spuštěný příkaz" priority="6">
+                    <h:outputText value="#{errorDetail.error.command}" />
+                </p:column>
+
+                <p:column sortBy="#{errorDetail.error.pathToInputFile}" width="20%" class="center-text" headerText="Popis chyby" priority="1">
+                    <h:outputText value="#{errorDetail.error.description == null ? '-' : errorDetail.error.description}" />
+                </p:column>
+                
+                <p:column width="7%" sortBy="#{errorDetail.error.exitCode}" class="center-text" headerText="Návratový kód" priority="1">
+                    <h:outputText value="#{errorDetail.error.exitCode}" />
+                </p:column>
+                
+                <p:column headerText="Možnosti" priority="1">
+                    <div class="p-grid center-items">                        
+                        <ui:fragment rendered="#{errorDetail.isRenderLogContentButton() || errorDetail.isRenderStderrContentButton()}" >
+                            <div style='min-width: 80px;' class="p-col-12 p-sm-12 p-md-6 p-lg-6 p-xl-6">
+                                <p:button outcome='errorDescription' value="Obsah logu" rendered="#{errorDetail.isRenderLogContentButton()}">
+                                    <f:param name="runJobID" value="#{PARAM_dataHandleBean.runJobID}"/>
+                                    <f:param name="nodeID" value="#{PARAM_dataHandleBean.nodeID}"/>
+                                    <f:param name="errorID" value="#{errorDetail.error.id}"/>
+                                    <f:param name="contentType" value="log" />
+                                </p:button>
+                            </div>
+                            <div style='min-width: 80px;' class="p-col-12 p-sm-12 p-md-6 p-lg-6 p-xl-6">
+                                <p:button outcome='errorDescription' value="Obsah stderr" rendered="#{errorDetail.isRenderStderrContentButton()}">
+                                    <f:param name="runJobID" value="#{PARAM_dataHandleBean.runJobID}"/>
+                                    <f:param name="nodeID" value="#{PARAM_dataHandleBean.nodeID}"/>
+                                    <f:param name="errorID" value="#{errorDetail.error.id}"/>
+                                    <f:param name="contentType" value="stderr" />
+                                </p:button>
+                            </div>
+                        </ui:fragment>
+                    </div>
+                </p:column>
+            </p:dataTable> 
+        </ui:composition>
+    </body>
+</html>

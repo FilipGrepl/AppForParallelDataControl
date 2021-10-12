@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui = "http://java.sun.com/jsf/facelets">
+    <body>
+        <ui:composition>
+            <div class="p-grid center-items p-nogutter">
+                <div class="p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-2">
+                    <h3 class="view-data-margin">Výpočetní uzel: </h3>
+                </div>
+                <div class="p-col-6 p-sm-6 p-md-6 p-lg-9 p-xl-9">
+                    <h3 class="view-data-margin">#{PARAM_dataHandleBean.taskStatusOnNode.nodeName}</h3>
+                </div>
+                <div class="p-col-3 p-sm-6 p-md-6 p-lg-3 p-xl-2">
+                    <h4 class="view-data-margin">Název úlohy: </h4>
+                </div>
+                <div class="p-col-3 p-sm-6 p-md-6 p-lg-3 p-xl-2">
+                    <h:outputText class="view-data-margin" value="#{PARAM_dataHandleBean.runTaskData.taskName}"/>
+                </div>   
+                <div class="p-col-3 p-sm-6 p-md-6 p-lg-3 p-xl-2">
+                    <h4 class="view-data-margin">Čas spuštění: </h4>
+                </div>
+                <div class="p-col-3 p-sm-6 p-md-6 p-lg-3 p-xl-6">
+                    <h:outputText class="view-data-margin" value="#{PARAM_dataHandleBean.runTaskData.startedAt}">
+                        <f:convertDateTime pattern="dd.MM.yyyy HH:mm:ss" />
+                    </h:outputText>
+                </div>
+
+                <div class="p-col-12">
+                    <p:separator/>
+                </div>
+
+                <div class="p-col-3 p-sm-6 p-md-6 p-lg-3 p-xl-2">
+                    <h4 class="view-data-margin">Krok: </h4>
+                </div>
+                <div class="p-col-3 p-sm-6 p-md-6 p-lg-3 p-xl-2" >
+                    <h:outputText class="view-data-margin" value="#{PARAM_dataHandleBean.taskStatusOnNode.stepsStr}"/>
+                </div>
+                <div class="p-col-3 p-sm-6 p-md-6 p-lg-3 p-xl-2">
+                    <h4 class="view-data-margin">Název kroku: </h4>
+                </div>
+
+                <div class="p-col-3 p-sm-6 p-md-6 p-lg-3 p-xl-6">
+                    <h:outputText class="view-data-margin" value="#{PARAM_dataHandleBean.taskStatusOnNode.runningStepName}"/>
+                </div>
+                <div class="p-col-3 p-sm-6 p-md-6 p-lg-3 p-xl-2">
+                    <h4 class="view-data-margin">Doba běhu: </h4>
+                </div>
+                <div class="p-col-3 p-sm-6 p-md-6 p-lg-3 p-xl-2">
+                    <h:outputText class="view-data-margin" value="#{PARAM_dataHandleBean.taskStatusOnNode.runningTimeStr}"/>
+                </div>
+                <div class="p-col-3 p-sm-6 p-md-6 p-lg-3 p-xl-2">
+                    <h4 class="view-data-margin">Doba čekání: </h4>
+                </div>
+                <div class="p-col-3 p-sm-6 p-md-6 p-lg-3 p-xl-6">
+                    <h:outputText class="view-data-margin" value="#{PARAM_dataHandleBean.taskStatusOnNode.waitingTimeStr}"/>
+                </div>
+
+                <div class="p-col-3 p-sm-6 p-md-6 p-lg-3 p-xl-2">
+                    <h4 class="view-data-margin">Zpracováno souborů: </h4>
+                </div>
+                <div class="p-col-3 p-sm-6 p-md-6 p-lg-3 p-xl-2">
+                    <h:outputText class="view-data-margin" value="#{PARAM_dataHandleBean.taskStatusOnNode.finishedFilesStr}"/>
+                </div>
+                <div class="p-col-3 p-sm-6 p-md-6 p-lg-3 p-xl-2">
+                    <h4 class="view-data-margin">Dokončeno: </h4>
+                </div>
+                <div class="p-col-3 p-sm-6 p-md-6 p-lg-3 p-xl-2">
+                    <p:progressBar class="view-data-margin" value="#{PARAM_dataHandleBean.taskStatusOnNode.finishedPercentage}" labelTemplate="#{PARAM_dataHandleBean.taskStatusOnNode.finishedPercentageStr}" />
+                </div>
+
+                <div class="p-col-3 p-sm-6 p-md-6 p-lg-3 p-xl-2 p-xl-offset-2">
+                    <p:commandButton
+                        onmouseup="OmniFaces.Push.close('#{PARAM_channelName}');"
+                        onstart="PF('#{PARAM_disableBlockName}').show();" 
+                        onsuccess="PF('#{PARAM_disableBlockName}').hide();"  
+                        class="repeat-button view-data-margin"
+                        actionListener="#{PARAM_dataHandleBean.repeatTaskOnNodeHandler}" 
+                        value="Opakovat chybné"
+                        rendered="#{PARAM_isRepeatTask and PARAM_dataHandleBean.taskStatusOnNode.isRenderErrRepeatButton}">
+                        <p:confirm header="Opakování chybných vstupů" message="Opravdu chcete znovu zpracovat chybné vstupy na serveru #{PARAM_dataHandleBean.taskStatusOnNode.nodeName}?" icon="pi pi-exclamation-triangle" />
+                    </p:commandButton>
+                    <p:commandButton onmouseup="OmniFaces.Push.close('#{PARAM_channelName}');"
+                                     onstart="PF('#{PARAM_disableBlockName}').show();" 
+                                     onsuccess="PF('#{PARAM_disableBlockName}').hide()"  
+                                     class="run-button" 
+                                     actionListener="#{PARAM_dataHandleBean.runStoppedTaskOnNodeHandler()}" 
+                                     value="Spustit úlohu"
+                                     update="@form messages"
+                                     oncomplete="PF('statusTableEachServer').filter(); OmniFaces.Push.open('#{PARAM_channelName}');"
+                                     rendered="#{PARAM_dataHandleBean.taskStatusOnNode.isRenderRunButton and not PARAM_dataHandleBean.taskStatusOnNode.isRenderErrRepeatButton}">
+                        <p:confirm header="Spuštění úlohy" message="Opravdu chcete spustit úlohu na serveru #{PARAM_dataHandleBean.taskStatusOnNode.nodeName}?" icon="pi pi-exclamation-triangle" />
+                    </p:commandButton>
+                </div>
+
+            </div>
+        </ui:composition>
+    </body>
+</html>

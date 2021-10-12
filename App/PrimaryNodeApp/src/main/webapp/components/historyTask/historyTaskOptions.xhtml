@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui = "http://java.sun.com/jsf/facelets">
+    <body>
+        <ui:composition>
+            <div class="p-col-12 p-sm-12 p-md-12 p-lg-12 p-xl-6 p-xl-offset-3">
+                <p:button outcome="historyOfTaskConfiguration" value="Zobrazit konfiguraci" icon="pi pi-star">
+                    <f:param name="i" value="2" />
+                    <f:param name="runJobID" value="#{PARAM_dataHandleBean.historyTaskData.runJobID}" />                                        
+                </p:button>                                        
+            </div>
+            <div class="p-col-12 p-sm-12 p-md-12 p-lg-12 p-xl-6 p-xl-offset-3">
+                <p:commandButton class="stop-button" 
+                                 actionListener="#{PARAM_dataHandleBean.deleteRunJobTask()}" 
+                                 value="Odstranit"
+                                 icon="pi pi-star" >
+                    <p:confirm header="Odstranění údajů o běhu úlohy" message="Opravdu chcete odstranit všechny údaje o běhu této úlohy?" icon="pi pi-exclamation-triangle" />
+                </p:commandButton>
+            </div>
+        </ui:composition>
+    </body>
+</html>

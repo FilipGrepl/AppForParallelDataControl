@@ -1,0 +1,6 @@
+{
+    "pathToErrLog" : "D:/FIT/Ing/DIP/gja---parallel-data-processing-application/App/logs/PrimaryNode_error.log",
+    "isAliveSendingPeriod" : 1,
+    "port" : 9001,
+    "recordTimeZone" : "CET"
+}

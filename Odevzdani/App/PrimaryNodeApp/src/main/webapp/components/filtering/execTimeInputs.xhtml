@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui = "http://java.sun.com/jsf/facelets">
+    <body>
+        <ui:composition>
+            <h4>Doba běhu</h4>
+            <div class="p-field p-grid">
+                <p:outputLabel for="execDaysFrom" styleClass="p-col-4" value="Od:" />
+                <div class="p-col-2">
+                    <p:inputNumber id="execDaysFrom" value="#{PARAM_filterBean.execDaysFrom}" minValue="0">
+                        <p:ajax event="keyup" listener="#{PARAM_ajaxBean[PARAM_ajaxHandler]}" update="#{PARAM_updateComponents}"/>
+                    </p:inputNumber>
+                </div>
+                <p:outputLabel for="execDaysFrom" styleClass="p-col-2" value="dnů" />
+                <div class="p-col-2">
+                    <p:inputNumber id="execHoursFrom" value="#{PARAM_filterBean.execHoursFrom}" minValue="0" maxValue="23">
+                        <p:ajax event="keyup" listener="#{PARAM_ajaxBean[PARAM_ajaxHandler]}" update="#{PARAM_updateComponents}"/>
+                    </p:inputNumber>
+                </div>
+                <p:outputLabel for="execHoursFrom" styleClass="p-col-2" value="hodin" />
+            </div>
+            <div class="p-field p-grid">
+                <p:outputLabel for="execDaysTo" styleClass="p-col-4" value="Do:" />
+                <div class="p-col-2">
+                    <p:inputNumber id="execDaysTo" value="#{PARAM_filterBean.execDaysFrom}" minValue="0">
+                        <p:ajax event="keyup" listener="#{PARAM_ajaxBean[PARAM_ajaxHandler]}" update="#{PARAM_updateComponents}"/>
+                    </p:inputNumber>
+                </div>
+                <p:outputLabel for="execDaysTo" styleClass="p-col-2" value="dnů" />
+                <div class="p-col-2">
+                    <p:inputNumber id="execHoursTo" value="#{PARAM_filterBean.execHoursFrom}" minValue="0" maxValue="23" converter="javax.faces.Integer">
+                        <p:ajax event="keyup" listener="#{PARAM_ajaxBean[PARAM_ajaxHandler]}" update="#{PARAM_updateComponents}"/>
+                    </p:inputNumber>
+                </div>
+                <p:outputLabel for="execHoursTo" styleClass="p-col-2" value="hodin" />
+            </div>
+        </ui:composition>
+    </body>
+</html>

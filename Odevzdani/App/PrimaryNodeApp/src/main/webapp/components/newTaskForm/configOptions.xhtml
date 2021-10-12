@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui = "http://java.sun.com/jsf/facelets">
+    <body>
+        <ui:composition>
+            <p:importEnum type="com.app.primaryNodeApp.controllers.backingBeans.NewTask.NewTaskBean$ConfigTypesEnum" var="ENUM_ConfigTypes" />
+            
+            
+            <div class="p-grid p-nogutter p-align-center">
+                <p:outputLabel for="taskOptionsPanel" styleClass="p-col-12 p-md-2 p-align-top" value="Konfigurace úlohy:" />
+
+                <p:outputPanel id="taskOptionsPanel" style="margin-bottom:10px">
+                    <p:selectOneRadio id="taskOptionsRadios" value="#{PARAM_newTaskBean.configType}" layout="custom">
+                        <p:ajax skipChildren="false" listener="#{PARAM_newTaskBean.taskConfOptionHandler}" process="taskOptionsPanel"  event="change" update="@form" />
+                        <f:selectItems value="#{PARAM_newTaskBean.configOptions}" />
+                    </p:selectOneRadio>
+
+                    <div class="p-grid p-align-center">
+                        <div class="p-col-3 p-sm-3 p-md-3 p-lg-3 p-xl-3">
+                            <div class="p-grid p-align-center">
+                                <div class="p-col-2 p-xl-1">
+                                    <p:radioButton id="opt1" for="taskOptionsRadios" itemIndex="0" />
+                                </div>
+                                <div class="p-col-10 p-xl-11">
+                                    <h:outputLabel for="opt1" value="Vlastní" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-col-9 p-sm-9 p-md-9 p-lg-9 p-xl-9" />
+
+                        <div class="p-col-3 p-sm-3 p-md-3 p-lg-3 p-xl-3">
+                            <div class="p-grid p-align-center">
+                                <div class="p-col-2 p-xl-1">
+                                    <p:radioButton id="opt2" for="taskOptionsRadios" itemIndex="1" />
+                                </div>
+                                <div class="p-col-10 p-xl-11">
+                                    <h:outputLabel for="opt2" value="Načíst uloženou konfiguraci úlohy" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-col-8 p-sm-8 p-md-6 p-lg-4 p-xl-7">
+                            <p:selectOneMenu style="min-width: 300px; max-width: 500px;" disabled="#{PARAM_newTaskBean.configType != ENUM_ConfigTypes.LOAD_EXIST_TASK}" id="console" value="#{PARAM_newTaskBean.selectedJobID}" > 
+                                <p:ajax process="taskOptionsPanel" skipChildren="false" event="valueChange" listener="#{PARAM_newTaskBean.changeSelectedJobHandler}" update="@form messages" />
+                                <f:selectItem itemLabel="Vyberte konfiguraci" itemValue="" />                                               
+                                <f:selectItems value="#{PARAM_newTaskBean.existJobs}" />
+                            </p:selectOneMenu>
+                        </div>
+                        <div class="p-col-1 p-sm-1 p-md-3 p-lg-5 p-xl-2" />
+
+                        <div class="p-col-3 p-sm-3 p-md-3 p-lg-3 p-xl-3">
+                            <div class="p-grid p-align-center">
+                                <div class="p-col-2 p-xl-1">
+                                    <p:radioButton id="opt3" for="taskOptionsRadios" itemIndex="2" />
+                                </div>
+                                <div class="p-col-10 p-xl-11">
+                                    <h:outputLabel for="opt3" value="Importovat konfiguraci úlohy" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-col-8 p-sm-8 p-md-6 p-lg-4 p-xl-7">
+                            <style type="text/css">
+                                .ui-fileupload-buttonbar {
+                                    height: 50px;
+                                }
+                                .ui-fileupload {
+                                    min-width: 300px;
+                                    max-width: 500px;
+                                }
+                            </style>
+                            <p:fileUpload listener="#{PARAM_newTaskBean.uploadHandler}" mode="advanced" skinSimple="true" label="Načíst konfiguraci" 
+                                          disabled="#{PARAM_newTaskBean.configType != ENUM_ConfigTypes.LOAD_FROM_FILE}"
+                                          update="@form messages" auto="true" sizeLimit="1048576" allowTypes="/(\.|\/)(json)$/"
+                                          invalidSizeMessage="Maximální velikost konfiguračního souboru je 1 MB."
+                                          invalidFileMessage="Soubor je neplatný, zvolte soubor ve formátu JSON."/>
+                        </div>
+                    </div>
+                </p:outputPanel>
+            </div>
+        </ui:composition>
+    </body>
+</html>

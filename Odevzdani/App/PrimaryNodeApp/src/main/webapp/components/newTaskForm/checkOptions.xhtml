@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui = "http://java.sun.com/jsf/facelets">
+    <body>
+        <ui:composition>
+            <p:importEnum type="com.app.primaryNodeApp.model.database.enums.IOtypes$IOtypesEnum" var="ENUM_IOtypes" />
+
+
+            <div class="p-formgroup p-align-center">
+                <ui:fragment rendered="#{not empty PARAM_actStep.inputType and not empty PARAM_actStep.outputType}">
+                    <div class="p-field-checkbox p-col-6 p-sm-6 p-md-6 p-lg-9 p-xl-6">
+                        <p:selectBooleanCheckbox style="margin-top: 30px;" itemLabel="Stderr je prázdný" value="#{PARAM_actStep.emptyStderr}"/>
+                    </div>
+                    <div class="p-grid p-field-checkbox p-align-center" style="margin-left: 0px;">
+                        <div class="p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-3">
+                            <p:selectBooleanCheckbox  class="ShowOnMobileLogCheckBox" itemLabel="Velikost logu" value="#{PARAM_actStep.checkLogFileSize}">
+                                <p:ajax process='@this' update='@this pathToLog logSize logSizeUnit' />
+                            </p:selectBooleanCheckbox>                                               
+                        </div>
+
+                        <div class="p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-3">
+                            <h:panelGroup id="pathToLogPanel" layout="block">
+                                <p:inputText  class="ShowOnMobileLogCheckBox" id='pathToLog' disabled="#{not PARAM_actStep.checkLogFileSize}" placeholder="Cesta k logu" value="#{PARAM_actStep.pathToLog}"
+                                              required="#{PARAM_actStep.stepOrder != 0 and (param['newTaskForm:save'] != null or param['newTaskForm:saveRun'] != null)}"
+                                              requiredMessage="Zadejte cestu k logu #{PARAM_actStep.stepOrder}. kroku, jehož velikost má být ověřena."/> 
+                                <p:tooltip for="pathToLogPanel" position="bottom" 
+                                           value="
+                                           Cesta musí odpovídat logu, který bude existovat po dokončení zpracování určitého vstupu daného kroku úlohy. Parametr $HOSTNAME bude automaticky nahrazen 
+                                           za název odpovídajícího výpočetního uzlu. Parametr $x bude nahrazen odpovídající skupinou znaků, která je vybrána zadaným regulárním výrazem aplikovaným 
+                                           na vstupní cestu (skupiny znaků jsou číslovány od 1)."
+                                           showEffect="clip" hideEffect="fold" />
+                            </h:panelGroup>
+                        </div>
+                        <div class="p-col-6 p-sm-6 p-md-6 p-lg-2 p-xl-2">
+                            <p:outputLabel style="display: inline-block; text-align: right; width: 150px;" class="center-text" value="menší než"/>
+                        </div>
+
+                        <div class="p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-3">
+                            <div class="p-formgroup-inline p-align-center">
+                                <div class="p-col-6 p-sm-6 p-md-6 p-lg-6 p-xl-5">
+                                    <p:spinner id="logSize" disabled="#{not PARAM_actStep.checkLogFileSize}" class="view-data-margin" decimalPlaces="0" min="1" value="#{stepValues.logSize}"
+                                               converterMessage="Timeout #{stepValues.step.stepOrder}. kroku musí být zadán ve formátu celého čísla"
+                                               required="#{PARAM_actStep.stepOrder != 0 and (param['newTaskForm:save'] != null or param['newTaskForm:saveRun'] != null)}"
+                                               requiredMessage="Zadejte maximální velikost logu #{PARAM_actStep.stepOrder}. kroku."/>
+                                </div>
+                                <div class="p-col-6 p-sm-4 p-md-3 p-lg-5 p-xl-6 ">
+                                    <p:selectOneMenu id='logSizeUnit' disabled="#{not PARAM_actStep.checkLogFileSize}" value="#{stepValues.logSizeUnit}" >
+                                        <f:selectItems value="#{newTaskBean.logSizeUnitValues}" />
+                                    </p:selectOneMenu>
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                </ui:fragment>
+
+                <ui:fragment  rendered="#{not empty PARAM_actStep.inputType and PARAM_actStep.outputType == ENUM_IOtypes.FILE}">
+                    <div class="p-field-checkbox p-col-12">
+                        <p:selectBooleanCheckbox itemLabel="Existence neprázdného výstupního souboru." value="#{PARAM_actStep.existNoEmptyOutputFsNode}"/>                                                    
+                    </div>
+                </ui:fragment>
+                <ui:fragment rendered="#{not empty PARAM_actStep.inputType and not empty PARAM_actStep.outputType and PARAM_actStep.outputType != ENUM_IOtypes.FILE}">
+
+                    <div class="p-field-checkbox p-col-12">
+                        <p:selectBooleanCheckbox itemLabel="Existence neprázdné výstupní složky." value="#{PARAM_actStep.existNoEmptyOutputFsNode}"/>                                                    
+                    </div>
+                </ui:fragment>
+
+
+
+
+                <ui:fragment  rendered="#{PARAM_actStep.inputType == ENUM_IOtypes.FOLDER and PARAM_actStep.outputType == ENUM_IOtypes.FOLDER}">
+                    <div class="p-field-checkbox p-col-12">
+                        <p:selectBooleanCheckbox  class="ShowOnMobileEqualInToOut" itemLabel="Počet souborů ve vstupní složce je roven počtu souborů ve výstupní složce." value="#{PARAM_actStep.equalInToOutFiles}"/>                                                    
+                    </div>
+
+
+                    <ui:insert name='actRunStepsTable'>
+                        <ui:include src='./secondOutputCheckBox.xhtml'>
+                            <ui:param name="PARAM_label" value="Počet souborů ve vstupní složce je roven počtu souborů ve složce " />
+                        </ui:include>
+                    </ui:insert>
+                </ui:fragment>
+
+
+
+
+
+                <ui:fragment  rendered="#{PARAM_actStep.inputType == ENUM_IOtypes.FOLDER_OF_FILES and PARAM_actStep.outputType == ENUM_IOtypes.FOLDER_OF_FILES}">
+                    <div class="p-field-checkbox p-col-12">
+                        <p:selectBooleanCheckbox class="ShowOnMobileEqualInToOut" itemLabel="Pro každý vstupní soubor existuje odpovídající neprázdný výstupní soubor." value="#{PARAM_actStep.existNoEmptyOutputFsNode}"/>                                                    
+                    </div>
+
+
+                    <ui:insert name='actRunStepsTable'>
+                        <ui:include src='./secondOutputCheckBox.xhtml'>
+                            <ui:param name="PARAM_label" value="Počet souborů ve vstupní složce je roven počtu souborů ve složce " />
+                        </ui:include>
+                    </ui:insert>
+                </ui:fragment>
+
+                <ui:fragment  rendered="#{PARAM_actStep.inputType == ENUM_IOtypes.FOLDER_OF_FILES and PARAM_actStep.outputType == ENUM_IOtypes.FOLDER_OF_FOLDERS}">
+                    <div class="p-field-checkbox p-col-12">
+                        <p:selectBooleanCheckbox class="ShowOnMobileEqualInToOut" itemLabel="Pro každý vstupní soubor existuje odpovídající neprázdná výstupní složka." value="#{PARAM_actStep.existNoEmptyOutputFsNode}"/>                                                    
+                    </div>
+
+                    <ui:insert name='actRunStepsTable'>
+                        <ui:include src='./secondOutputCheckBox.xhtml'>
+                            <ui:param name="PARAM_label" value="Počet souborů ve vstupní složce je roven počtu složek ve složce " />
+                        </ui:include>
+                    </ui:insert>
+
+                </ui:fragment>
+
+
+
+
+                <ui:fragment  rendered="#{PARAM_actStep.inputType == ENUM_IOtypes.FOLDER_OF_FOLDERS and PARAM_actStep.outputType == ENUM_IOtypes.FOLDER_OF_FILES}">
+                    <div class="p-field-checkbox p-col-12">
+                        <p:selectBooleanCheckbox class="ShowOnMobileEqualInToOut" itemLabel="Ke každé vstupní složce existuje odpovídající neprázdný výstupní soubor." value="#{PARAM_actStep.existNoEmptyOutputFsNode}"/>                                                    
+                    </div>
+
+                    <ui:insert name='actRunStepsTable'>
+                        <ui:include src='./secondOutputCheckBox.xhtml'>
+                            <ui:param name="PARAM_label" value="Počet složek ve vstupní složce je roven počtu souborů ve složce " />
+                        </ui:include>
+                    </ui:insert>
+
+                </ui:fragment>
+
+                <ui:fragment  rendered="#{PARAM_actStep.inputType == ENUM_IOtypes.FOLDER_OF_FOLDERS and PARAM_actStep.outputType == ENUM_IOtypes.FOLDER_OF_FOLDERS}">
+                    <div class="p-field-checkbox p-col-12">
+                        <p:selectBooleanCheckbox class="ShowOnMobileEqualInToOut" itemLabel="Ke každé vstupní složce existuje odpovídající neprázdná výstupní složka." value="#{PARAM_actStep.existNoEmptyOutputFsNode}"/>                                                    
+                    </div>
+
+                    <ui:insert name='actRunStepsTable'>
+                        <ui:include src='./secondOutputCheckBox.xhtml'>
+                            <ui:param name="PARAM_label" value="Počet složek ve vstupní složce je roven počtu složek ve složce " />
+                        </ui:include>
+                    </ui:insert>
+
+                </ui:fragment>
+            </div>  
+        </ui:composition>
+    </body>
+</html>

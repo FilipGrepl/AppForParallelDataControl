@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui = "http://java.sun.com/jsf/facelets">
+    <body>
+        <ui:composition>
+            <div class="p-grid p-align-center">
+                <div class="p-col-4 p-sm-4 p-md-3 p-lg-2 p-xl-2 p-xl-offset-3 p-lg-offset-3 p-md-offset-2 p-sm-offset-1">
+                    <p:commandButton
+                        style="margin-top: 20px;"
+                        id='save'    
+                        process="@form"
+                        value="#{PARAM_save_label}"
+                        actionListener="#{PARAM_newTaskBean.persistTaskHandler()}" 
+                        update="@form messages"
+                        icon="pi pi-save" />
+                </div>
+                <div class="p-col-4 p-sm-4 p-md-3 p-lg-2 p-xl-2 p-xl-offset-2 p-lg-offset-2 p-md-offset-2 p-sm-offset-2">
+                    <p:commandButton
+                        style="margin-top: 20px;"
+                        id='saveRun'
+                        process="@form"
+                        value="#{PARAM_save_run_label}"
+                        actionListener="#{PARAM_newTaskBean.persistAndRunTaskHandler()}"
+                        update="@form messages"
+                        icon="pi pi-arrow-up" />
+                </div>
+            </div>
+        </ui:composition>
+    </body>
+</html>

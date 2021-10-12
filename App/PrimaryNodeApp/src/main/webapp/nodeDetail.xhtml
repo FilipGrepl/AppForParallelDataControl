@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui = "http://java.sun.com/jsf/facelets"
+      xmlns:o="http://omnifaces.org/ui">
+
+    <h:head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <f:metadata>
+            <f:viewParam name="nodeID" value="#{nodeDetailBean.nodeID}"/>
+            <f:viewAction action="#{nodeDetailBean.loadData()}" />
+        </f:metadata>
+    </h:head>
+    <h:body>   
+
+
+        <h:outputStylesheet library="css" name="primeflex.css"/>
+        <h:outputStylesheet library="css" name="style.css"/>
+
+        <ui:composition template = "templates/commonWithoutSideForm.xhtml">
+
+            <ui:define name = "content">
+                <h:outputScript library='js' name='graphConfiguration.js' />
+                <p:importEnum type="com.app.primaryNodeApp.model.primaryNode.serverPushBean.enums.FirePushEvents$FirePushEventsEnum" var="ENUM_FirePushEvents" />
+                <p:growl redisplay="false" skipDetailIfEqualsSummary="true" id="messages" showDetail="true">
+                    <!--<p:autoUpdate/>-->
+                </p:growl>
+
+                <div class="p-grid">
+
+                    <div class="p-col-5 p-sm-5 p-md-4 p-lg-2 p-xl-1">
+                        <p:button outcome="nodesOverview" value="Zpět">
+                            <f:param name="i" value="1"/>
+                        </p:button>
+                        <p:spacer/>
+                    </div>
+
+                    <!--<div class="p-col-12 p-sm-1 p-md-1 p-lg-1 p-xl-1 p-sm-offset-6 p-md-offset-7 p-lg-offset-9 p-xl-offset-10">
+                        <p:ajaxStatus id="ajaxStatus">
+                            <f:facet name="start">
+                                <i class="pi pi-spin pi-spinner" style="font-size: 3em"/>
+                            </f:facet>
+                        </p:ajaxStatus>
+                        <p:sticky target="ajaxStatus"/>
+                    </div>-->
+
+
+
+                    <div class="p-col-12">
+                        <h:form>   
+                            <o:socket channel="nodeEventChannel" onmessage="function(message) {console.log('message');}">
+                                <p:ajax process="@form" event="#{ENUM_FirePushEvents.NODE_EVENT}" listener="#{nodeDetailBean.update()}"  update="runTaskInfoPanel" />
+                            </o:socket>
+                            <o:socket channel="runTaskEventChannel" onmessage="function(message) {console.log('message');}">
+                                <p:ajax process="@form" event="#{ENUM_FirePushEvents.NODE_EVENT}" listener="#{nodeDetailBean.update()}"  update="runTaskInfoPanel" />
+                            </o:socket>
+                            <p:panel id="runTaskInfoPanel" header="#{nodeDetailBean.nodeData.nodeName}" style="margin-bottom:20px">
+
+                                <ui:insert name='runTaskListItem'>
+                                    <ui:include src='components/nodeUsageDetail/nodeInfo.xhtml'>
+                                        <ui:param name='PARAM_nodeData' value='#{nodeDetailBean.nodeData}' />+
+                                        <ui:param name='PARAM_dataHandleBean' value='#{nodeDetailBean}' />
+                                        <ui:param name='PARAM_update' value='runTaskInfoPanel messages' />
+                                        <ui:param name='PARAM_disableBlockName' value='blockUIcomponent' />
+                                        <ui:param name='PARAM_channelName' value='runTaskEventChannel' />
+                                        <ui:param name='PARAM_channelName_2' value='nodeEventChannel' />
+                                    </ui:include>
+                                </ui:insert>
+
+                                <p:separator/>
+                                <p:spacer/>
+                                <div class="p-grid">
+
+                                    <div class="p-col-2 p-sm-3 p-md-2 p-lg-1 p-xl-1 p-xl-offset-1 p-lg-offset-2">
+                                        <h:outputText class="view-data-margin usage-selector" value="Zobrazit údaje za:" />
+                                    </div>
+                                    <div class="p-col-10 p-sm-9 p-md-10 p-lg-7 p-xl-9">
+                                        <ui:insert name='ajaxSelector'>
+                                            <ui:include src='components/ajaxSelector/ajaxSelector.xhtml'>
+                                                <ui:param name='PARAM_itemBean' value='#{nodeDetailBean.selectUsageBean}' />
+                                                <ui:param name='PARAM_ajaxBean' value='#{nodeDetailBean}' />
+                                                <ui:param name='PARAM_ajaxHandler' value='ajaxSelectHandler' />
+                                                <ui:param name='PARAM_is_add_class' value='true' />
+                                                <ui:param name='PARAM_updateComponents' value='chart' />
+                                                <ui:param name="PARAM_styleClass" value="" />
+                                            </ui:include>
+                                        </ui:insert>
+                                    </div>
+                                    <div class="p-col-1 p-sm-0 p-md-0 p-lg-0 p-xl-0" />
+                                    <div class="p-col-10 p-sm-10 p-md-10 p-lg-10 p-xl-10 p-lg-offset-1">
+                                        <p:chart id="chart" type="line" model="#{nodeDetailBean.lineChartModel}" responsive="true" widgetVar="chart" style="height: 500px;"/>
+                                    </div> 
+                                    <div class="p-col-12 p-sm-4 p-md-4 p-lg-2 p-xl-2 p-sm-offset-4 p-md-4 p-lg-5 p-xl-offset-5">
+                                        <p:commandButton type="button" value="Zoom reset" icon="pi pi-ban" onclick="PF('chart').resetZoom()"/>
+                                    </div>
+                                </div>
+
+                                <p:separator/>
+                                
+                                <ui:insert name='runTaskListItem'>
+                                    <ui:include src='components/nodeUsageDetail/runTaskInfo.xhtml'>
+                                        <ui:param name='PARAM_nodeData' value='#{nodeDetailBean.nodeData}' />
+                                    </ui:include>
+                                </ui:insert>
+
+
+                            </p:panel>
+                            <p:blockUI widgetVar="blockUIcomponent" block="runTaskInfoPanel" />
+                            <p:confirmDialog global="true" closeOnEscape="true" showEffect="fade" hideEffect="fade" responsive="true">
+                                <p:commandButton value="OK" type="button" styleClass="ui-confirmdialog-yes" icon="pi pi-check" />
+                                <p:commandButton value="Storno" type="button" styleClass="ui-confirmdialog-no" icon="pi pi-times">
+                                    <p:ajax process="@form" event="click" listener="#{nodeDetailBean.update()}"  update="runTaskInfoPanel" 
+                                            oncomplete="OmniFaces.Push.open('runTaskEventChannel'); OmniFaces.Push.open('nodeEventChannel');"/>
+                                </p:commandButton>
+                            </p:confirmDialog>   
+                        </h:form>
+                    </div>
+                </div>
+            </ui:define>
+
+        </ui:composition> 
+    </h:body>
+</html>

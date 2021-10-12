@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui = "http://java.sun.com/jsf/facelets">
+    <body>
+        <ui:composition>
+            <div class="p-field p-grid">
+                <p:outputLabel for="taskName" styleClass="p-col-4" value="Název úlohy" />
+                <div class="p-col-8">
+                    <p:inputText id="taskName" value="#{PARAM_filterBean.taskName}">
+                        <p:ajax event="keyup" listener="#{PARAM_ajaxBean[PARAM_ajaxHandler]}" update="#{PARAM_updateComponents}"/>
+                    </p:inputText>
+                </div>
+            </div>
+        </ui:composition>
+    </body>
+</html>

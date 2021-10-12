@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui = "http://java.sun.com/jsf/facelets">
+    <body>
+        <ui:composition>
+            <div class="p-grid center-items p-nogutter">
+                <div class="p-col-12 p-sm-12 p-md-12 p-lg-12 p-xl-6">
+                    <h4 class="view-data-margin">Naposledy spuštěno: </h4>
+                </div>
+                <div class="p-col-12 p-sm-12 p-md-12 p-lg-12 p-xl-6">
+                    <h:outputText class="view-data-margin" value="#{empty PARAM_taskData.lastStartedAt ? '-' : PARAM_taskData.lastStartedAt}">
+                        <f:convertDateTime pattern="dd.MM.yyyy HH:mm:ss" />
+                    </h:outputText>
+                </div>
+                <div class="p-col-12 p-sm-12 p-md-12 p-lg-12 p-xl-6">
+                    <h4 class="view-data-margin">Vytíženo serverů: </h4>
+                </div>
+                <div class="p-col-12 p-sm-12 p-md-12 p-lg-12 p-xl-6">
+                    <h:outputText class="view-data-margin" value="#{ empty PARAM_taskData.numberOfServers ? '-' : PARAM_taskData.numberOfServers}"/>
+                </div>
+                
+                <div class="p-col-12 p-sm-12 p-md-12 p-lg-12 p-xl-6">
+                    <h4 class="view-data-margin">Počet kroků úlohy: </h4>
+                </div>
+                <div class="p-col-12 p-sm-12 p-md-12 p-lg-12 p-xl-6">
+                    <h:outputText class="view-data-margin" value="#{ empty PARAM_taskData.numberOfSteps ? '-' : PARAM_taskData.numberOfSteps}"/>
+                </div>
+                <div class="p-col-12 p-sm-12 p-md-12 p-lg-12 p-xl-6">
+                    <h2 class="view-data-margin">Status: </h2>
+                </div>
+                <div class="p-col-12 p-sm-12 p-md-12 p-lg-12 p-xl-6">   
+                    <h3 class="#{empty PARAM_taskData.statusClass ? 'text-blue' : PARAM_taskData.statusClass} view-data-margin">
+                        #{empty PARAM_taskData.taskStatus or PARAM_taskData.taskStatus == ENUM_StepStatus.FINISHED ? 'Není spuštěna' : PARAM_taskData.taskStatus.getMessage()}</h3>
+                </div>
+            </div>
+        </ui:composition>
+    </body>
+</html>

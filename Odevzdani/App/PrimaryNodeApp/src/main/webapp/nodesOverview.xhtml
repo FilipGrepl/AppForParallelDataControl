@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui = "http://java.sun.com/jsf/facelets"
+      xmlns:o="http://omnifaces.org/ui">
+
+    <h:head> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </h:head>
+    <h:body>   
+
+
+        <h:outputStylesheet library="css" name="primeflex.css"/>
+        <h:outputStylesheet library="css" name="style.css"/>
+
+        <ui:composition template = "templates/commonWithoutSideForm.xhtml">
+            <ui:define name = "content">
+                <p:importEnum type="com.app.primaryNodeApp.model.primaryNode.serverPushBean.enums.FirePushEvents$FirePushEventsEnum" var="ENUM_FirePushEvents" />
+           
+                <div class="p-grid center-items">
+                    <div class="p-col-12 center-text">
+                        <h:form>
+                            <o:socket channel="nodeEventChannel" onmessage="function(message) {console.log(message);}">
+                                <p:ajax process="@form" event="#{ENUM_FirePushEvents.NODE_EVENT}" listener="#{nodesOverviewBean.update()}"  update="statusTableEachServer" oncomplete="PF('statusTableEachServer').filter()" />
+                            </o:socket>
+                            
+                            <p:dataTable widgetVar="statusTableEachServer" 
+                                         id="statusTableEachServer"
+                                         var="nodeData" 
+                                         value="#{nodesOverviewBean.nodesData}"
+                                         emptyMessage="Dle zadaných kritérií nebyly žádné výpočetní uzly nalezeny" 
+                                         filteredValue="#{nodesOverviewBean.nodesDataFiltered}" 
+
+                                         selectionMode="single"
+                                         rowKey="#{nodeData.nodeID}"
+                                         selection="#{nodesOverviewBean.selectedNode}"
+                                         >
+
+                                <p:ajax  event="rowSelect" listener="#{nodesOverviewBean.redirectToNodeDetail()}" update="@all" />
+
+                                <p:column sortBy="#{nodeData.nodeName}" filterBy="#{nodeData.nodeName}"  filterMatchMode="contains" class="center-text view-table-padding" headerText="Název uzlu" priority="1">
+                                    <h:outputText class="view-data-margin" value="#{nodeData.nodeName}" />
+                                </p:column>
+                                
+                                <p:column sortBy="#{nodeData.nodeIP}" filterBy="#{nodeData.nodeIP}"  filterMatchMode="contains" class="center-text view-table-padding" headerText="IP adresa" priority="6">
+                                    <h:outputText class="view-data-margin" value="#{empty nodeData.nodeIP ? '-' : nodeData.nodeIP}" />
+                                </p:column>
+                  
+                                <p:column sortBy="#{nodeData.nodeStatus.getMessage()}" filterBy="#{nodeData.nodeStatus.getMessage()}"  filterMatchMode="contains" class="center-text view-table-padding" headerText="Stav uzlu" priority="1">
+                                    <f:facet name="filter">
+                                        <p:selectOneMenu onchange="PF('statusTableEachServer').filter()">
+                                            <f:selectItem itemLabel="Zvolte stav" itemValue="#{null}" noSelectionOption="true" />
+                                            <f:selectItems value="#{nodesOverviewBean.nodeStatuses}" />
+                                        </p:selectOneMenu>
+                                    </f:facet>
+                                    <h4 class="#{nodeData.nodeStatusClass}">#{nodeData.nodeStatus.getMessage()}</h4>
+                                </p:column>
+
+                                <p:column sortBy="#{nodeData.runTaskName}" filterBy="#{nodeData.runTaskName}"  filterMatchMode="contains" class="center-text view-table-padding" headerText="Běžící úloha" priority="1">
+                                    <h:outputText class="view-data-margin" value="#{empty nodeData.runTaskName ? '-' : nodeData.runTaskName}" />
+                                </p:column>
+
+                                <p:column sortBy="#{nodeData.startDate}" class="center-text view-table-padding" headerText="Datum spuštění" priority="6">
+                                    <h:outputText class="view-data-margin" value="#{empty nodeData.startDate ? '-' : nodeData.startDate}">
+                                        <f:convertDateTime pattern="dd.MM.yyyy HH:mm:ss" />
+                                    </h:outputText>
+                                </p:column>
+
+                                <p:column sortBy="#{nodeData.stepsPercentage}" class="center-text view-table-padding" headerText="Dokončeno kroků" priority="3">
+                                    <p:progressBar labelTemplate="#{nodeData.stepsStr}" rendered="#{not empty nodeData.stepsPercentage}"/>
+                                    <h:outputText class="view-data-margin" value="-" rendered="#{empty nodeData.stepsPercentage}" />
+                                </p:column>
+
+                                <p:column sortBy="#{nodeData.runningStep}" filterBy="#{nodeData.runningStep}" filterMatchMode="startsWith" class="center-text view-table-padding" headerText="Běžící krok" priority="5">
+                                    <f:facet name="filter">
+                                        <p:selectOneMenu onchange="PF('statusTableEachServer').filter()">
+                                            <f:selectItem itemLabel="Vyberte krok" itemValue="#{null}" noSelectionOption="true" />
+                                            <f:selectItems value="#{empty nodesOverviewBean.runningSteps ? '-' : nodesOverviewBean.runningSteps}" />
+                                        </p:selectOneMenu>
+                                    </f:facet>
+                                    <h:outputText value="#{empty nodeData.runningStep ? '-' : nodeData.runningStep}" />
+                                </p:column>
+
+
+                                <p:column sortBy="#{nodeData.finishedPercentage}" class="center-text view-table-padding" headerText="Dokončeno [%]" priority="4">
+                                    <p:progressBar value="#{nodeData.finishedPercentage}" labelTemplate="#{nodeData.finishedPercentageStr}" rendered="#{not empty nodeData.finishedPercentage}"/>
+                                    <h:outputText class="view-data-margin" value="-" rendered="#{empty nodeData.finishedPercentage}" />
+                                </p:column>
+
+                                <p:column sortBy="#{nodeData.finishedFiles}" filterBy="#{nodeData.finishedFilesStr}"  filterMatchMode="startsWith" class="center-text view-table-padding" headerText="Zpracováno souborů" priority="6">
+                                    <h:outputText class="view-data-margin" value="#{empty nodeData.finishedFilesStr ? '-' : nodeData.finishedFilesStr}" />
+                                </p:column>
+
+                                <p:column sortBy="#{nodeData.stepStatus.getMessage()}" filterBy="#{nodeData.stepStatus.getMessage()}" filterMatchMode="in" class="center-text view-table-padding" headerText="Status úlohy" priority="2">
+                                    <f:facet name="filter">
+                                        <p:selectCheckboxMenu label="Status" onchange="PF('statusTableEachServer').filter()" scrollHeight="200">
+                                            <f:selectItems value="#{nodesOverviewBean.stepStatuses}" />
+                                        </p:selectCheckboxMenu>
+                                    </f:facet>
+                                    <h4 class="#{nodeData.stepStatusClass}">#{empty nodeData.stepStatus ? '-' : nodeData.stepStatus.getMessage()}</h4>
+                                </p:column>
+
+                                <p:column width="13%" priority="2" class="center-text view-table-padding">
+
+                                    <f:facet name="header">
+                                        <div class='p-grid'>
+                                            <div class='p-col-12'>
+                                                <span class="ui-column-title">Využití za:</span>
+                                            </div>
+
+                                            <div class='p-col-12'>
+                                                <ui:insert name='ajaxSelector'>
+                                                    <ui:include src='components/ajaxSelector/ajaxSelector.xhtml'>
+                                                        <ui:param name='PARAM_itemBean' value='#{nodesOverviewBean.selectUsageBean}' />
+                                                        <ui:param name='PARAM_ajaxBean' value='#{nodesOverviewBean}' />
+                                                        <ui:param name='PARAM_ajaxHandler' value='ajaxSelectHandler' />
+                                                        <ui:param name='PARAM_is_add_class' value='true' />
+                                                        <ui:param name='PARAM_updateComponents' value='@form' />
+                                                        <ui:param name='PARAM_styleClass' value='ShowOnDesktop' />
+                                                    </ui:include>
+                                                </ui:insert>
+
+                                                <p:selectOneMenu value="#{nodesOverviewBean.selectUsageBean.selectValue}" styleClass="ShowOnSmallScreen">
+                                                    <p:ajax  event="change" listener="#{nodesOverviewBean.ajaxSelectHandler()}" update="@form" />
+                                                    <f:selectItems value="#{nodesOverviewBean.selectUsageBean.selectValues}" />
+                                                </p:selectOneMenu>
+                                            </div>
+                                        </div>
+                                    </f:facet>
+                                    <p:progressBar value="#{nodeData.displayUsage}" labelTemplate="#{nodeData.displayUsageStr}" />
+                                </p:column>
+
+                            </p:dataTable>
+                        </h:form>
+                    </div>
+                </div>
+            </ui:define>
+
+        </ui:composition> 
+    </h:body>
+</html>

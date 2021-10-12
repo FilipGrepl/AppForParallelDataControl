@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui = "http://java.sun.com/jsf/facelets"
+      xmlns:o="http://omnifaces.org/ui">
+
+    <h:head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <f:metadata>
+            <f:viewParam name="jobID" value="#{newTaskBean.jobID}"/>
+            <f:viewAction action="#{newTaskBean.loadData()}" />
+        </f:metadata>
+    </h:head>
+    <h:body>   
+        <h:outputStylesheet library="css" name="primeflex.css"/>
+        <h:outputStylesheet library="css" name="style.css"/>
+
+        <ui:composition template = "templates/commonWithoutSideForm.xhtml">
+
+            <ui:define name = "content">
+                <style type="text/css">
+                    .ui-panelgrid.showcase-text-align-center .ui-grid-responsive .ui-panelgrid-cell {
+                        text-align: center;
+                    }
+
+                    .customPanelGrid .ui-panelgrid-content {
+                        align-items: center;
+                        border: none !important;
+                    }
+                </style>        
+
+                <p:growl redisplay="false" skipDetailIfEqualsSummary="true" id="messages" showDetail="true">
+                    <!--<p:autoUpdate/>-->
+                </p:growl> 
+
+                <p:panel id="runTaskCOnfigurationPanel" header="Vytvoření nové úlohy" style="margin-bottom:20px">
+                    <o:form id="newTaskForm">
+
+                        <div class="ui-fluid "> 
+
+                            <div class="p-col-12 center-text ">
+                                <h3>Načtení konfigurace úlohy</h3> 
+                            </div>
+
+                            <!--<div class="p-col-2 p-sm-2 p-md-2 p-lg-1 p-xl-1 p-sm-offset-10 p-lg-offset-11 p-xl-offset-11">
+                                <p:ajaxStatus style="text-align: right;" id="ajaxStatus">
+                                    <f:facet name="start">
+                                        <i class="pi pi-spin pi-spinner" style="font-size: 3em"/>
+                                    </f:facet>
+                                </p:ajaxStatus>
+                                <p:sticky target="ajaxStatus"/>
+                            </div>-->
+
+                            <ui:include src='components/newTaskForm/configOptions.xhtml'>
+                                <ui:param name='PARAM_newTaskBean' value='#{newTaskBean}' />
+                            </ui:include>
+
+                            <p:separator/>
+                            <p:spacer />
+
+                            <div class="p-col-12 center-text">
+                                <h3>Specifikace úlohy</h3>
+                            </div>
+
+                            <ui:include src='components/newTaskForm/taskSettings.xhtml'>
+                                <ui:param name='PARAM_newTaskBean' value='#{newTaskBean}' />
+                            </ui:include>
+
+                            <p:separator/>
+                            <p:spacer />
+
+                            <div class="p-col-12 center-text">
+                                <h4>Specifikace kroků úlohy</h4>
+                            </div>
+
+
+                            <style type="text/css">
+                                .ui-tabs-nav {
+                                    width: 10% !important;
+                                }
+                                .ui-tabs-panels {
+                                    width: 90% !important;
+                                }
+                            </style>
+
+                            <ui:include src='components/newTaskForm/stepsSettings.xhtml'>
+                                <ui:param name='PARAM_newTaskBean' value='#{newTaskBean}' />
+                            </ui:include>
+
+                            <ui:include src='components/newTaskForm/formConfirmButtons.xhtml'>
+                                <ui:param name='PARAM_newTaskBean' value='#{newTaskBean}' />
+                                <ui:param name='PARAM_save_label' value='Uložit úlohu' />
+                                <ui:param name='PARAM_save_run_label' value="Ulož a spustit úlohu" />
+                            </ui:include>
+
+                        </div>
+                    </o:form>
+                </p:panel>                
+            </ui:define>
+        </ui:composition> 
+    </h:body>
+</html>

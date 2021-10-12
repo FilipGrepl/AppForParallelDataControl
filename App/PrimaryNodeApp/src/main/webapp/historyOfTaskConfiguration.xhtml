@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui = "http://java.sun.com/jsf/facelets">
+
+    <h:head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <f:metadata>
+            <f:viewParam name="runJobID" value="#{historyOfTaskConfBean.runJobID}"/>
+            <f:viewAction action="#{historyOfTaskConfBean.loadData()}" />
+        </f:metadata>
+    </h:head>
+    <h:body>   
+
+
+        <h:outputStylesheet library="css" name="primeflex.css"/>
+        <h:outputStylesheet library="css" name="style.css"/>
+
+        <ui:composition template = "templates/commonWithoutSideForm.xhtml">
+
+            <ui:define name = "content">
+                <p:growl redisplay="false" skipDetailIfEqualsSummary="true" id="messages" showDetail="true">
+                    <p:autoUpdate/>
+                </p:growl>
+
+                <div class="p-grid">
+
+                    <div class="p-col-5 p-sm-5 p-md-4 p-lg-2 p-xl-1">
+                        <p:button outcome="historyOfTaskDetail" value="Zpět">
+                            <f:param name="i" value="2" />
+                            <f:param name="runJobID" value="#{historyOfTaskConfBean.runJobID}"/>
+                        </p:button>
+                        <p:spacer/>
+                    </div>
+                    
+                    <div class="p-col-12">
+                        <h:form>                           
+                            <p:panel id="runTaskCOnfigurationPanel" header="#{historyOfTaskConfBean.historyTaskData.taskName}" style="margin-bottom:20px">
+
+                                <ui:insert name='runTaskListItem'>
+                                    <ui:include src='components/historyTask/historyTaskListItem.xhtml'>
+                                        <ui:param name='PARAM_taskData' value='#{historyOfTaskConfBean.historyTaskData}' />
+                                    </ui:include>
+                                </ui:insert>
+
+                                <p:separator/>
+                                <p:spacer/>
+                                <div class="p-col-12">
+                                    <h3 class="center-text">Parametry spuštění</h3>
+                                </div>
+                                <ui:insert name="stepTabView">
+                                    <ui:include src="components/configuration/stepTabView.xhtml">
+                                        <ui:param name='PARAM_stepsConfData' value='#{historyOfTaskConfBean.stepConfData}' />
+                                    </ui:include>
+                                </ui:insert>
+                            </p:panel>
+                        </h:form>
+                    </div>
+                </div>
+            </ui:define>
+
+        </ui:composition> 
+    </h:body>
+</html>

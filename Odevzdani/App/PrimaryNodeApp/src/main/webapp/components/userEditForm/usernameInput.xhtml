@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui = "http://java.sun.com/jsf/facelets">
+    <body>
+        <ui:composition>
+            <script type="text/javascript">
+                function updateUsernameMsg() {
+                    var isExistInputNode = document.getElementById('newTaskForm:isExistUsername').value;
+                    var messageNode = document.getElementById('newTaskForm:username_message');
+
+                    messageNode.innerHTML = '';
+                    if (isExistInputNode === 'true') {
+                        var span_1 = document.createElement('SPAN');
+                        var span_2 = document.createElement('SPAN');
+                        var div = document.createElement('DIV');
+                        span_1.classList.add('ui-message-error-icon');
+                        span_2.classList.add('ui-message-error-detail');
+                        span_2.textContent = 'Zadané uživatelské jméno již existuje';
+                        div.appendChild(span_1);
+                        div.appendChild(span_2);
+                        messageNode.appendChild(div);
+                        messageNode.classList.add('ui-message-error', 'ui-widget', 'ui-corner-all');
+                        messageNode.style.display = 'inline-block';
+                    } else {
+                        messageNode.style.display = 'none';
+                    }
+                }
+            </script>
+
+            <div class="p-grid p-field p-nogutter">
+                <p:outputLabel for="username" styleClass="p-col-3 p-sm-3 p-md-3 p-lg-2 p-xl-2 p-sm-offset-2 p-md-offset-2 p-lg-offset-3 p-xl-offset-4" value="Uživatelské jméno: " />
+                <div class="p-col-9 p-sm-5 p-md-5 p-lg-4 p-xl-2">
+                    <h:inputHidden id="isExistUsername" value="#{PARAM_isExistUsername}" />
+                    <p:inputText  placeholder="Zadejte uživatelské jméno" id="username" value="#{PARAM_usernameInput}" required="true" requiredMessage="Zadejte uživatelské jméno">
+                        <p:ajax event="keyup" process="username" listener="#{PARAM_isExistUsernameHandlerBean[PARAM_isExistUsernameHandler]}" update="isExistUsername" oncomplete="updateUsernameMsg()" />
+                    </p:inputText>
+                </div>
+                <div class="p-col-12 p-sm-5 p-md-5 p-lg-3 p-xl-2 p-sm-offset-5 p-lg-offset-0 p-xl-offset-0">
+                    <p:message id="username_message" for="username" />
+                </div>
+            </div>
+
+            <script type="text/javascript">
+                var messageNode = document.getElementById('newTaskForm:username_message');
+                messageNode.innerHTML = '';
+                messageNode.style.display = 'none';
+            </script>
+        </ui:composition>
+    </body>
+</html>

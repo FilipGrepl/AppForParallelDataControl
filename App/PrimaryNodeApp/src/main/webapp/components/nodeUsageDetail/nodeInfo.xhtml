@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui = "http://java.sun.com/jsf/facelets">
+    <body>
+        <ui:composition>
+            <p:importEnum type="com.app.primaryNodeApp.model.database.enums.NodeStatus$NodeStatusEnum" var="ENUM_NodeStatus" />
+            <div class="p-grid center-items p-nogutter">
+                <div class="p-col-8">
+                    <div class="p-grid center-items p-nogutter">
+                        <div class="p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-2">
+                            <h2 class="view-data-margin">Stav uzlu: </h2>
+                        </div>
+                        <div class="p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-2">
+                            <h3 class="#{PARAM_nodeData.nodeStatusClass} view-data-margin">#{PARAM_nodeData.nodeStatus.getMessage()}</h3>
+                        </div>
+                        <div class="p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-2">
+                            <h4 class="view-data-margin">IP adresa: </h4>
+                        </div>
+                        <div class="p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-6" >
+                            <h:outputText class="view-data-margin" value="#{empty PARAM_nodeData.nodeIP ? '-' : PARAM_nodeData.nodeIP}"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-col-4 center-text">
+                    <h3>Možnosti uzlu</h3>
+                    <div class="p-col-12 p-sm-12 p-md-12 p-lg-12 p-xl-6 p-xl-offset-3">
+                        <p:commandButton
+                            onmouseup="OmniFaces.Push.close('#{PARAM_channelName}'); OmniFaces.Push.close('#{PARAM_channelName_2}');"
+                            onstart="PF('#{PARAM_disableBlockName}').show();" 
+                            onsuccess="PF('#{PARAM_disableBlockName}').hide();" 
+                            oncomplete="OmniFaces.Push.open('nodeEventChannel');"
+                            class="stop-button"
+                            action="#{PARAM_dataHandleBean.resetIPHandler()}"
+                            value="Resetovat IP adresu"
+                            update="#{PARAM_update}"
+                            icon="pi pi-star"
+                            disabled="#{empty PARAM_nodeData.nodeIP or PARAM_nodeData.nodeStatus != ENUM_NodeStatus.DISCONNECTED}">
+                            <p:confirm header="Resetování IP adresy" message="Opravdu chcete smazat uloženou IP adresu u výpočetního uzlu #{PARAM_nodeData.nodeName}?" icon="pi pi-exclamation-triangle" />                          
+                        </p:commandButton>
+                    </div>
+                    <div class="p-col-12 p-sm-12 p-md-12 p-lg-12 p-xl-6 p-xl-offset-3">
+                        <p:commandButton
+                            onstart="PF('#{PARAM_disableBlockName}').show();"
+                            onsuccess="PF('#{PARAM_disableBlockName}').hide();" 
+                            action="#{PARAM_dataHandleBean.showChangeNodeNameDialogHandler()}"
+                            value="Změnit název uzlu"
+                            update="#{PARAM_update}"
+                            icon="pi pi-star"
+                            disabled="#{PARAM_nodeData.nodeStatus != ENUM_NodeStatus.DISCONNECTED}">
+                            <p:ajax event="dialogReturn" listener='#{PARAM_dataHandleBean.dialogReturnHandler}' update="#{PARAM_update}" />
+                        </p:commandButton>                                        
+                    </div>
+                </div>
+            </div>
+        </ui:composition>
+    </body>
+</html>

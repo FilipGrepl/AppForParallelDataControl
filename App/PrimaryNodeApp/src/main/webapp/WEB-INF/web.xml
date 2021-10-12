@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <context-param>
+        <param-name>javax.faces.DATETIMECONVERTER_DEFAULT_TIMEZONE_IS_SYSTEM_TIMEZONE</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <context-param>
+        <param-name>javax.faces.PROJECT_STAGE</param-name> <!--Production -->
+        <param-value>Development</param-value>
+    </context-param>
+    <context-param>
+        <param-name>org.omnifaces.SOCKET_ENDPOINT_ENABLED</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <context-param>
+        <param-name>primefaces.THEME</param-name>
+        <param-value>luna-blue</param-value>
+    </context-param>
+    <context-param>
+        <param-name>primefaces.CLIENT_SIDE_VALIDATION</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <context-param>
+        <param-name>primefaces.UPLOADER</param-name>
+        <param-value>auto</param-value>
+    </context-param>
+    <context-param>
+        <param-name>facelets.SKIP_COMMENTS</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    
+    <!-- APPLICATION SPECIFIC CONTEXT PARAMETERS -->
+    <env-entry>
+        <env-entry-name>PATH_TO_ERR_LOG</env-entry-name>
+        <env-entry-type>java.lang.String</env-entry-type>
+        <!--<env-entry-value>D:/FIT/Ing/DIP/gja- - -parallel-data-processing-application/App/logs/PrimaryNode_error.log</env-entry-value>-->
+        <env-entry-value>/opt/glassfish5/glassfish/domains/domain1/logs/PrimaryNode_error.log</env-entry-value>
+    </env-entry>
+    <env-entry>
+        <env-entry-name>SOCKET_LISTENING_PORT</env-entry-name>
+        <env-entry-type>java.lang.Integer</env-entry-type>
+        <env-entry-value>9001</env-entry-value>
+    </env-entry>
+    <env-entry>
+        <env-entry-name>IS_ALIVE_SENDING_PERIOD</env-entry-name>
+        <env-entry-type>java.lang.Long</env-entry-type>
+        <env-entry-value>1</env-entry-value>
+    </env-entry>
+    <env-entry>
+        <env-entry-name>RECORD_TIME_ZONE</env-entry-name>
+        <env-entry-type>java.lang.String</env-entry-type>
+        <env-entry-value>CET</env-entry-value>
+    </env-entry>
+       
+    <mime-mapping>
+        <extension>ttf <!--{or the extension of file}--></extension>
+        <mime-type>text/html</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>woff2</extension>
+        <mime-type>text/html</mime-type>
+    </mime-mapping>
+    
+    <servlet>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>/faces/*</url-pattern>
+    </servlet-mapping>
+    
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>faces/loginPage.xhtml</welcome-file>
+    </welcome-file-list>
+</web-app>

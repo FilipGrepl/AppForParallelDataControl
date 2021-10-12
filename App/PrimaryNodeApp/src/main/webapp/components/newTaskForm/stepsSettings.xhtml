@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui = "http://java.sun.com/jsf/facelets">
+    <body>
+        <ui:composition>
+            <p:importConstants type="com.app.primaryNodeApp.controllers.backingBeans.AbstractBeans.GeneralNewTaskBean" var="CONST_NewTaskBean"/>
+            <p:importEnum type="com.app.primaryNodeApp.model.database.enums.IOtypes$IOtypesEnum" var="ENUM_IOtypes" />
+
+            <div class="p-grid p-field p-nogutter">
+                <div class="p-col-12">
+                    <p:tabView  id="stepView" widgetVar="stepView" value="#{PARAM_newTaskBean.stepsValues}" var="stepValues" orientation="left">
+                        <p:ajax skipChildren="false" process="stepView" event="tabChange"  listener="#{PARAM_newTaskBean.tabChangeHandler}" update="stepView" />
+                        <p:tab title="#{stepValues.step.stepOrder == 0 ? CONST_NewTaskBean.NEW_STEP_LABEL : ('').concat(stepValues.step.stepOrder).concat('. krok')}">
+
+                            <div class="p-grid p-align-center p-nogutter">
+                                <div class="p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-1">
+                                    <h4 class="view-data-margin">Název kroku: </h4>
+                                </div>
+                                <div class="p-col-6 p-sm-6 p-md-6 p-lg-9 p-xl-2">
+                                    <div class="p-col-12 p-sm-12 p-md-12 p-lg-12 p-xl-10">
+                                        <p:inputText id='stepName' class="view-data-margin" value="#{stepValues.step.stepName}" 
+                                                     required="#{stepValues.step.stepOrder != 0 and (param['newTaskForm:save'] != null or param['newTaskForm:saveRun'] != null)}"
+                                                     requiredMessage="Zadejte název #{stepValues.step.stepOrder}. kroku">
+                                        </p:inputText>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="p-col-12">
+                                    <p:separator/>
+                                </div>
+
+                                <div class="p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-1">
+                                    <h4 class="view-data-margin">Prefix příkazu: </h4>
+                                </div>
+                                <div class="p-col-6 p-sm-6 p-md-6 p-lg-9 p-xl-11" >
+                                    <div class="p-col-12 p-sm-12 p-md-12 p-lg-12 p-xl-12">
+                                        <p:inputText id='commandPrefix' class="view-data-margin" value="#{stepValues.step.commandPrefix}"
+                                                     required="#{stepValues.step.stepOrder != 0 and (param['newTaskForm:save'] != null or param['newTaskForm:saveRun'] != null)}"
+                                                     requiredMessage="Zadejte název programu #{stepValues.step.stepOrder}. kroku">
+                                            <p:ajax event='keyup' update='commandResult' />
+                                        </p:inputText>
+                                        <p:tooltip for="commandPrefix" position="bottom" 
+                                                   value="Parametr $HOSTNAME bude automaticky nahrazen za název odpovídajícího výpočetního uzlu. Parametr $x bude nahrazen odpovídající skupinou znaků, 
+                                                   která je vybrána zadaným regulárním výrazem aplikovaným na vstupní cestu (skupiny znaků jsou číslovány od 1). Parametry s mezerami je nutné uzavřít do
+                                                   dvojitých uvozovek."
+                                                   showEffect="clip" hideEffect="fold" />
+                                    </div>
+                                </div>
+
+                                <div class="p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-1">
+                                    <h4 class="view-data-margin" >Typ vstupu: </h4>
+                                </div>
+                                <div class="p-col-6 p-sm-6 p-md-6 p-lg-9 p-xl-2" >
+                                    <div class="p-col-12 p-sm-12 p-md-12 p-lg-12 p-xl-10">
+                                        <p:selectOneMenu id="inputType" 
+                                                         value="#{stepValues.step.inputType}" 
+                                                         required="#{stepValues.step.stepOrder != 0 and (param['newTaskForm:save'] != null or param['newTaskForm:saveRun'] != null)}"
+                                                         requiredMessage="Zadejte typ vstupu #{stepValues.step.stepOrder}. kroku"> 
+                                            <p:ajax skipChildren="false" onstart="$('[id=&#34;newTaskForm:stepView:'+PF('stepView').getActiveIndex()+':processesSpinner_input&#34;]').val('1')"  process="stepView" 
+                                                    event="valueChange" update="stepView" />
+                                            <f:selectItem itemLabel="Vyberte typ vstupu" itemValue="" />                                               
+                                            <f:selectItems value="#{PARAM_newTaskBean.inputTypeValues}" />
+                                        </p:selectOneMenu>
+                                        <p:tooltip for="inputType" position="top" 
+                                                   value="
+                                                   Pokud je vstupem soubor nebo složka je příkaz spuštěn právě jednou se zadaným vstupním souborem nebo složkou. Pokud je typem vstupu složka souborů (složka složek), 
+                                                   bude příkaz spuštěn s každým souborem (složkou) v dané složce. 
+                                                   " showEffect="clip" hideEffect="fold" />
+
+                                    </div>
+                                </div>  
+                                <div class="p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-1">
+                                    <h4 class="view-data-margin">Argument: </h4>
+                                </div>
+                                <div class="p-col-6 p-sm-6 p-md-6 p-lg-9 p-xl-2" >
+                                    <div class="p-col-12 p-sm-12 p-md-12 p-lg-12 p-xl-10">
+                                        <p:inputText class="view-data-margin" value="#{stepValues.step.inputArgument}"                                                     
+                                                     requiredMessage="Zadejte argument vstupu #{stepValues.step.stepOrder}. kroku">
+                                            <p:ajax event='keyup' update='commandResult' />
+                                        </p:inputText>
+                                    </div>
+                                </div>
+                                <div class="p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-1">
+                                    <h4 class="view-data-margin">Cesta: </h4>
+                                </div>
+                                <div class="p-col-6 p-sm-6 p-md-6 p-lg-9 p-xl-5" >
+                                    <div class="p-col-12 p-sm-12 p-md-12 p-lg-12 p-xl-10">
+                                        <p:inputText id="inputPath" class="view-data-margin" value="#{stepValues.step.inputPath}"
+                                                     required="#{stepValues.step.stepOrder != 0 and (param['newTaskForm:save'] != null or param['newTaskForm:saveRun'] != null)}"
+                                                     requiredMessage="Zadejte cestu vstupu #{stepValues.step.stepOrder}. kroku">
+                                            <p:ajax event='keyup' update='commandResult' />
+                                        </p:inputText>
+                                        <p:tooltip for="inputPath" position="bottom" 
+                                                   value="V případě, že je typem vstupu složka souborů (složka složek), odpovídá cesta složce s jednotlivými vstupními soubory (složkami) se kterými má být příkaz spuštěn.
+                                                   Pokud je vstupem složka souborů a cílová složka obsahuje symbolické odkazy, je příkaz spuštěn s těmito symbolickými odkazy.
+                                                   Pokud je vstupem symbolický odkaz, pracuje se vždy s cílovým souborem nebo složkou. Když je tedy jako vstup zadán symbolický odkaz na složku se vstupními soubory 
+                                                   (složkami), je provedeno načtení vstupů z odkazované složky. Pokud cesta obsahuje mezery, není nutné zadávat uvozovky - jsou doplněny automaticky. Parametr $HOSTNAME 
+                                                   bude automaticky nahrazen za název odpovídajícího výpočetního uzlu." 
+                                                   showEffect="clip" hideEffect="fold" />
+
+                                    </div>
+                                </div>
+
+                                <div class="p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-1 p-xl-offset-6">
+                                    <h4 class="view-data-margin">Reg. výraz:</h4>
+                                </div>
+                                <div class="p-col-6 p-sm-6 p-md-6 p-lg-9 p-xl-5" >
+                                    <div class="p-col-12 p-sm-12 p-md-12 p-lg-12 p-xl-10">
+                                        <p:inputText id='regex' class="view-data-margin" value="#{stepValues.step.inputRegex}" />
+                                        <p:tooltip for="regex" position="bottom" value="
+                                                   Zadaný regulární výraz bude aplikován na zadanou vstupní cestu. Pokud je typem vstupu složka souborů (složka složek), je zadaná vstupní cesta nejprve doplněna o název 
+                                                   konkrétního vstupního souboru (složky). Pokud je jako vstup zadán symbolický odkaz, je regulární výraz aplikován na tento symbolický odkaz, který je v případě, že je 
+                                                   vstupem složka souborů (složka složek) nejprve doplněn o název načteného vstupního souboru (složky). Jednotlivé skupiny znaků, které vzniknou aplikací 
+                                                   regulárního výrazu, lze po té použít pro specifikaci zbývajících cest k výstupům a logům pomocí parametru $x, kde x označuje konkrétní skupinu znaků
+                                                   (skupiny znaků jsou číslovány od 1). Jedná se o typ Java regular expression (nadmnožina extended regular expression)." showEffect="clip" hideEffect="fold" />
+                                    </div>
+                                </div>
+
+                                <div class="p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-1">
+                                    <h4 class="view-data-margin">Typ výstupu: </h4>
+                                </div>
+                                <div class="p-col-6 p-sm-6 p-md-6 p-lg-9 p-xl-2" >
+                                    <div class="p-col-12 p-sm-12 p-md-12 p-lg-12 p-xl-10">
+                                        <p:selectOneMenu id="outputType"
+                                                         value="#{stepValues.step.outputType}" 
+                                                         disabled="#{stepValues.step.inputType == null}"
+                                                         required="#{stepValues.step.stepOrder != 0 and (param['newTaskForm:save'] != null or param['newTaskForm:saveRun'] != null)}"
+                                                         requiredMessage="Zadejte typ výstupu #{stepValues.step.stepOrder}. kroku"> 
+                                            <p:ajax skipChildren="false" process="stepView" event="valueChange" update="stepView" />
+                                            <f:selectItem itemLabel="Vyberte typ výstupu" itemValue="" />                                               
+                                            <f:selectItems value="#{PARAM_newTaskBean.getOutputTypeValues(PARAM_newTaskBean.stepsValues.indexOf(stepValues))}" />
+                                        </p:selectOneMenu>
+                                        <p:tooltip for="outputType" position="top" 
+                                                   value="
+                                                   Pokud je typem výstupu složka souborů (složka složek) znamená to, že pro každý vstupní soubor (složku) bude na výstupu vytvořen odpovídající neprázdný výstupní 
+                                                   soubor (složka). Pokud je výstupem složka, je výstup programu uložen do dané složky přičemž její obsah není definován."
+                                                   showEffect="clip" hideEffect="fold" />
+                                    </div>
+                                </div>
+                                <div class="p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-1">
+                                    <h4 class="view-data-margin">Argument: </h4>
+                                </div>
+                                <div class="p-col-6 p-sm-6 p-md-6 p-lg-9 p-xl-2" >
+                                    <div class="p-col-12 p-sm-12 p-md-12 p-lg-12 p-xl-10">
+                                        <p:inputText class="view-data-margin" value="#{stepValues.step.outputArgument}"                                                     
+                                                     requiredMessage="Zadejte argument výstupu #{stepValues.step.stepOrder}. kroku" >
+                                            <p:ajax event='keyup' update='commandResult' />
+                                        </p:inputText>
+                                    </div>
+                                </div>
+                                <div class="p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-1">
+                                    <h4 class="view-data-margin">Cesta: </h4>
+                                </div>
+                                <div class="p-col-6 p-sm-6 p-md-6 p-lg-9 p-xl-5" >
+                                    <div class="p-col-12 p-sm-12 p-md-12 p-lg-12 p-xl-10">
+                                        <p:inputText id="outputPath" class="view-data-margin" value="#{stepValues.step.outputPath}"
+                                                     required="#{stepValues.step.stepOrder != 0 and (param['newTaskForm:save'] != null or param['newTaskForm:saveRun'] != null)}"
+                                                     requiredMessage="Zadejte cestu výstupu #{stepValues.step.stepOrder}. kroku">
+                                            <p:ajax event='keyup' update='commandResult' />
+                                        </p:inputText>
+                                        <p:tooltip for="outputPath" position="bottom" 
+                                                   value="Pokud je typem výstupu složka souborů (složka složek) znamená to, že pro každý vstupní soubor (složku) bude vytvořen
+                                                   odpovídající výstupní soubor (složka), přičemž název výstupu bude odvozen z cesty ke vstupu a to tak, že se na zadanou vstupní cestu aplikuje zadaný regulární
+                                                   výraz. Jednotlivé skupiny znaků vzniklé po jeho aplikaci lze po té použít pro specifikaci výstupní cesty zadanám parametru $x, kde x označuje konkrétní skupinu znaků
+                                                   (skupiny znaků jsou číslovány od 1). Pokud cesta obsahuje mezery, není nutné zadávat uvozovky - jsou doplněny automaticky." showEffect="clip" hideEffect="fold" />
+                                    </div>
+                                </div>
+
+                                <div class="p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-1">
+                                    <h4 class="view-data-margin">Suffix příkazu: </h4>
+                                </div>
+                                <div class="p-col-6 p-sm-6 p-md-6 p-lg-9 p-xl-11" >
+                                    <div class="p-col-12 p-sm-12 p-md-12 p-lg-12 p-xl-12">
+                                        <p:inputText id="commandSuffix" class="view-data-margin" value='#{stepValues.step.commandSuffix}'>
+                                            <p:ajax event='keyup' update='commandResult' />
+                                        </p:inputText>
+                                        <p:tooltip for="commandSuffix" position="bottom" 
+                                                   value="
+                                                   Parametr $HOSTNAME bude automaticky nahrazen za název odpovídajícího výpočetního uzlu. Parametr $x bude nahrazen odpovídající skupinou znaků, 
+                                                   která je vybrána zadaným regulárním výrazem aplikovaným na vstupní cestu (skupiny znaků jsou číslovány od 1). Parametry s mezerami je nutné uzavřít do
+                                                   dvojitých uvozovek. Je možné použít pipelines i přesměrování vstupu jako v běžném shellu."
+                                                   showEffect="clip" hideEffect="fold" />
+                                    </div>
+                                </div>
+
+                                <div class="p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-1">
+                                    <h4 class="view-data-margin">Výsledný příkaz: </h4>
+                                </div>
+                                <div class="p-col-6 p-sm-6 p-md-6 p-lg-9 p-xl-11" >
+                                    <div class="p-col-12 p-sm-12 p-md-12 p-lg-12 p-xl-12">
+                                        <h:outputText id="commandResult" class="view-data-margin" 
+                                                      value="
+                                                      
+                                                      #{stepValues.step.commandPrefix} #{stepValues.step.inputArgument} 
+                                                      #{empty stepValues.step.inputPath ? '' : '\'\''} #{stepValues.step.inputPath} #{empty stepValues.step.inputPath ? '' : '\'\''}
+                                                      #{stepValues.step.outputArgument} 
+                                                      #{empty stepValues.step.outputPath ? '' : '\'\''} #{stepValues.step.outputPath} #{empty stepValues.step.outputPath ? '' : '\'\''}
+                                                      #{stepValues.step.commandSuffix}"/>
+                                    </div>
+                                </div>
+                                
+                                <div class="p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-1" />
+                                <div class="p-col-6 p-sm-6 p-md-6 p-lg-9 p-xl-11" >
+                                    <div class="p-col-12 p-sm-12 p-md-12 p-lg-12 p-xl-12">
+                                        <h:outputText style="font-style: italic;" class="view-data-margin" 
+                                                      value="pozn. Výsledný příkaz je spuštěn pod /bin/sh."/>
+                                    </div>
+                                </div>
+
+                                <div class="p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-1">
+                                    <h4 class="view-data-margin">Počet procesů: </h4>
+                                </div>
+                                <div class="p-col-6 p-sm-6 p-md-6 p-lg-9 p-xl-2" >
+                                    <div class="p-col-12 p-sm-12 p-md-12 p-lg-12 p-xl-4">
+                                        <p:spinner id="processesSpinner" decimalPlaces="0" min="1" class="view-data-margin" value="#{stepValues.step.processes}"
+                                                   disabled="#{stepValues.step.inputType == ENUM_IOtypes.FILE or stepValues.step.inputType == ENUM_IOtypes.FOLDER}"
+                                                   converterMessage="Počet procesů #{stepValues.step.stepOrder}. kroku musí být zadán ve formátu celého čísla"
+                                                   required="#{stepValues.step.stepOrder != 0 and (param['newTaskForm:save'] != null or param['newTaskForm:saveRun'] != null)}"
+                                                   requiredMessage="Zadejte počet procesů, ve kterých bude 1 #{stepValues.step.stepOrder}. krok spuštěn"/>
+                                        <p:tooltip for="processesSpinner" position="bottom" 
+                                                   value="Počet procesů, které budou zpracovávat jednotlivé vstupy (má smysl pouze u vstupu typu složka souborů nebo složka složek)."
+                                                   showEffect="clip" hideEffect="fold" />
+                                    </div>
+                                </div>
+
+                                <div class="p-col-12">
+                                    <p:separator/>
+                                </div>
+
+                                <div class=" p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-1">
+                                    <h4 class="view-data-margin" >Timeout: </h4>
+                                </div>
+                                <div class=" p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-2">
+                                    <div class="p-formgroup-inline p-align-center" >
+                                        <div class="p-col-6 p-sm-6 p-md-6 p-lg-6 p-xl-4">
+                                            <p:spinner id="timeoutSpinner" decimalPlaces="0" min="1" value="#{stepValues.timeout}"
+                                                       converterMessage="Timeout #{stepValues.step.stepOrder}. kroku musí být zadán ve formátu celého čísla"
+                                                       required="#{stepValues.step.stepOrder != 0 and (param['newTaskForm:save'] != null or param['newTaskForm:saveRun'] != null)}"
+                                                       requiredMessage="Zadejte maximální dobu běhu #{stepValues.step.stepOrder}. kroku pro 1 vstup"/>
+                                            <p:tooltip for="timeoutSpinner" position="bottom" 
+                                                       value="Maximální doba běhu zpracování jednoho vstupu. Pokud bude zpracování daného vstupu trvat déle, bude jeho zpracování automaticky ukončeno zasláním signálu SIGTERM."
+                                                       showEffect="clip" hideEffect="fold" />
+                                        </div>
+                                        <div class="p-col-6 p-sm-6 p-md-6 p-lg-6 p-xl-4">
+                                            <p:selectOneMenu value="#{stepValues.timeoutUnit}" >
+                                                <f:selectItems value="#{PARAM_newTaskBean.timeoutUnitValues}" />
+                                            </p:selectOneMenu>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="p-col-0 p-sm-0 p-md-0 p-lg-0 p-xl-9" />
+                                <div class="p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-1">
+                                    <h4 class="view-data-margin">Ověření: </h4>
+                                </div>
+
+                                <ui:include src='./checkOptions.xhtml'>
+                                    <ui:param name='PARAM_actStep' value='#{stepValues.step}' />
+                                </ui:include>
+
+                                <div class="p-col-12">
+                                    <p:separator/>
+                                </div>
+
+                                <div class="p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-1">
+                                    <h4 class="view-data-margin">Při chybě: </h4>
+                                </div>
+
+
+                                <ui:include src='./errorOptions.xhtml'>
+                                    <ui:param name='PARAM_actStep' value='#{stepValues.step}' />
+                                </ui:include>
+
+                                <div class="p-col-12">
+                                    <p:separator/>
+                                </div>
+
+                                <div class="p-col-6 p-sm-6 p-md-6 p-lg-3 p-xl-1">
+                                    <h4 class="view-data-margin"> Synchronizace: </h4>
+                                </div>
+                                <div class="p-col-6 p-sm-6 p-md-6 p-lg-9 p-xl-9">
+                                    <div class="p-grid p-align-center" style="margin-left: 0px;">
+                                        <div class="p-col-6 p-sm-3 p-md-2 p-lg-1 p-xl-1">
+                                            <p:toggleSwitch id="synchronizedToggleSwitch" value="#{stepValues.step.synchronizedStep}">
+                                                <p:ajax skipChildren="false" process="stepView"  event="change" update="stepView" />
+                                            </p:toggleSwitch>
+                                            <p:tooltip for="synchronizedToggleSwitch" position="bottom" 
+                                                       value="Pokud je krok synchronizován znamená to, že zpracování může pokračovat dalším krokem až v případě, že je zpracování všech vstupů daného kroku dokončeno
+                                                       na všech výpočetních uzlech."
+                                                       showEffect="clip" hideEffect="fold" />
+                                        </div>
+                                        <div class="p-col-12 p-sm-9 p-md-10 p-lg-10 p-xl-5">
+                                            <ui:fragment rendered="#{stepValues.step.synchronizedStep ? 'true' : 'false'}">
+                                                <i class="pi pi-check"></i>
+                                            </ui:fragment>
+                                            <ui:fragment rendered="#{!stepValues.step.synchronizedStep}">
+                                                <i class="pi pi-times"></i>
+                                            </ui:fragment>
+                                            <p:spacer width="10px"/>
+                                            <h:outputText class="view-data-margin" value="Tento krok #{stepValues.step.synchronizedStep ? 'je' : 'není'} synchronizován." />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="p-col-12">
+                                    <div class="p-col-12 p-sm-12 p-md-12 p-lg-6 p-xl-2 p-xl-offset-10 p-lg-offset-6">
+                                        <p:commandButton immediate="true" class="stop-button" value="Odstranit krok" 
+                                                         style="float: right;"
+                                                         disabled="#{PARAM_newTaskBean.stepsValues.size() le 2}" 
+                                                         validateClient="false" 
+                                                         actionListener="#{PARAM_newTaskBean.removeStepHandler(stepValues)}" 
+                                                         oncomplete="
+                                                         if (PF('stepView').getActiveIndex()=== #{PARAM_newTaskBean.stepsValues.size()}-2) {
+                                                         PF('stepView').select(#{PARAM_newTaskBean.stepsValues.size()}-3);
+                                                         }"
+                                                         update="stepView" icon="pi pi-times-circle" />
+                                    </div>  
+                                </div>
+                            </div>
+                        </p:tab>
+                    </p:tabView>          
+                </div>
+            </div>
+        </ui:composition>
+    </body>
+</html>

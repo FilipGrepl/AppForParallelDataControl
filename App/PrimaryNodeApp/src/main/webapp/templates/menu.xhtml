@@ -1,0 +1,56 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui = "http://java.sun.com/jsf/facelets">
+
+
+    <h:outputStylesheet library="css" name="primeflex.css"/>
+    <h:outputStylesheet library="css" name="style.css"/>
+
+    <body>
+        <ui:composition>
+            <p:importEnum type="com.app.primaryNodeApp.model.database.enums.UserRoles$UserRolesEnum" var="ENUM_UserRoles" />
+            <h:form>
+                <div class="p-grid ui-fluid">
+                    <div class="p-col-12 p-md-8 p-lg-8 p-xl-10">
+
+                        <p:tabMenu activeIndex="#{param.i}">
+                            <p:menuitem value="Aktuálně spuštěné úlohy" outcome="runningTasks" >
+                                <f:param name="i" value="0" />
+                            </p:menuitem>
+                            <p:menuitem value="Přehled výpočetních uzlů" outcome="nodesOverview" >
+                                <f:param name="i" value="1" />
+                            </p:menuitem>
+                            <p:menuitem value="Historie dokončených úloh" outcome="historyOfTasks" >
+                                <f:param name="i" value="2" />
+                            </p:menuitem>
+                            <p:menuitem value="Možnosti uložených úloh" outcome="savedTasksOptions" >
+                                <f:param name="i" value="3" />
+                            </p:menuitem>
+                            <p:menuitem value="Vytvořit novou úlohu" outcome="newTask" >
+                                <f:param name="i" value="4" />
+                            </p:menuitem>
+                            <p:menuitem rendered="#{loginBean.user.role == ENUM_UserRoles.ADMIN}" value="Správa uživatelů" outcome="usersOverview" >
+                                <f:param name="i" value="5" />
+                            </p:menuitem>
+                        </p:tabMenu>
+                    </div>
+                    <div class="p-col-12 p-md-2 p-lg-2 p-xl-1">
+                         <p:button class="repeat-button" value="Změnit heslo" outcome="changePasswordForm" icon="pi pi-cog">
+                             <f:param name="i" value="-1" />
+                         </p:button>
+                    </div>
+                    <div class="p-col-12 p-md-2 p-lg-2 p-xl-1">
+                        <p:commandButton value="Odhlásit se" action="#{loginBean.logout()}" icon="pi pi-sign-out"/>
+                    </div>
+                     
+                </div> 
+            </h:form>
+        </ui:composition>	
+    </body>
+</html>

@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="windows-1250" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-04-28T16:21:08</date>
+  <millis>1619619668720</millis>
+  <sequence>393</sequence>
+  <logger>org.hibernate.Version</logger>
+  <level>INFO</level>
+  <class>org.hibernate.Version</class>
+  <method>logVersion</method>
+  <thread>56</thread>
+  <message>HHH000412: Hibernate Core {5.3.7.Final}</message>
+</record>
+<record>
+  <date>2021-04-28T16:21:08</date>
+  <millis>1619619668731</millis>
+  <sequence>395</sequence>
+  <logger>org.hibernate.cfg.Environment</logger>
+  <level>INFO</level>
+  <class>org.hibernate.cfg.Environment</class>
+  <method>&lt;clinit&gt;</method>
+  <thread>56</thread>
+  <message>HHH000206: hibernate.properties not found</message>
+</record>
+<record>
+  <date>2021-04-28T16:21:09</date>
+  <millis>1619619669869</millis>
+  <sequence>397</sequence>
+  <logger>org.hibernate.annotations.common.Version</logger>
+  <level>INFO</level>
+  <class>org.hibernate.annotations.common.reflection.java.JavaReflectionManager</class>
+  <method>&lt;clinit&gt;</method>
+  <thread>56</thread>
+  <message>HCANN000001: Hibernate Commons Annotations {5.0.4.Final}</message>
+</record>
+<record>
+  <date>2021-04-28T16:21:10</date>
+  <millis>1619619670686</millis>
+  <sequence>400</sequence>
+  <logger>org.hibernate.engine.jdbc.connections.internal.ConnectionProviderInitiator</logger>
+  <level>INFO</level>
+  <class>org.hibernate.engine.jdbc.connections.internal.ConnectionProviderInitiator</class>
+  <method>initiateService</method>
+  <thread>205</thread>
+  <message>HHH000130: Instantiating explicit connection provider: org.hibernate.connection.C3P0ConnectionProvider</message>
+</record>
+<record>
+  <date>2021-04-28T16:21:10</date>
+  <millis>1619619670686</millis>
+  <sequence>399</sequence>
+  <logger>org.hibernate.engine.jdbc.connections.internal.ConnectionProviderInitiator</logger>
+  <level>INFO</level>
+  <class>org.hibernate.engine.jdbc.connections.internal.ConnectionProviderInitiator</class>
+  <method>initiateService</method>
+  <thread>56</thread>
+  <message>HHH000130: Instantiating explicit connection provider: org.hibernate.connection.C3P0ConnectionProvider</message>
+</record>
+<record>
+  <date>2021-04-28T16:21:10</date>
+  <millis>1619619670709</millis>
+  <sequence>404</sequence>
+  <logger>org.hibernate.c3p0.internal.C3P0ConnectionProvider</logger>
+  <level>INFO</level>
+  <class>org.hibernate.c3p0.internal.C3P0ConnectionProvider</class>
+  <method>configure</method>
+  <thread>205</thread>
+  <message>HHH010002: C3P0 using driver: com.mysql.cj.jdbc.Driver at URL: jdbc:mysql://localhost:3306/appforparalleldatacontrol?serverTimezone=CET&amp;useSSL=false&amp;allowPublicKeyRetrieval=true</message>
+</record>
+<record>
+  <date>2021-04-28T16:21:10</date>
+  <millis>1619619670709</millis>
+  <sequence>403</sequence>
+  <logger>org.hibernate.c3p0.internal.C3P0ConnectionProvider</logger>
+  <level>INFO</level>
+  <class>org.hibernate.c3p0.internal.C3P0ConnectionProvider</class>
+  <method>configure</method>
+  <thread>56</thread>
+  <message>HHH010002: C3P0 using driver: com.mysql.cj.jdbc.Driver at URL: jdbc:mysql://localhost:3306/appforparalleldatacontrol?serverTimezone=CET&amp;useSSL=false&amp;allowPublicKeyRetrieval=true</message>
+</record>
+<record>
+  <date>2021-04-28T16:21:10</date>
+  <millis>1619619670710</millis>
+  <sequence>407</sequence>
+  <logger>org.hibernate.c3p0.internal.C3P0ConnectionProvider</logger>
+  <level>INFO</level>
+  <class>org.hibernate.c3p0.internal.C3P0ConnectionProvider</class>
+  <method>configure</method>
+  <thread>205</thread>
+  <message>HHH10001001: Connection properties: {user=root, password=****}</message>
+</record>
+<record>
+  <date>2021-04-28T16:21:10</date>
+  <millis>1619619670710</millis>
+  <sequence>411</sequence>
+  <logger>org.hibernate.c3p0.internal.C3P0ConnectionProvider</logger>
+  <level>INFO</level>
+  <class>org.hibernate.c3p0.internal.C3P0ConnectionProvider</class>
+  <method>configure</method>
+  <thread>205</thread>
+  <message>HHH10001003: Autocommit mode: false</message>
+</record>
+<record>
+  <date>2021-04-28T16:21:10</date>
+  <millis>1619619670710</millis>
+  <sequence>409</sequence>
+  <logger>org.hibernate.c3p0.internal.C3P0ConnectionProvider</logger>
+  <level>INFO</level>
+  <class>org.hibernate.c3p0.internal.C3P0ConnectionProvider</class>
+  <method>configure</method>
+  <thread>56</thread>
+  <message>HHH10001001: Connection properties: {user=root, password=****}</message>
+</record>
+<record>
+  <date>2021-04-28T16:21:10</date>
+  <millis>1619619670712</millis>
+  <sequence>413</sequence>
+  <logger>org.hibernate.c3p0.internal.C3P0ConnectionProvider</logger>
+  <level>INFO</level>
+  <class>org.hibernate.c3p0.internal.C3P0ConnectionProvider</class>
+  <method>configure</method>
+  <thread>56</thread>
+  <message>HHH10001003: Autocommit mode: false</message>
+</record>
+<record>
+  <date>2021-04-28T16:21:10</date>
+  <millis>1619619670858</millis>
+  <sequence>415</sequence>
+  <logger>com.mchange.v2.log.MLog</logger>
+  <level>INFO</level>
+  <class>com.mchange.v2.log.MLog</class>
+  <method></method>
+  <thread>209</thread>
+  <message>MLog clients using java 1.4+ standard logging.</message>
+</record>
+<record>
+  <date>2021-04-28T16:21:11</date>
+  <millis>1619619671208</millis>
+  <sequence>417</sequence>
+  <logger>com.mchange.v2.c3p0.C3P0Registry</logger>
+  <level>INFO</level>
+  <class>com.mchange.v2.c3p0.C3P0Registry</class>
+  <method></method>
+  <thread>56</thread>
+  <message>Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]</message>
+</record>
+<record>
+  <date>2021-04-28T16:21:11</date>
+  <millis>1619619671215</millis>
+  <sequence>419</sequence>
+  <logger>com.mchange.v2.c3p0.management.ActiveManagementCoordinator</logger>
+  <level>WARNING</level>
+  <class>com.mchange.v2.c3p0.management.ActiveManagementCoordinator</class>
+  <method></method>
+  <thread>56</thread>
+  <message>A C3P0Registry mbean is already registered. This probably means that an application using c3p0 was undeployed, but not all PooledDataSources were closed prior to undeployment. This may lead to resource leaks over time. Please take care to close all PooledDataSources.</message>
+</record>
+<record>
+  <date>2021-04-28T16:21:11</date>
+  <millis>1619619671350</millis>
+  <sequence>421</sequence>
+  <logger>org.hibernate.c3p0.internal.C3P0ConnectionProvider</logger>
+  <level>INFO</level>
+  <class>org.hibernate.c3p0.internal.C3P0ConnectionProvider</class>
+  <method>configure</method>
+  <thread>56</thread>
+  <message>HHH10001007: JDBC isolation level: &lt;unknown&gt;</message>
+</record>
+<record>
+  <date>2021-04-28T16:21:11</date>
+  <millis>1619619671417</millis>
+  <sequence>423</sequence>
+  <logger>org.hibernate.c3p0.internal.C3P0ConnectionProvider</logger>
+  <level>INFO</level>
+  <class>org.hibernate.c3p0.internal.C3P0ConnectionProvider</class>
+  <method>configure</method>
+  <thread>205</thread>
+  <message>HHH10001007: JDBC isolation level: &lt;unknown&gt;</message>
+</record>
+<record>
+  <date>2021-04-28T16:21:11</date>
+  <millis>1619619671491</millis>
+  <sequence>425</sequence>
+  <logger>com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource</logger>
+  <level>INFO</level>
+  <class>com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource</class>
+  <method></method>
+  <thread>56</thread>
+  <message>Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@c8edacca [ connectionPoolDataSource -&gt; com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@b726a290 [ acquireIncrement -&gt; 5, acquireRetryAttempts -&gt; 30, acquireRetryDelay -&gt; 1000, autoCommitOnClose -&gt; false, automaticTestTable -&gt; null, breakAfterAcquireFailure -&gt; false, checkoutTimeout -&gt; 0, connectionCustomizerClassName -&gt; null, connectionTesterClassName -&gt; com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -&gt; caller, debugUnreturnedConnectionStackTraces -&gt; false, factoryClassLocation -&gt; null, forceIgnoreUnresolvedTransactions -&gt; false, forceSynchronousCheckins -&gt; false, identityToken -&gt; rtf5dmah6w9rmtm6s5yo|5a05f4b9, idleConnectionTestPeriod -&gt; 0, initialPoolSize -&gt; 5, maxAdministrativeTaskTime -&gt; 0, maxConnectionAge -&gt; 0, maxIdleTime -&gt; 1800, maxIdleTimeExcessConnections -&gt; 0, maxPoolSize -&gt; 100, maxStatements -&gt; 0, maxStatementsPerConnection -&gt; 0, minPoolSize -&gt; 5, nestedDataSource -&gt; com.mchange.v2.c3p0.DriverManagerDataSource@91e0f3f8 [ description -&gt; null, driverClass -&gt; null, factoryClassLocation -&gt; null, forceUseNamedDriverClass -&gt; false, identityToken -&gt; rtf5dmah6w9rmtm6s5yo|8e16541, jdbcUrl -&gt; jdbc:mysql://localhost:3306/appforparalleldatacontrol?serverTimezone=CET&amp;useSSL=false&amp;allowPublicKeyRetrieval=true, properties -&gt; {user=******, password=******} ], preferredTestQuery -&gt; null, privilegeSpawnedThreads -&gt; false, propertyCycle -&gt; 0, statementCacheNumDeferredCloseThreads -&gt; 0, testConnectionOnCheckin -&gt; false, testConnectionOnCheckout -&gt; false, unreturnedConnectionTimeout -&gt; 0, usesTraditionalReflectiveProxies -&gt; false; userOverrides: {} ], dataSourceName -&gt; null, extensions -&gt; {}, factoryClassLocation -&gt; null, identityToken -&gt; rtf5dmah6w9rmtm6s5yo|2655eafb, numHelperThreads -&gt; 3 ]</message>
+</record>
+<record>
+  <date>2021-04-28T16:21:11</date>
+  <millis>1619619671491</millis>
+  <sequence>426</sequence>
+  <logger>com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource</logger>
+  <level>INFO</level>
+  <class>com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource</class>
+  <method></method>
+  <thread>205</thread>
+  <message>Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@42330cb3 [ connectionPoolDataSource -&gt; com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@67dd725d [ acquireIncrement -&gt; 5, acquireRetryAttempts -&gt; 30, acquireRetryDelay -&gt; 1000, autoCommitOnClose -&gt; false, automaticTestTable -&gt; null, breakAfterAcquireFailure -&gt; false, checkoutTimeout -&gt; 0, connectionCustomizerClassName -&gt; null, connectionTesterClassName -&gt; com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -&gt; caller, debugUnreturnedConnectionStackTraces -&gt; false, factoryClassLocation -&gt; null, forceIgnoreUnresolvedTransactions -&gt; false, forceSynchronousCheckins -&gt; false, identityToken -&gt; rtf5dmah6w9rmtm6s5yo|4429fecf, idleConnectionTestPeriod -&gt; 0, initialPoolSize -&gt; 5, maxAdministrativeTaskTime -&gt; 0, maxConnectionAge -&gt; 0, maxIdleTime -&gt; 1800, maxIdleTimeExcessConnections -&gt; 0, maxPoolSize -&gt; 100, maxStatements -&gt; 0, maxStatementsPerConnection -&gt; 0, minPoolSize -&gt; 5, nestedDataSource -&gt; com.mchange.v2.c3p0.DriverManagerDataSource@5d4f9ced [ description -&gt; null, driverClass -&gt; null, factoryClassLocation -&gt; null, forceUseNamedDriverClass -&gt; false, identityToken -&gt; rtf5dmah6w9rmtm6s5yo|3eab3823, jdbcUrl -&gt; jdbc:mysql://localhost:3306/appforparalleldatacontrol?serverTimezone=CET&amp;useSSL=false&amp;allowPublicKeyRetrieval=true, properties -&gt; {user=******, password=******} ], preferredTestQuery -&gt; null, privilegeSpawnedThreads -&gt; false, propertyCycle -&gt; 0, statementCacheNumDeferredCloseThreads -&gt; 0, testConnectionOnCheckin -&gt; false, testConnectionOnCheckout -&gt; false, unreturnedConnectionTimeout -&gt; 0, usesTraditionalReflectiveProxies -&gt; false; userOverrides: {} ], dataSourceName -&gt; null, extensions -&gt; {}, factoryClassLocation -&gt; null, identityToken -&gt; rtf5dmah6w9rmtm6s5yo|1f778116, numHelperThreads -&gt; 3 ]</message>
+</record>
+<record>
+  <date>2021-04-28T16:21:12</date>
+  <millis>1619619672333</millis>
+  <sequence>429</sequence>
+  <logger>org.hibernate.dialect.Dialect</logger>
+  <level>INFO</level>
+  <class>org.hibernate.dialect.Dialect</class>
+  <method>&lt;init&gt;</method>
+  <thread>205</thread>
+  <message>HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect</message>
+</record>
+<record>
+  <date>2021-04-28T16:21:12</date>
+  <millis>1619619672333</millis>
+  <sequence>430</sequence>
+  <logger>org.hibernate.dialect.Dialect</logger>
+  <level>INFO</level>
+  <class>org.hibernate.dialect.Dialect</class>
+  <method>&lt;init&gt;</method>
+  <thread>56</thread>
+  <message>HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect</message>
+</record>
+<record>
+  <date>2021-04-28T16:21:14</date>
+  <millis>1619619674186</millis>
+  <sequence>434</sequence>
+  <logger>org.hibernate.orm.beans</logger>
+  <level>INFO</level>
+  <class>org.hibernate.resource.beans.spi.ManagedBeanRegistryInitiator</class>
+  <method>resoveBeanContainer</method>
+  <thread>205</thread>
+  <message>HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate ClassLoader.</message>
+</record>
+<record>
+  <date>2021-04-28T16:21:14</date>
+  <millis>1619619674186</millis>
+  <sequence>433</sequence>
+  <logger>org.hibernate.orm.beans</logger>
+  <level>INFO</level>
+  <class>org.hibernate.resource.beans.spi.ManagedBeanRegistryInitiator</class>
+  <method>resoveBeanContainer</method>
+  <thread>56</thread>
+  <message>HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate ClassLoader.</message>
+</record>
+<record>
+  <date>2021-04-28T16:21:16</date>
+  <millis>1619619676915</millis>
+  <sequence>438</sequence>
+  <logger>org.hibernate.orm.connections.access</logger>
+  <level>INFO</level>
+  <class>org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl</class>
+  <method>getIsolatedConnection</method>
+  <thread>205</thread>
+  <message>HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4bc8d932] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.</message>
+</record>
+<record>
+  <date>2021-04-28T16:21:16</date>
+  <millis>1619619676915</millis>
+  <sequence>437</sequence>
+  <logger>org.hibernate.orm.connections.access</logger>
+  <level>INFO</level>
+  <class>org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl</class>
+  <method>getIsolatedConnection</method>
+  <thread>56</thread>
+  <message>HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2fc52335] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.</message>
+</record>
+<record>
+  <date>2021-04-28T16:21:17</date>
+  <millis>1619619677903</millis>
+  <sequence>442</sequence>
+  <logger>org.hibernate.hql.internal.QueryTranslatorFactoryInitiator</logger>
+  <level>INFO</level>
+  <class>org.hibernate.hql.internal.QueryTranslatorFactoryInitiator</class>
+  <method>initiateService</method>
+  <thread>205</thread>
+  <message>HHH000397: Using ASTQueryTranslatorFactory</message>
+</record>
+<record>
+  <date>2021-04-28T16:21:17</date>
+  <millis>1619619677903</millis>
+  <sequence>441</sequence>
+  <logger>org.hibernate.hql.internal.QueryTranslatorFactoryInitiator</logger>
+  <level>INFO</level>
+  <class>org.hibernate.hql.internal.QueryTranslatorFactoryInitiator</class>
+  <method>initiateService</method>
+  <thread>56</thread>
+  <message>HHH000397: Using ASTQueryTranslatorFactory</message>
+</record>
+<record>
+  <date>2021-04-28T16:21:18</date>
+  <millis>1619619678913</millis>
+  <sequence>445</sequence>
+  <logger>javax.enterprise.web</logger>
+  <level>INFO</level>
+  <class>com.sun.enterprise.web.WebApplication</class>
+  <method>start</method>
+  <thread>56</thread>
+  <message>Loading application [PrimaryNodeApp] at [/PrimaryNodeApp]</message>
+  <key>AS-WEB-GLUE-00172</key>
+  <catalog>com.sun.enterprise.web.LogMessages</catalog>
+  <param>PrimaryNodeApp</param>
+  <param>/PrimaryNodeApp</param>
+</record>
+<record>
+  <date>2021-04-28T16:21:19</date>
+  <millis>1619619679099</millis>
+  <sequence>447</sequence>
+  <logger>javax.enterprise.system.core</logger>
+  <level>INFO</level>
+  <class>org.glassfish.deployment.admin.DeployCommand</class>
+  <method>execute</method>
+  <thread>56</thread>
+  <message>PrimaryNodeApp was successfully deployed in 24 580 milliseconds.</message>
+</record>
+<record>
+  <date>2021-04-28T16:21:27</date>
+  <millis>1619619687087</millis>
+  <sequence>449</sequence>
+  <level>INFO</level>
+  <class>com.sun.common.util.logging.LoggingOutputStream</class>
+  <method>log</method>
+  <thread>180</thread>
+  <message>/PrimaryNodeApp/faces/runningTasks.xhtml         /faces</message>
+</record>
+<record>
+  <date>2021-04-28T16:21:27</date>
+  <millis>1619619687185</millis>
+  <sequence>451</sequence>
+  <logger>javax.enterprise.resource.webcontainer.jsf.flash</logger>
+  <level>SEVERE</level>
+  <class>com.sun.faces.context.flash.ELFlash</class>
+  <method>getCurrentFlashManager</method>
+  <thread>183</thread>
+  <message>JSF1094: Could not decode flash data from incoming cookie value Invalid characters in decrypted value.  Processing will continue, but the flash is unavailable for this request.</message>
+  <key>jsf.externalcontext.flash.bad.cookie</key>
+  <catalog>com.sun.faces.LogStrings</catalog>
+  <param>Invalid characters in decrypted value</param>
+</record>
+<record>
+  <date>2021-04-28T16:23:42</date>
+  <millis>1619619822149</millis>
+  <sequence>453</sequence>
+  <logger>com.app.primaryNodeApp.model.primaryNode.primSocketCommunicators.PrimSocketReceiver</logger>
+  <level>INFO</level>
+  <class>com.app.commons.eventLogger.SocketEventLogger</class>
+  <method>logReceivedMessage</method>
+  <thread>244</thread>
+  <message>Message of type NODE_NAME with text "Knot10" has been received from Secondary node Knot10.</message>
+</record>
+<record>
+  <date>2021-04-28T16:23:42</date>
+  <millis>1619619822178</millis>
+  <sequence>455</sequence>
+  <logger>com.app.primaryNodeApp.model.primaryNode.primSocketCommunicators.PrimSocketSender</logger>
+  <level>INFO</level>
+  <class>com.app.commons.eventLogger.SocketEventLogger</class>
+  <method>logSentMessage</method>
+  <thread>244</thread>
+  <message>Message of type ACCEPT_CONNECTION with text "" has been sent to Secondary node Knot10.</message>
+</record>
+<record>
+  <date>2021-04-28T16:24:02</date>
+  <millis>1619619842280</millis>
+  <sequence>457</sequence>
+  <logger>com.app.primaryNodeApp.model.primaryNode.primSocketCommunicators.PrimSocketSender</logger>
+  <level>INFO</level>
+  <class>com.app.commons.eventLogger.SocketEventLogger</class>
+  <method>logSentMessage</method>
+  <thread>245</thread>
+  <message>Message of type RUN_JOB_STEP with text "RunValues{step=Step{id=22, stepName=STEP 1, commandPrefix=python3 /mnt/d/FIT/Ing/DIP/TestTasks/TestProgram/SuccessTask.py, inputType=FOLDER_OF_FILES, inputArgument=--in, inputPath=/mnt/d/FIT/Ing/DIP/TestTasks/TestExecuteFolder/step_1/InFiles, inputRegex=(.*)\/(.*)\.(.*), processes=3, outputType=FOLDER_OF_FILES, outputArgument=--out, outputPath=/mnt/d/FIT/Ing/DIP/TestTasks/TestExecuteFolder/step_1/OutFiles/$2.out, commandSuffix=-sleep 15 -secondOut /mnt/d/FIT/Ing/DIP/TestTasks/TestExecuteFolder/step_1/SecondOut/$2.secOut -logFilePath /mnt/d/FIT/Ing/DIP/TestTasks/TestExecuteFolder/step_1/Log/$2.log -errLogFilePath /mnt/d/FIT/Ing/DIP/TestTasks/TestExecuteFolder/step_1/ErrLog/$2.log, timeout=3600000, CheckExistNoEmptyOutputFsNode=true, EmptyStderr=true, CheckLogFileSize=true, pathToLog=/mnt/d/FIT/Ing/DIP/TestTasks/TestExecuteFolder/step_1/Log/$2.log, logSizeLessThan=1024, EqualInToOutFiles=false, EqualInToOutFilesSecondOutput=false, pathToSecondOutputFolder=null, saveStderr=true, saveErrLog=true, pathToErrLog=/mnt/d/FIT/Ing/DIP/TestTasks/TestExecuteFolder/step_1/ErrLog/$2.log, SynchronizedStep=false, stepOrder=1}, errInputs=[], runType=RUN_WITHOUT_ERRORS}" has been sent to Secondary node Knot10.</message>
+</record>
+<record>
+  <date>2021-04-28T16:24:02</date>
+  <millis>1619619842442</millis>
+  <sequence>459</sequence>
+  <logger>com.app.primaryNodeApp.model.primaryNode.primSocketCommunicators.PrimSocketReceiver</logger>
+  <level>INFO</level>
+  <class>com.app.commons.eventLogger.SocketEventLogger</class>
+  <method>logReceivedMessage</method>
+  <thread>244</thread>
+  <message>Message of type RUN_JOB_STEP_ACK with text "6" has been received from Secondary node Knot10.</message>
+</record>
+<record>
+  <date>2021-04-28T16:24:19</date>
+  <millis>1619619859555</millis>
+  <sequence>461</sequence>
+  <logger>com.app.primaryNodeApp.model.primaryNode.primSocketCommunicators.PrimSocketReceiver</logger>
+  <level>INFO</level>
+  <class>com.app.commons.eventLogger.SocketEventLogger</class>
+  <method>logReceivedMessage</method>
+  <thread>244</thread>
+  <message>Message of type PROC_FINISHED with text "FinishValues{execTime=17012, finishType=FINISH_FS_NODE, inputPath=/mnt/d/FIT/Ing/DIP/TestTasks/TestExecuteFolder/step_1/InFiles/in6.in, inputSize=7}" has been received from Secondary node Knot10.</message>
+</record>
+<record>
+  <date>2021-04-28T16:24:19</date>
+  <millis>1619619859569</millis>
+  <sequence>463</sequence>
+  <logger>com.app.primaryNodeApp.model.primaryNode.primSocketCommunicators.PrimSocketReceiver</logger>
+  <level>INFO</level>
+  <class>com.app.commons.eventLogger.SocketEventLogger</class>
+  <method>logReceivedMessage</method>
+  <thread>244</thread>
+  <message>Message of type PROC_FINISHED with text "FinishValues{execTime=17012, finishType=FINISH_FS_NODE, inputPath=/mnt/d/FIT/Ing/DIP/TestTasks/TestExecuteFolder/step_1/InFiles/in4.in, inputSize=7}" has been received from Secondary node Knot10.</message>
+</record>
+<record>
+  <date>2021-04-28T16:24:19</date>
+  <millis>1619619859583</millis>
+  <sequence>465</sequence>
+  <logger>com.app.primaryNodeApp.model.primaryNode.primSocketCommunicators.PrimSocketReceiver</logger>
+  <level>INFO</level>
+  <class>com.app.commons.eventLogger.SocketEventLogger</class>
+  <method>logReceivedMessage</method>
+  <thread>244</thread>
+  <message>Message of type PROC_FINISHED with text "FinishValues{execTime=17012, finishType=FINISH_FS_NODE, inputPath=/mnt/d/FIT/Ing/DIP/TestTasks/TestExecuteFolder/step_1/InFiles/in5.in, inputSize=7}" has been received from Secondary node Knot10.</message>
+</record>
+<record>
+  <date>2021-04-28T16:24:35</date>
+  <millis>1619619875086</millis>
+  <sequence>467</sequence>
+  <logger>com.app.primaryNodeApp.model.primaryNode.primSocketCommunicators.PrimSocketReceiver</logger>
+  <level>INFO</level>
+  <class>com.app.commons.eventLogger.SocketEventLogger</class>
+  <method>logReceivedMessage</method>
+  <thread>244</thread>
+  <message>Message of type PROC_FINISHED with text "FinishValues{execTime=15503, finishType=FINISH_FS_NODE, inputPath=/mnt/d/FIT/Ing/DIP/TestTasks/TestExecuteFolder/step_1/InFiles/in3.in, inputSize=7}" has been received from Secondary node Knot10.</message>
+</record>
+<record>
+  <date>2021-04-28T16:24:35</date>
+  <millis>1619619875097</millis>
+  <sequence>469</sequence>
+  <logger>com.app.primaryNodeApp.model.primaryNode.primSocketCommunicators.PrimSocketReceiver</logger>
+  <level>INFO</level>
+  <class>com.app.commons.eventLogger.SocketEventLogger</class>
+  <method>logReceivedMessage</method>
+  <thread>244</thread>
+  <message>Message of type PROC_FINISHED with text "FinishValues{execTime=15514, finishType=FINISH_FS_NODE, inputPath=/mnt/d/FIT/Ing/DIP/TestTasks/TestExecuteFolder/step_1/InFiles/in2.in, inputSize=7}" has been received from Secondary node Knot10.</message>
+</record>
+<record>
+  <date>2021-04-28T16:24:35</date>
+  <millis>1619619875110</millis>
+  <sequence>471</sequence>
+  <logger>com.app.primaryNodeApp.model.primaryNode.primSocketCommunicators.PrimSocketReceiver</logger>
+  <level>INFO</level>
+  <class>com.app.commons.eventLogger.SocketEventLogger</class>
+  <method>logReceivedMessage</method>
+  <thread>244</thread>
+  <message>Message of type PROC_FINISHED with text "FinishValues{execTime=15508, finishType=FINISH_ALL, inputPath=/mnt/d/FIT/Ing/DIP/TestTasks/TestExecuteFolder/step_1/InFiles/in1.in, inputSize=7}" has been received from Secondary node Knot10.</message>
+</record>
+<record>
+  <date>2021-04-28T16:24:35</date>
+  <millis>1619619875227</millis>
+  <sequence>473</sequence>
+  <logger>com.app.primaryNodeApp.model.primaryNode.primSocketCommunicators.PrimSocketSender</logger>
+  <level>INFO</level>
+  <class>com.app.commons.eventLogger.SocketEventLogger</class>
+  <method>logSentMessage</method>
+  <thread>245</thread>
+  <message>Message of type RUN_JOB_STEP with text "RunValues{step=Step{id=23, stepName=STEP 2, commandPrefix=python3 /mnt/d/FIT/Ing/DIP/TestTasks/TestProgram/ValidateErrorStderr.py, inputType=FOLDER_OF_FILES, inputArgument=--in, inputPath=/mnt/d/FIT/Ing/DIP/TestTasks/TestExecuteFolder/step_1/OutFiles, inputRegex=(.*)\/(.*)\.(.*), processes=2, outputType=FOLDER_OF_FILES, outputArgument=--out, outputPath=/mnt/d/FIT/Ing/DIP/TestTasks/TestExecuteFolder/step_2/OutFiles/$2.out, commandSuffix=-sleep 10 -secondOut /mnt/d/FIT/Ing/DIP/TestTasks/TestExecuteFolder/step_2/SecondOut/$2.secOut -logFilePath /mnt/d/FIT/Ing/DIP/TestTasks/TestExecuteFolder/step_2/Log/$2.log -errLogFilePath /mnt/d/FIT/Ing/DIP/TestTasks/TestExecuteFolder/step_2/ErrLog/$2.log, timeout=3600000, CheckExistNoEmptyOutputFsNode=true, EmptyStderr=true, CheckLogFileSize=true, pathToLog=/mnt/d/FIT/Ing/DIP/TestTasks/TestExecuteFolder/step_2/Log/$2.log, logSizeLessThan=1024, EqualInToOutFiles=false, EqualInToOutFilesSecondOutput=false, pathToSecondOutputFolder=null, saveStderr=true, saveErrLog=true, pathToErrLog=/mnt/d/FIT/Ing/DIP/TestTasks/TestExecuteFolder/step_2/ErrLog/$2.log, SynchronizedStep=false, stepOrder=2}, errInputs=[], runType=RUN_WITHOUT_ERRORS}" has been sent to Secondary node Knot10.</message>
+</record>
+<record>
+  <date>2021-04-28T16:24:35</date>
+  <millis>1619619875243</millis>
+  <sequence>475</sequence>
+  <logger>com.app.primaryNodeApp.model.primaryNode.primSocketCommunicators.PrimSocketReceiver</logger>
+  <level>INFO</level>
+  <class>com.app.commons.eventLogger.SocketEventLogger</class>
+  <method>logReceivedMessage</method>
+  <thread>244</thread>
+  <message>Message of type RUN_JOB_STEP_ACK with text "6" has been received from Secondary node Knot10.</message>
+</record>
+<record>
+  <date>2021-04-28T16:24:41</date>
+  <millis>1619619881815</millis>
+  <sequence>477</sequence>
+  <logger>com.app.primaryNodeApp.model.primaryNode.primSocketCommunicators.PrimSocketReceiver</logger>
+  <level>INFO</level>
+  <class>com.app.commons.eventLogger.SocketEventLogger</class>
+  <method>logReceivedMessage</method>
+  <thread>244</thread>
+  <message>Message of type PROC_FINISHED with text "FinishValues{execTime=6520, finishType=FINISH_FS_NODE, inputPath=/mnt/d/FIT/Ing/DIP/TestTasks/TestExecuteFolder/step_1/OutFiles/in6.out, inputSize=25}" has been received from Secondary node Knot10.</message>
+</record>
+<record>
+  <date>2021-04-28T16:24:45</date>
+  <millis>1619619885785</millis>
+  <sequence>479</sequence>
+  <logger>com.app.primaryNodeApp.model.primaryNode.primSocketCommunicators.PrimSocketReceiver</logger>
+  <level>INFO</level>
+  <class>com.app.commons.eventLogger.SocketEventLogger</class>
+  <method>logReceivedMessage</method>
+  <thread>244</thread>
+  <message>Message of type PROC_FINISHED with text "FinishValues{execTime=10521, finishType=FINISH_FS_NODE, inputPath=/mnt/d/FIT/Ing/DIP/TestTasks/TestExecuteFolder/step_1/OutFiles/in5.out, inputSize=25}" has been received from Secondary node Knot10.</message>
+</record>
+<record>
+  <date>2021-04-28T16:24:51</date>
+  <millis>1619619891307</millis>
+  <sequence>481</sequence>
+  <logger>com.app.primaryNodeApp.model.primaryNode.primSocketCommunicators.PrimSocketReceiver</logger>
+  <level>INFO</level>
+  <class>com.app.commons.eventLogger.SocketEventLogger</class>
+  <method>logReceivedMessage</method>
+  <thread>244</thread>
+  <message>Message of type PROC_FINISHED with text "FinishValues{execTime=5513, finishType=FINISH_FS_NODE, inputPath=/mnt/d/FIT/Ing/DIP/TestTasks/TestExecuteFolder/step_1/OutFiles/in3.out, inputSize=25}" has been received from Secondary node Knot10.</message>
+</record>
+<record>
+  <date>2021-04-28T16:24:51</date>
+  <millis>1619619891372</millis>
+  <sequence>483</sequence>
+  <logger>com.app.primaryNodeApp.model.primaryNode.primSocketCommunicators.PrimSocketReceiver</logger>
+  <level>INFO</level>
+  <class>com.app.commons.eventLogger.SocketEventLogger</class>
+  <method>logReceivedMessage</method>
+  <thread>244</thread>
+  <message>Message of type PROC_ERROR with text "ErrorValues{error=Error{id=null, pathToInputFile=/mnt/d/FIT/Ing/DIP/TestTasks/TestExecuteFolder/step_1/OutFiles/in4.out, logFile=This is content of error log file.
+   and that is the problem 
+      dummy dummy dummy   dummy 
+                       dummyThis is content of error log file.
+This is content of error log file.
+This is content of error log file.
+, stderr=fatal error test of STDERR 
+ fatal error test of STDERR
+, description=Stderr is not empty., command=python3 /mnt/d/FIT/Ing/DIP/TestTasks/TestProgram/ValidateErrorStderr.py --in "/mnt/d/FIT/Ing/DIP/TestTasks/TestExecuteFolder/step_1/OutFiles/in4.out" --out "/mnt/d/FIT/Ing/DIP/TestTasks/TestExecuteFolder/step_2/OutFiles/in4.out" -sleep 10 -secondOut /mnt/d/FIT/Ing/DIP/TestTasks/TestExecuteFolder/step_2/SecondOut/in4.secOut -logFilePath /mnt/d/FIT/Ing/DIP/TestTasks/TestExecuteFolder/step_2/Log/in4.log -errLogFilePath /mnt/d/FIT/Ing/DIP/TestTasks/TestExecuteFolder/step_2/ErrLog/in4.log, exitCode=0}, finishValues=FinishValues{execTime=9519, finishType=FINISH_FS_NODE, inputPath=/mnt/d/FIT/Ing/DIP/TestTasks/TestExecuteFolder/step_1/OutFiles/in4.out, inputSize=25}}" has been received from Secondary node Knot10.</message>
+</record>
+<record>
+  <date>2021-04-28T16:24:56</date>
+  <millis>1619619896912</millis>
+  <sequence>485</sequence>
+  <logger>com.app.primaryNodeApp.model.primaryNode.primSocketCommunicators.PrimSocketReceiver</logger>
+  <level>INFO</level>
+  <class>com.app.commons.eventLogger.SocketEventLogger</class>
+  <method>logReceivedMessage</method>
+  <thread>244</thread>
+  <message>Message of type PROC_FINISHED with text "FinishValues{execTime=5516, finishType=FINISH_FS_NODE, inputPath=/mnt/d/FIT/Ing/DIP/TestTasks/TestExecuteFolder/step_1/OutFiles/in1.out, inputSize=25}" has been received from Secondary node Knot10.</message>
+</record>
+<record>
+  <date>2021-04-28T16:25:03</date>
+  <millis>1619619903818</millis>
+  <sequence>487</sequence>
+  <logger>com.app.primaryNodeApp.model.primaryNode.primSocketCommunicators.PrimSocketReceiver</logger>
+  <level>INFO</level>
+  <class>com.app.commons.eventLogger.SocketEventLogger</class>
+  <method>logReceivedMessage</method>
+  <thread>244</thread>
+  <message>Message of type PROC_ERROR with text "ErrorValues{error=Error{id=null, pathToInputFile=/mnt/d/FIT/Ing/DIP/TestTasks/TestExecuteFolder/step_1/OutFiles/in2.out, logFile=This is content of error log file.
+   and that is the problem 
+      dummy dummy dummy   dummy 
+                       dummyThis is content of error log file.
+This is content of error log file.
+This is content of error log file.
+, stderr=fatal error test of STDERR 
+ fatal error test of STDERR
+, description=Stderr is not empty., command=python3 /mnt/d/FIT/Ing/DIP/TestTasks/TestProgram/ValidateErrorStderr.py --in "/mnt/d/FIT/Ing/DIP/TestTasks/TestExecuteFolder/step_1/OutFiles/in2.out" --out "/mnt/d/FIT/Ing/DIP/TestTasks/TestExecuteFolder/step_2/OutFiles/in2.out" -sleep 10 -secondOut /mnt/d/FIT/Ing/DIP/TestTasks/TestExecuteFolder/step_2/SecondOut/in2.secOut -logFilePath /mnt/d/FIT/Ing/DIP/TestTasks/TestExecuteFolder/step_2/Log/in2.log -errLogFilePath /mnt/d/FIT/Ing/DIP/TestTasks/TestExecuteFolder/step_2/ErrLog/in2.log, exitCode=0}, finishValues=FinishValues{execTime=12501, finishType=FINISH_ALL, inputPath=/mnt/d/FIT/Ing/DIP/TestTasks/TestExecuteFolder/step_1/OutFiles/in2.out, inputSize=25}}" has been received from Secondary node Knot10.</message>
+</record>
+<record>
+  <date>2021-04-28T16:25:05</date>
+  <millis>1619619905295</millis>
+  <sequence>489</sequence>
+  <logger>com.app.primaryNodeApp.model.primaryNode.primSocketCommunicators.PrimSocketReceiver</logger>
+  <level>WARNING</level>
+  <class>com.app.commons.eventLogger.SocketEventLogger</class>
+  <method>logUnexpMsgErr</method>
+  <thread>244</thread>
+  <message>Unexpected USAGE_OF_RESOURCES message with text UsageValues{cpuLoad=0.0, ramUsage=0.008571624755859375} has been received from Secondary node Knot10.</message>
+</record>
+<record>
+  <date>2021-04-28T16:26:24</date>
+  <millis>1619619984728</millis>
+  <sequence>491</sequence>
+  <logger>javax.enterprise.system.core</logger>
+  <level>INFO</level>
+  <class>com.sun.enterprise.v3.admin.StopServer</class>
+  <method>doExecute</method>
+  <thread>263</thread>
+  <message>Server shutdown initiated</message>
+  <key>NCLS-CORE-00092</key>
+  <catalog>org.glassfish.kernel.LogMessages</catalog>
+</record>
+<record>
+  <date>2021-04-28T16:26:24</date>
+  <millis>1619619984737</millis>
+  <sequence>493</sequence>
+  <logger>javax.enterprise.bootstrap</logger>
+  <level>INFO</level>
+  <class>com.sun.enterprise.glassfish.bootstrap.osgi.EmbeddedOSGiGlassFishImpl</class>
+  <method>unregisterService</method>
+  <thread>263</thread>
+  <message>Unregistered com.sun.enterprise.glassfish.bootstrap.osgi.EmbeddedOSGiGlassFishImpl@160396db from service registry.</message>
+  <key>NCLS-BOOTSTRAP-00028</key>
+  <catalog>com.sun.enterprise.glassfish.bootstrap.LogMessages</catalog>
+  <param>com.sun.enterprise.glassfish.bootstrap.osgi.EmbeddedOSGiGlassFishImpl@160396db</param>
+</record>
+<record>
+  <date>2021-04-28T16:26:24</date>
+  <millis>1619619984739</millis>
+  <sequence>495</sequence>
+  <level>INFO</level>
+  <class>com.sun.common.util.logging.LoggingOutputStream</class>
+  <method>log</method>
+  <thread>263</thread>
+  <message>FileMonitoring shutdown</message>
+</record>
+<record>
+  <date>2021-04-28T16:26:24</date>
+  <millis>1619619984744</millis>
+  <sequence>497</sequence>
+  <logger>javax.enterprise.system.jmx</logger>
+  <level>INFO</level>
+  <class>org.glassfish.admin.mbeanserver.JMXStartupService$JMXConnectorsStarterThread</class>
+  <method>shutdown</method>
+  <thread>263</thread>
+  <message>JMXStartupService: Stopped JMXConnectorServer: null</message>
+  <key>NCLS-JMX-00002</key>
+  <catalog>org.glassfish.admin.mbeanserver.LogMessages</catalog>
+  <param>???</param>
+</record>
+<record>
+  <date>2021-04-28T16:26:24</date>
+  <millis>1619619984745</millis>
+  <sequence>499</sequence>
+  <logger>javax.enterprise.system.jmx</logger>
+  <level>INFO</level>
+  <class>org.glassfish.admin.mbeanserver.JMXStartupService</class>
+  <method>shutdown</method>
+  <thread>263</thread>
+  <message>JMXStartupService and JMXConnectors have been shut down.</message>
+  <key>NCLS-JMX-00001</key>
+  <catalog>org.glassfish.admin.mbeanserver.LogMessages</catalog>
+</record>
+<record>
+  <date>2021-04-28T16:26:24</date>
+  <millis>1619619984858</millis>
+  <sequence>501</sequence>
+  <logger>com.app.primaryNodeApp.model.primaryNode.PrimaryNode</logger>
+  <level>INFO</level>
+  <class>com.app.primaryNodeApp.model.primaryNode.PrimaryNode</class>
+  <method>preDestroy</method>
+  <thread>268</thread>
+  <message>Close file handler for saving information to log file.</message>
+</record>
+</log>

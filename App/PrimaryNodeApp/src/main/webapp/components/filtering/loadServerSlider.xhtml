@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui = "http://java.sun.com/jsf/facelets">
+    <body>
+        <ui:composition>
+            <!-- paramFilterBean is passed parameter by ui:parameter of parent component -->
+            <script type="text/javascript">
+                // update min/max input when min/max slider is moved
+                function updateInput(event, ui) {
+                    var loadSlider = PF("loadSlider").jq.children(".ui-slider-handle");
+                    // min slider
+                    if ($(loadSlider[0]).hasClass('ui-state-focus')) {
+                        PF("minLoadServerI").setValue(ui.value);
+                    }
+                    // max slider
+                    if ($(loadSlider[1]).hasClass('ui-state-focus')) {
+                        PF("maxLoadServerI").setValue(ui.value);
+                    }
+                }
+
+                // update min/max slider when the min/max input is changed (keyup event)
+                function updateSlider(sliderNumber) {
+                    var slider = PF("loadSlider").jq.children(".ui-slider-handle")[sliderNumber];
+                    var sliderRange = PF("loadSlider").jq.children(".ui-slider-range");
+                    var leftInputValue = PF("minLoadServerI").getValue();
+                    var rightInputValue = PF("maxLoadServerI").getValue();
+                    if (sliderNumber === 0) {
+                        if (leftInputValue.length !== 0) {
+                            // update slider
+                            $(slider).css("left", leftInputValue + "%");
+
+                            // update sliderRange
+                            $(sliderRange).css("left", leftInputValue + "%");
+                            $(sliderRange).css("width", (rightInputValue - leftInputValue) + "%");
+                        }
+                    }
+                    if (sliderNumber === 1) {
+                        if (rightInputValue.length !== 0) {
+                            // update slider
+                            $(slider).css("left", rightInputValue + "%");
+
+                            // update sliderRange
+                            $(sliderRange).css("width", (rightInputValue - leftInputValue) + "%");
+                        }
+                    }
+                }
+            </script>
+            <h4>Vytíženo serverů</h4>
+            <div class="p-field p-grid">
+                <div class="p-col-4"/>
+                <div class="p-col-8">
+                    <p:slider widgetVar="loadSlider" for="minLoadServer,maxLoadServer" range="true" minValue="0" maxValue="100" onSlide="updateInput(event, ui);">
+                        <p:ajax process='@form' event="slideEnd" listener="#{PARAM_ajaxBean[PARAM_ajaxHandler]}" update="#{PARAM_updateComponents}"/>
+                    </p:slider>
+                    <h:inputHidden id="minLoadServer" value="#{PARAM_filterBean.minLoadServer}"/>
+                    <h:inputHidden id="maxLoadServer" value="#{PARAM_filterBean.maxLoadServer}"/>
+                </div>
+            </div>
+            <div class="p-field p-grid">
+                <div class="p-col-4"/>
+                <div class="p-col-2">
+                    <p:inputNumber widgetVar="minLoadServerI" id="minLoadServerI" value="#{PARAM_filterBean.minLoadServerI}" minValue="0" maxValue="100" onkeyup="updateSlider(0);">
+                        <p:ajax event="keyup" listener="#{PARAM_ajaxBean[PARAM_ajaxHandler]}" update="#{PARAM_updateComponents}"/>
+                    </p:inputNumber>
+                </div>
+                <div class="p-col-4"/>
+                <div class="p-col-2">
+                    <p:inputNumber widgetVar="maxLoadServerI" id="maxLoadServerI" value="#{PARAM_filterBean.maxLoadServerI}" minValue="0" maxValue="100" onkeyup="updateSlider(1);">
+                        <p:ajax event="keyup" listener="#{PARAM_ajaxBean[PARAM_ajaxHandler]}" update="#{PARAM_updateComponents}"/>
+                    </p:inputNumber>
+                </div>
+            </div>
+        </ui:composition>
+    </body>
+</html>

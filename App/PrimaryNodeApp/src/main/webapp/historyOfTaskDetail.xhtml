@@ -1,0 +1,280 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:ui = "http://java.sun.com/jsf/facelets"
+      >
+
+    <h:head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <f:metadata>
+            <f:viewParam name="runJobID" value="#{historyOfTaskDetailBean.runJobID}"/>
+            <f:viewAction action="#{historyOfTaskDetailBean.loadData()}" />
+        </f:metadata>
+    </h:head>
+    <h:body>   
+
+
+
+        <h:outputStylesheet library="css" name="primeflex.css"/>
+        <h:outputStylesheet library="css" name="style.css"/>
+
+        <ui:composition template = "templates/commonWithoutSideForm.xhtml">
+
+            <ui:define name = "content">
+                <h:outputScript library='js' name='graphConfiguration.js' />
+                <p:growl redisplay="false" skipDetailIfEqualsSummary="true" id="messages" showDetail="true">
+                    <p:autoUpdate/>
+                </p:growl>
+
+                <div class="p-grid">
+
+                    <div class="p-col-5 p-sm-5 p-md-4 p-lg-2 p-xl-1">
+                        <p:button outcome="historyOfTasks" value="Zpět">
+                            <f:param name="i" value="2" />
+                        </p:button>
+                        <p:spacer/>
+                    </div>
+
+                    <div class="p-col-12">
+                        <h:form>             
+                            <p:panel id="runTaskInfoPanel" header="#{historyOfTaskDetailBean.historyTaskData.taskName}" style="margin-bottom:20px; min-width: 1500px;">
+                                <div class="p-grid center-items">
+                                    <div class="p-col-8">
+                                        <ui:insert name='historyTaskListItem'>
+                                            <ui:include src='components/historyTask/historyTaskListItem.xhtml'>
+                                                <ui:param name='PARAM_taskData' value='#{historyOfTaskDetailBean.historyTaskData}' />
+                                            </ui:include>
+                                        </ui:insert>
+                                    </div>
+                                    <div class="p-col-4 center-text">
+                                        <h3>Možnosti úlohy</h3>
+                                        <ui:insert name='historyTaskOptions'>
+                                            <ui:include src='components/historyTask/historyTaskOptions.xhtml'>
+                                                <ui:param name='PARAM_disableBlockName' value='testBlock' />
+                                                <ui:param name='PARAM_dataHandleBean' value='#{historyOfTaskDetailBean}'/>
+                                            </ui:include>
+                                        </ui:insert>
+                                    </div>
+
+                                    <div class="p-col-12">
+                                        <p:separator/>
+                                        <p:spacer/>
+                                        <p:panel class="center-text" header="Celková doba trvání úlohy na jednotlivých výpočetních uzlech">
+                                            <div class="p-grid">
+                                                <div class="p-col-12">
+                                                    <div class="p-col-12">
+                                                        <p:chart type="bar" model="#{historyOfTaskDetailBean.stepExecTimeGraph}" responsive="true"  style="height: 500px;"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </p:panel>
+                                    </div>
+
+                                    <div class="p-col-12">
+                                        <p:spacer />
+                                        <p:separator/>
+                                        <p:spacer />
+                                        <p:panel class="center-text" header="Statistiky provádění úlohy pro jednotlivé výpočetní uzly">
+                                            <p:tabView widgetVar="tabView" style="text-align: left;" value="#{historyOfTaskDetailBean.historyStepGraphData}"  var="stepData">
+                                                <p:tab title="#{stepData.stepName}">
+                                                    <div class="p-grid">
+                                                        <div class="p-col-12">
+                                                            <p:chart type="bar" model="#{stepData.execGraph}" responsive="true"  style="height: 500px;"/>
+                                                        </div>
+                                                        <div class="p-col-12">
+                                                            <p:separator/>
+                                                        </div>
+                                                        <div class="p-col-12">
+                                                            <ui:insert name='historyTaskFilterGraph'>
+                                                                <ui:include src='components/historyTask/historyTaskFilterGraph.xhtml'>
+                                                                    <ui:param name='PARAM_bean' value='#{historyOfTaskDetailBean}' />
+                                                                    <ui:param name='PARAM_listener' value='changeFileExecCheckboxHandler' />
+                                                                    <ui:param name='PARAM_chartIndex' value='#{historyOfTaskDetailBean.historyStepGraphData.indexOf(stepData)}' />
+                                                                    <ui:param name='PARAM_chartID' value='fileProcGraph'/>
+                                                                    <ui:param name='PARAM_minChartData' value='#{stepData.checkMinFileExecTime}' />
+                                                                    <ui:param name='PARAM_avgChartData' value='#{stepData.checkAvgFileExecTime}' />
+                                                                    <ui:param name='PARAM_maxChartData' value='#{stepData.checkMaxFileExecTime}' />
+                                                                    <ui:param name='PARAM_ChartModel' value='#{stepData.fileProcGraph}' />
+                                                                    <ui:param name='PARAM_StepId' value="#{stepData.stepId}" />
+                                                                    <ui:param name='PARAM_isRenderFileLabel' value='true' />
+                                                                </ui:include>
+                                                            </ui:insert>
+                                                        </div>  
+                                                        <div class="p-col-12">
+                                                            <p:separator/>
+                                                        </div>
+                                                        <div class="p-col-12">
+                                                            <ui:insert name='historyTaskFilterGraph'>
+                                                                <ui:include src='components/historyTask/historyTaskFilterGraph.xhtml'>
+                                                                    <ui:param name='PARAM_bean' value='#{historyOfTaskDetailBean}' />
+                                                                    <ui:param name='PARAM_listener' value='changeNormalizedFileExecCheckboxHandler' />
+                                                                    <ui:param name='PARAM_chartIndex' value='#{historyOfTaskDetailBean.historyStepGraphData.indexOf(stepData)}' />
+                                                                    <ui:param name='PARAM_chartID' value='normalizedFileProcGraph'/>
+                                                                    <ui:param name='PARAM_minChartData' value='#{stepData.checkNormalizedMinFileExecTime}' />
+                                                                    <ui:param name='PARAM_maxChartData' value='#{stepData.checkNormalizedMaxFileExecTime}' />
+                                                                    <ui:param name='PARAM_ChartModel' value='#{stepData.normalizedFileProcGraph}' />                                                                    
+                                                                    <ui:param name='PARAM_StepId' value="#{stepData.stepId}" />
+                                                                    <ui:param name='PARAM_isRenderFileLabel' value='true' />
+                                                                </ui:include>
+                                                            </ui:insert>
+                                                        </div>  
+                                                        <div class="p-col-12">
+                                                            <p:separator/>
+                                                        </div>
+                                                        <div class="p-col-12">
+                                                            <ui:insert name='historyTaskFilterGraph'>
+                                                                <ui:include src='components/historyTask/historyTaskFilterGraph.xhtml'>
+                                                                    <ui:param name='PARAM_bean' value='#{historyOfTaskDetailBean}' />
+                                                                    <ui:param name='PARAM_listener' value='changeRamUsageCheckboxHandler' />
+                                                                    <ui:param name='PARAM_chartIndex' value='#{historyOfTaskDetailBean.historyStepGraphData.indexOf(stepData)}' />
+                                                                    <ui:param name='PARAM_chartID' value='ramUsageGraph'/>
+                                                                    <ui:param name='PARAM_minChartData' value='#{stepData.checkMinRamUsage}' />
+                                                                    <ui:param name='PARAM_avgChartData' value='#{stepData.checkAvgRamUsage}' />
+                                                                    <ui:param name='PARAM_maxChartData' value='#{stepData.checkMaxRamUsage}' />
+                                                                    <ui:param name='PARAM_ChartModel' value='#{stepData.usageRAMGraph}' />
+                                                                    <ui:param name='PARAM_StepId' value="#{stepData.stepId}" />
+                                                                    <ui:param name='PARAM_isRenderFileLabel' value='false' />
+                                                                </ui:include>
+                                                            </ui:insert>
+                                                        </div> 
+                                                        <div class="p-col-12">
+                                                            <p:separator/>
+                                                        </div>
+                                                        <div class="p-col-12">
+                                                            <ui:insert name='historyTaskFilterGraph'>
+                                                                <ui:include src='components/historyTask/historyTaskFilterGraph.xhtml'>
+                                                                    <ui:param name='PARAM_bean' value='#{historyOfTaskDetailBean}' />
+                                                                    <ui:param name='PARAM_listener' value='changeCpuUsageCheckboxHandler' />
+                                                                    <ui:param name='PARAM_chartIndex' value='#{historyOfTaskDetailBean.historyStepGraphData.indexOf(stepData)}' />
+                                                                    <ui:param name='PARAM_chartID' value='cpuUsageGraph'/>
+                                                                    <ui:param name='PARAM_minChartData' value='#{stepData.checkMinCpuUsage}' />
+                                                                    <ui:param name='PARAM_avgChartData' value='#{stepData.checkAvgCpuUsage}' />
+                                                                    <ui:param name='PARAM_maxChartData' value='#{stepData.checkMaxCpuUsage}' />
+                                                                    <ui:param name='PARAM_ChartModel' value='#{stepData.usageCPUGraph}' />
+                                                                    <ui:param name='PARAM_StepId' value="#{stepData.stepId}" />
+                                                                    <ui:param name='PARAM_isRenderFileLabel' value='false' />
+                                                                </ui:include>
+                                                            </ui:insert>
+                                                        </div> 
+                                                    </div>
+                                                </p:tab>
+                                            </p:tabView>
+                                        </p:panel>
+                                    </div>
+
+                                </div>
+                            </p:panel>
+                            <p:blockUI block="runTaskInfoPanel" />
+                            <p:confirmDialog global="true" closeOnEscape="true" responsive="true" showEffect="fade" hideEffect="fade">
+                                <p:commandButton value="OK" type="button" styleClass="ui-confirmdialog-yes" icon="pi pi-check" />
+                                <p:commandButton value="Storno" type="button" styleClass="ui-confirmdialog-no" icon="pi pi-times" />
+                            </p:confirmDialog>  
+
+                            <script type="text/javascript">
+                                var stepIds = [];
+
+                                <c:forEach items="#{historyOfTaskDetailBean.historyStepGraphData}" var="item">      
+                                stepIds.push('#{item.getStepId()}');
+                                </c:forEach>
+      
+                                var filesDataProcGraph = [];
+                                var filesDataProcNormGraph = [];
+                                <c:forEach items="#{historyOfTaskDetailBean.historyStepGraphData}" var="item" varStatus="status">     
+                                
+                                    var minFiles = [];
+                                    <c:forEach items="#{item.pathsToMinFileProcGraph}" var="item2">     
+                                        minFiles.push('#{item2}');
+                                    </c:forEach>
+                                    
+                                    var maxFiles = [];
+                                    <c:forEach items="#{item.pathsToMaxFileProcGraph}" var="item2">     
+                                        maxFiles.push('#{item2}');
+                                    </c:forEach>
+                                    
+                                    var minNormFiles = [];
+                                    <c:forEach items="#{item.pathsToMinFileNormProcGraph}" var="item2">     
+                                        minNormFiles.push('#{item2}');
+                                    </c:forEach>
+                                    
+                                    var maxNormFiles = [];
+                                    <c:forEach items="#{item.pathsToMaxFileNormProcGraph}" var="item2">     
+                                        maxNormFiles.push('#{item2}');
+                                    </c:forEach>
+                                    
+                                    
+                                    filesDataProcGraph['#{status.index}'] = [];
+                                    filesDataProcGraph['#{status.index}'].push(minFiles);
+                                    filesDataProcGraph['#{status.index}'].push([]);
+                                    filesDataProcGraph['#{status.index}'].push(maxFiles);
+                                    
+                                    filesDataProcNormGraph['#{status.index}'] = [];
+                                    filesDataProcNormGraph['#{status.index}'].push(minNormFiles);
+                                    filesDataProcNormGraph['#{status.index}'].push(maxNormFiles);
+                                    
+                                </c:forEach>                               
+                                $(document).ready(function () {
+                                    stepIds.forEach(function (item, index) {
+                                        $('.' + item + '_fileProcGraph').first().unbind('jqplotDataHighlight');
+                                        $('.' + item + '_fileProcGraph').first().bind('jqplotDataHighlight', function (ev, seriesIndex, pointIndex, data) {
+                                            $('#' + item + '_fileProcGraph_outputDiv').text(filesDataProcGraph[PF('tabView').getActiveIndex()][seriesIndex][pointIndex]);
+                                        });
+                                        $('.' + item + '_fileProcGraph').first().unbind('jqplotDataUnhighlight');
+                                        $('.' + item + '_fileProcGraph').first().bind('jqplotDataUnhighlight', function (ev, seriesIndex, pointIndex, data) {
+                                            $('#' + item + '_fileProcGraph_outputDiv').text('-');
+                                        });
+                                        $('.' + item + '_normalizedFileProcGraph').first().unbind('jqplotDataHighlight');
+                                        $('.' + item + '_normalizedFileProcGraph').first().bind('jqplotDataHighlight', function (ev, seriesIndex, pointIndex, data) {
+                                            $('#' + item + '_normalizedFileProcGraph_outputDiv').text(filesDataProcNormGraph[PF('tabView').getActiveIndex()][seriesIndex][pointIndex]);
+                                        });
+                                        $('.' + item + '_normalizedFileProcGraph').first().unbind('jqplotDataUnhighlight');
+                                        $('.' + item + '_normalizedFileProcGraph').first().bind('jqplotDataUnhighlight', function (ev, seriesIndex, pointIndex, data) {
+                                            $('#' + item + '_normalizedFileProcGraph_outputDiv').text('-');
+                                        });
+                                    });
+                                });
+                                
+                                function addMinMaxFileHandlers(stepID, chartID) {
+                                    if (chartID === 'fileProcGraph') {
+                                        if ( PF(stepID+'_'+chartID+'_minCheckbox').isChecked() === false &amp;&amp; PF(stepID+'_'+chartID+'_avgCheckbox').isChecked() === false) {
+                                            $('.' + stepID + '_' + chartID).first().bind('jqplotDataHighlight', function (ev, seriesIndex, pointIndex, data) {
+                                                $('#' + stepID + '_' + chartID + '_outputDiv').text(filesDataProcGraph[PF('tabView').getActiveIndex()][seriesIndex+2][pointIndex]);
+                                            });
+                                        } if ( PF(stepID+'_'+chartID+'_avgCheckbox').isChecked() === false) {
+                                            $('.' + stepID + '_' + chartID).first().bind('jqplotDataHighlight', function (ev, seriesIndex, pointIndex, data) {
+                                                if (seriesIndex === 1)
+                                                    $('#' + stepID + '_' + chartID + '_outputDiv').text(filesDataProcGraph[PF('tabView').getActiveIndex()][seriesIndex+1][pointIndex]);
+                                                else
+                                                    $('#' + stepID + '_' + chartID + '_outputDiv').text(filesDataProcGraph[PF('tabView').getActiveIndex()][seriesIndex][pointIndex]);
+                                            });
+                                        } else if ( PF(stepID+'_'+chartID+'_minCheckbox').isChecked() === false) {
+                                            $('.' + stepID + '_' + chartID).first().bind('jqplotDataHighlight', function (ev, seriesIndex, pointIndex, data) {
+                                                $('#' + stepID + '_' + chartID + '_outputDiv').text(filesDataProcGraph[PF('tabView').getActiveIndex()][seriesIndex+1][pointIndex]);
+                                            });
+                                        } else {
+                                            $('.' + stepID + '_' + chartID).first().bind('jqplotDataHighlight', function (ev, seriesIndex, pointIndex, data) {
+                                                $('#' + stepID + '_' + chartID + '_outputDiv').text(filesDataProcGraph[PF('tabView').getActiveIndex()][seriesIndex][pointIndex]);
+                                            });
+                                        }
+                                        
+                                        
+                                        
+                                        
+                                        $('.' + stepID + '_' + chartID).first().bind('jqplotDataUnhighlight', function (ev, seriesIndex, pointIndex, data) {
+                                            $('#' + stepID + '_' + chartID + '_outputDiv').text('-');
+                                        });
+                                        
+                                    }
+                                }
+
+                            </script>
+                        </h:form>
+                    </div>
+                </div>               
+            </ui:define>
+        </ui:composition> 
+    </h:body>
+</html>

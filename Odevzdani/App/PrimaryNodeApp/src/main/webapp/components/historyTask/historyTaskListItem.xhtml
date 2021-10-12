@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui = "http://java.sun.com/jsf/facelets">
+    <body>
+        <ui:composition>
+            <div class="p-grid center-items p-nogutter in-task">
+                <div class="p-col-3 p-sm-6 p-md-6 p-lg-3 p-xl-2">
+                    <h4 class="view-data-margin">Datum spuštění: </h4>
+                </div>
+                <div class="p-col-3 p-sm-6 p-md-6 p-lg-3 p-xl-2">
+                    <h:outputText class="view-data-margin" value="#{PARAM_taskData.startedAt}">
+                        <f:convertDateTime pattern="dd.MM.yyyy HH:mm:ss" />
+                    </h:outputText>
+                </div>
+                <div class="p-col-3 p-sm-6 p-md-6 p-lg-3 p-xl-2">
+                    <h4 class="view-data-margin">Doba běhu úlohy: </h4>
+                </div>
+                <div class="p-col-3 p-sm-6 p-md-6 p-lg-3 p-xl-6">
+                    <h:outputText class="view-data-margin" value="#{PARAM_taskData.runningTimeStr}"/>
+                </div>
+
+                <div class="p-col-3 p-sm-6 p-md-6 p-lg-3 p-xl-2">
+                    <h4 class="view-data-margin">Datum dokončení:</h4>
+                </div>
+                <div class="p-col-3 p-sm-6 p-md-6 p-lg-3 p-xl-2">
+                    <h:outputText class="view-data-margin" value="#{PARAM_taskData.finishedAt}">
+                        <f:convertDateTime pattern="dd.MM.yyyy HH:mm:ss" />
+                    </h:outputText>
+                </div>
+                <div class="p-col-3 p-sm-6 p-md-6 p-lg-3 p-xl-2">
+                    <h4 class="view-data-margin">Celková doba výpočtu: </h4>
+                </div>
+                <div class="p-col-3 p-sm-6 p-md-6 p-lg-3 p-xl-6">
+                    <h:outputText class="view-data-margin" value="#{PARAM_taskData.execTimeStr}"/>
+                </div>
+
+                <div class="p-col-3 p-sm-6 p-md-6 p-lg-3 p-xl-2">
+                    <h4 class="view-data-margin">Spuštěno na: </h4>
+                </div>
+                <div class="p-col-3 p-sm-6 p-md-6 p-lg-3 p-xl-2">
+                    <h:outputText class="view-data-margin" value="#{PARAM_taskData.numberOfServers} serverech"/>
+                </div>
+                <div class="p-col-3 p-sm-6 p-md-6 p-lg-3 p-xl-2">
+                    <h4 class="view-data-margin">Celková doba čekání: </h4>
+                </div>
+                <div class="p-col-3 p-sm-6 p-md-6 p-lg-3 p-xl-2">
+                    <h:outputText class="view-data-margin" value="#{PARAM_taskData.waitingTimeStr}"/>
+                </div>
+            </div>
+        </ui:composition>
+    </body>
+</html>

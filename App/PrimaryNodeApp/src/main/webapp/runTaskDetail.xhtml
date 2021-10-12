@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui = "http://java.sun.com/jsf/facelets"
+      xmlns:o="http://omnifaces.org/ui">
+
+    <h:head> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <f:metadata>
+            <f:viewParam name="runJobID" value="#{runTaskDetailBean.runJobID}"/>
+            <f:viewAction action="#{runTaskDetailBean.loadData()}" />
+        </f:metadata>
+    </h:head>
+    <h:body>   
+
+
+        <h:outputStylesheet library="css" name="primeflex.css"/>
+        <h:outputStylesheet library="css" name="style.css"/>
+
+        <ui:composition template = "templates/commonWithoutSideForm.xhtml">
+
+            <ui:define name = "content">
+                <p:importEnum type="com.app.primaryNodeApp.model.primaryNode.serverPushBean.enums.FirePushEvents$FirePushEventsEnum" var="ENUM_FirePushEvents" />
+
+                <p:growl redisplay="false" skipDetailIfEqualsSummary="true" id="messages" showDetail="true">
+                    <!--<p:autoUpdate/>-->
+                </p:growl>
+
+                <h:form>
+                    <div class="p-grid">
+
+                        <div class="p-col-5 p-sm-5 p-md-4 p-lg-2 p-xl-1">
+                            <p:button outcome="runningTasks" value="Zpět"/>
+                            <p:spacer/>
+                        </div>
+                        <!--<div class="p-col-12 p-sm-1 p-md-1 p-lg-1 p-xl-1 p-sm-offset-6 p-md-offset-7 p-lg-offset-9 p-xl-offset-10">
+                            <p:ajaxStatus id="ajaxStatus">
+                                <f:facet name="start">
+                                    <i class="pi pi-spin pi-spinner" style="font-size: 3em"/>
+                                </f:facet>
+                            </p:ajaxStatus>
+                            <p:sticky target="ajaxStatus"/>
+                        </div>-->
+
+                        <div class="p-col-12">
+
+                            <o:socket channel="runTaskEventChannel" onmessage="function (message) {}">
+                                <p:ajax process="@form" event="#{ENUM_FirePushEvents.RUN_TASK_EVENT}" listener="#{runTaskDetailBean.update()}"  update="runTaskDetailPanel" oncomplete="PF('statusTableEachServer').filter();"/>
+                            </o:socket>
+
+                            <p:panel id="runTaskDetailPanel" header="#{runTaskDetailBean.taskData.taskName}" style="margin-bottom:20px">
+
+                                <ui:insert name='runTaskListItem'>
+                                    <ui:include src='components/runTaskList/runTaskListItem.xhtml'>
+                                        <ui:param name='PARAM_taskData' value='#{runTaskDetailBean.taskData}' />
+                                    </ui:include>
+                                </ui:insert>
+
+                                <p:separator/>
+
+                                <div class="p-grid center-items">
+                                    <div class="p-col-8 center-text">
+                                        <h3>Přehled kroků úlohy</h3>
+                                        <ui:insert name='actRunStepsTable'>
+                                            <ui:include src='components/runTaskDetail/actRunStepsTable.xhtml'>
+                                                <ui:param name='PARAM_data' value='#{runTaskDetailBean.actRunStepsData}' />
+                                            </ui:include>
+                                        </ui:insert>
+                                    </div>
+                                    <div class="p-col-4 center-text">
+                                        <h3>Možnosti úlohy</h3>
+                                        <ui:insert name='taskOptions'>
+                                            <ui:include src='components/runTaskDetail/taskOptions.xhtml'>
+                                                <ui:param name='PARAM_disableBlockName' value='blockUIcomponent' />
+                                                <ui:param name='PARAM_dataHandleBean' value='#{runTaskDetailBean}'/>
+                                                <ui:param name='PARAM_statusTableEachServerName' value='statusTableEachServer' />
+                                                <ui:param name='PARAM_channelName' value='runTaskEventChannel' />
+                                            </ui:include>
+                                        </ui:insert>
+                                    </div>
+                                </div>
+
+                                <p:separator/>
+
+                                <div class="p-grid center-items">
+                                    <div class="p-col-12 center-text">
+                                        <h3>Stav úlohy na jednotlivých výpočetních uzlech</h3>
+                                        <ui:insert name='taskStatusOnNodesTable'>
+                                            <ui:include src='components/runTaskDetail/taskStatusOnNodesTable.xhtml'>
+                                                <ui:param name='PARAM_disableBlockName' value='blockUIcomponent' />
+                                                <ui:param name='PARAM_dataHandleBean' value='#{runTaskDetailBean}' />
+                                                <ui:param name='PARAM_channelName' value='runTaskEventChannel' />
+                                            </ui:include>
+                                        </ui:insert>
+                                    </div>
+                                </div>
+                            </p:panel>
+                            <p:blockUI widgetVar='blockUIcomponent' block="runTaskDetailPanel" />
+                            <p:confirmDialog widgetVar="confirmDialog" global="true" responsive="true" showEffect="fade" hideEffect="fade">
+                                <p:commandButton value="OK" type="button" styleClass="ui-confirmdialog-yes" icon="pi pi-check"/>
+                                <p:commandButton value="Storno" type="button" styleClass="ui-confirmdialog-no" icon="pi pi-times">
+                                    <p:ajax process="@form" event="click" listener="#{runTaskDetailBean.update()}"  update="runTaskDetailPanel" 
+                                            oncomplete="PF('statusTableEachServer').filter(); OmniFaces.Push.open('runTaskEventChannel');"/>
+                                </p:commandButton>
+                            </p:confirmDialog>
+                        </div>    
+                    </div>
+                </h:form>
+            </ui:define>
+
+        </ui:composition> 
+    </h:body>
+</html>

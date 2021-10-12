@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui = "http://java.sun.com/jsf/facelets">
+    <body>
+        <ui:composition>
+            <h4>Status</h4>
+            <div class="p-field p-grid">
+                <div class="p-col-4"/>
+                <div class="p-col-8">
+                    <p:selectBooleanCheckbox id="statusRunning" value="#{PARAM_filterBean.isCheckedRunning}" itemLabel="Běží">
+                        <p:ajax event="change" listener="#{PARAM_ajaxBean[PARAM_ajaxHandler]}" update="#{PARAM_updateComponents}"/>
+                    </p:selectBooleanCheckbox>
+                </div>
+                <div class="p-col-4"/>
+                <div class="p-col-8">
+                    <p:selectBooleanCheckbox id="statusRunning_error" value="#{PARAM_filterBean.isCheckedRunningError}" itemLabel="Běží/chyba">
+                        <p:ajax event="change" listener="#{PARAM_ajaxBean[PARAM_ajaxHandler]}" update="#{PARAM_updateComponents}"/>
+                    </p:selectBooleanCheckbox>
+                </div>
+                <div class="p-col-4"/>
+                <div class="p-col-8">
+                    <p:selectBooleanCheckbox id="statusError" value="#{PARAM_filterBean.isCheckedError}" itemLabel="Chyba">
+                        <p:ajax event="change" listener="#{PARAM_ajaxBean[PARAM_ajaxHandler]}" update="#{PARAM_updateComponents}"/>
+                    </p:selectBooleanCheckbox>
+                </div>
+                <div class="p-col-4"/>
+                <div class="p-col-8">
+                    <p:selectBooleanCheckbox id="statusWaiting" value="#{PARAM_filterBean.isCheckedWaiting}" itemLabel="Čeká">
+                        <p:ajax event="change" listener="#{PARAM_ajaxBean[PARAM_ajaxHandler]}" update="#{PARAM_updateComponents}"/>
+                    </p:selectBooleanCheckbox>
+                </div>
+                <div class="p-col-4"/>
+                <div class="p-col-8">
+                    <p:selectBooleanCheckbox id="statusPaused" value="#{PARAM_filterBean.isCheckedPaused}" itemLabel="Pozastaveno">
+                        <p:ajax event="change" listener="#{PARAM_ajaxBean[PARAM_ajaxHandler]}" update="#{PARAM_updateComponents}"/>
+                    </p:selectBooleanCheckbox>                                    
+                </div>
+            </div>
+        </ui:composition>
+    </body>
+</html>

@@ -1,0 +1,5 @@
+{
+    "pathToLogFolder" : "mnt/d/FIT/Ing/DIP/gja---parallel-data-processing-application/App/logs/",
+    "isAliveSendingPeriod" : 1,
+    "pathToBashConfigFolder" : "/mnt/d/FIT/Ing/DIP/gja---parallel-data-processing-application/App/SecondaryNodeApp"
+}

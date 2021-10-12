@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui = "http://java.sun.com/jsf/facelets">
+
+    <h:head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <f:metadata>
+            <f:viewParam name="userID" value="#{userEditBean.userID}"/>
+            <f:viewAction action="#{userEditBean.loadData()}" />
+        </f:metadata>
+    </h:head>
+    <h:body>   
+
+
+
+        <h:outputStylesheet library="css" name="primeflex.css"/>
+        <h:outputStylesheet library="css" name="style.css"/>
+
+        <ui:composition template = "templates/commonWithoutSideForm.xhtml">
+
+
+            <ui:define name = "content">
+                <p:importEnum type="com.app.primaryNodeApp.model.database.enums.UserRoles$UserRolesEnum" var="ENUM_UserRoles" />      
+
+                <p:growl skipDetailIfEqualsSummary="true" redisplay="false" id="messages" showDetail="true">
+                    <!--<p:autoUpdate/>-->
+                </p:growl> 
+
+                <div class='p-grid'>
+                    <div class="p-col-5 p-sm-5 p-md-4 p-lg-2 p-xl-1">
+                        <p:button outcome="usersOverview" value="Zpět">
+                            <f:param name='i' value='5' />
+                        </p:button>
+                        <p:spacer/>
+                    </div>
+                </div>
+
+                <p:panel class="center-text" id="userEditPanel" header="#{userEditBean.userID == null ? 'Přidání nového uživatele' : 'Editace existujícího uživatele'}" style="margin-bottom:20px">
+                    <h:form id="newTaskForm">
+
+                        <div class="ui-fluid "> 
+
+                            <div class="p-grid p-field p-nogutter">
+                                <p:outputLabel for="firstname" styleClass="p-col-3 p-sm-3 p-md-3 p-lg-2 p-xl-2 p-sm-offset-2 p-md-offset-2 p-lg-offset-3 p-xl-offset-4" value="Jméno: " />
+                                <div class="p-col-9 p-sm-5 p-md-5 p-lg-4 p-xl-2">
+                                    <p:inputText placeholder="Zadejte jméno uživatele" id="firstname" value="#{userEditBean.user.firstname}" required="true" requiredMessage="Zadejte jméno uživatele" />
+                                </div>
+                            </div>
+
+                            <div class="p-grid p-field p-nogutter">
+                                <p:outputLabel for="lastname" styleClass="p-col-3 p-sm-3 p-md-3 p-lg-2 p-xl-2 p-sm-offset-2 p-md-offset-2 p-lg-offset-3 p-xl-offset-4" value="Příjmení: " />
+                                <div class="p-col-9 p-sm-5 p-md-5 p-lg-4 p-xl-2">
+                                    <p:inputText placeholder="Zadejte příjmení uživatele" id="lastname" value="#{userEditBean.user.lastname}" required="true" requiredMessage="Zadejte příjmení uživatele" />
+                                </div>
+                            </div>
+
+
+                            <ui:fragment>
+                                <ui:insert name='usernameInput'>
+                                    <ui:include src='components/userEditForm/usernameInput.xhtml'>
+                                        <ui:param name='PARAM_isExistUsername' value='#{userEditBean.isExistUsername}' />
+                                        <ui:param name='PARAM_usernameInput' value='#{userEditBean.user.username}' />
+                                        <ui:param name='PARAM_isExistUsernameHandlerBean' value='#{userEditBean}' />
+                                        <ui:param name='PARAM_isExistUsernameHandler' value='changeUsernameHandler' />
+                                    </ui:include>
+                                </ui:insert>
+                            </ui:fragment>
+
+                            <div class="p-grid p-field p-nogutter">
+                                <p:outputLabel for="role" styleClass="p-col-3 p-sm-3 p-md-3 p-lg-2 p-xl-2 p-sm-offset-2 p-md-offset-2 p-lg-offset-3 p-xl-offset-4" value="Role uživatele: " />
+                                <div class="p-col-9 p-sm-5 p-md-5 p-lg-4 p-xl-2">
+                                    <p:selectOneMenu id="role"
+                                                     disabled='#{usersOverviewBean.isLastAdmin and userEditBean.user.role == ENUM_UserRoles.ADMIN and userEditBean.userID != null}'
+                                                     value="#{userEditBean.user.role}" 
+                                                     required="true"
+                                                     requiredMessage="Zadejte roli uživatele."> 
+                                        <f:selectItem itemLabel="Zvolte roli" itemValue="" />                                               
+                                        <f:selectItems value="#{usersOverviewBean.userRolesValues}" />
+                                    </p:selectOneMenu>
+                                </div>
+                            </div>
+
+
+
+                            <ui:fragment rendered="#{userEditBean.userID != null}">
+                                <div style="text-align: left;" class="p-field p-grid p-nogutter">
+                                    <p:outputLabel for="changePasswordCheckbox" styleClass="p-col-3 p-sm-3 p-md-3 p-lg-2 p-xl-2 p-sm-offset-2 p-md-offset-2 p-lg-offset-3 p-xl-offset-4" value="Změnit heslo: " />
+                                    <div class="p-col-9 p-sm-5 p-md-5 p-lg-4 p-xl-2">
+                                        <p:selectBooleanCheckbox  id="changePasswordCheckbox" itemLabel="Změnit heslo" value="#{userEditBean.isChangePassword}">
+                                            <p:ajax process="@this" update="@form" />
+                                        </p:selectBooleanCheckbox>
+                                    </div>
+                                </div>
+                            </ui:fragment>
+
+                            <ui:fragment rendered="#{userEditBean.isChangePassword or userEditBean.userID == null}">
+                                <ui:insert name='newPasswordInput'>
+                                    <ui:include src='components/userEditForm/newPasswordInput.xhtml'>
+                                        <ui:param name='PARAM_password_1_value' value='#{userEditBean.password_1}' />
+                                        <ui:param name='PARAM_password_2_value' value='#{userEditBean.password_2}' />
+                                    </ui:include>
+                                </ui:insert>
+                            </ui:fragment>
+
+                            <div class="p-grid p-align-center">
+                                <div class="p-col-12 p-sm-5 p-md-5 p-lg-4 p-xl-2 p-sm-offset-5 p-md-offset-5 p-lg-offset-5 p-xl-offset-6">
+                                    <p:commandButton
+                                        style="margin-top: 20px;"
+                                        process="@form"
+                                        value="#{userEditBean.userID == null ? 'Vytvořit' : 'Uložit změny'}"
+                                        actionListener="#{userEditBean.saveUserHandler()}" 
+                                        update="@form messages"
+                                        icon="pi pi-save" />
+                                </div>
+                            </div>
+                        </div>                     
+                    </h:form>
+
+                </p:panel> 
+
+
+            </ui:define>
+        </ui:composition> 
+    </h:body>
+</html>

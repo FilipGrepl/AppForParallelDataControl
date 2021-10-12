@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui = "http://java.sun.com/jsf/facelets">
+    <body>
+        <ui:composition>
+            <style type="text/css">
+                .ui-tabs-nav {
+                    width: 10% !important;
+                }
+                .ui-tabs-panels {
+                    width: 90% !important;
+                }
+            </style>
+            <div class="p-grid center-items p-nogutter">
+                <div class="p-col-12">
+                    <p:tabView value="#{PARAM_stepsConfData}" var="stepConfData" orientation="left">
+                        <p:tab title="#{stepConfData.step.stepOrder}. krok">
+                            <div class="p-grid center-items p-nogutter">
+                                <div class="p-col-4 p-sm-3 p-md-3 p-lg-3 p-xl-1">
+                                    <h4 class="view-data-margin">Název kroku: </h4>
+                                </div>
+                                <div class="p-col-8 p-sm-9 p-md-9 p-lg-9 p-xl-2">
+                                    <h:outputText class="view-data-margin" value="#{stepConfData.step.stepName}"/>
+                                </div>
+                                
+                                <div class="p-col-12">
+                                    <p:separator/>
+                                </div>
+                                
+                                <div class="p-col-4 p-sm-3 p-md-3 p-lg-3 p-xl-1">
+                                    <h4 class="view-data-margin">Prefix příkazu: </h4>
+                                </div>
+                                <div class="p-col-8 p-sm-9 p-md-9 p-lg-9 p-xl-11" >
+                                    <h:outputText class="view-data-margin" value="#{stepConfData.step.commandPrefix}"/>
+                                </div>
+
+                                <div class="p-col-4 p-sm-3 p-md-3 p-lg-3 p-xl-1">
+                                    <h4 class="view-data-margin" >Typ vstupu: </h4>
+                                </div>
+                                <div class="p-col-8 p-sm-9 p-md-9 p-lg-3 p-xl-2">
+                                    <h:outputText class="view-data-margin" value="#{stepConfData.step.inputType.getMessage()}"/>
+                                </div>
+                                <div class="p-col-4 p-sm-3 p-md-3 p-lg-3 p-xl-1">
+                                    <h4 class="view-data-margin">Argument: </h4>
+                                </div>
+                                <div class="p-col-8 p-sm-9 p-md-9 p-lg-3 p-xl-2">
+                                    <h:outputText class="view-data-margin" value="#{stepConfData.step.inputArgument == '' ? '-' : stepConfData.step.inputArgument}"/>
+                                </div>
+                                <div class="p-col-4 p-sm-3 p-md-3 p-lg-3 p-xl-1">
+                                    <h4 class="view-data-margin">Cesta: </h4>
+                                </div>
+                                <div class="p-col-8 p-sm-9 p-md-9 p-lg-9 p-xl-5">
+                                    <h:outputText class="view-data-margin" value="#{stepConfData.step.inputPath}"/>
+                                </div>
+                                <div class="p-col-4 p-sm-3 p-md-3 p-lg-3 p-xl-1 p-xl-offset-6">
+                                    <h4 class="view-data-margin">Reg. výraz:</h4>
+                                </div>
+                                <div class="p-col-8 p-sm-9 p-md-9 p-lg-9 p-xl-5">
+                                    <h:outputText class="view-data-margin" value="#{stepConfData.step.inputRegex == '' ? '-' : stepConfData.step.inputRegex}"/>
+                                </div>
+
+                                <div class="p-col-4 p-sm-3 p-md-3 p-lg-3 p-xl-1">
+                                    <h4 class="view-data-margin">Typ výstupu: </h4>
+                                </div>
+                                <div class="p-col-8 p-sm-9 p-md-9 p-lg-3 p-xl-2">
+                                    <h:outputText class="view-data-margin" value="#{stepConfData.step.outputType.getMessage()}"/>
+                                </div>
+                                <div class="p-col-4 p-sm-3 p-md-3 p-lg-3 p-xl-1">
+                                    <h4 class="view-data-margin">Argument:  </h4>
+                                </div>
+                                <div class="p-col-8 p-sm-9 p-md-9 p-lg-3 p-xl-2">
+                                    <h:outputText class="view-data-margin" value="#{stepConfData.step.outputArgument == '' ? '-' : stepConfData.step.outputArgument}"/>
+                                </div>
+                                <div class="p-col-4 p-sm-3 p-md-3 p-lg-3 p-xl-1">
+                                    <h4 class="view-data-margin">Cesta: </h4>
+                                </div>
+                                <div class="p-col-8 p-sm-9 p-md-9 p-lg-9 p-xl-5">
+                                    <h:outputText class="view-data-margin" value="#{stepConfData.step.outputPath}"/>
+                                </div>
+
+                                <div class="p-col-4 p-sm-3 p-md-3 p-lg-3 p-xl-1">
+                                    <h4 class="view-data-margin">Suffix příkazu: </h4>
+                                </div>
+                                <div class="p-col-8 p-sm-9 p-md-9 p-lg-9 p-xl-11">
+                                    <h:outputText class="view-data-margin" value="#{stepConfData.step.commandSuffix == '' ? '-' : stepConfData.step.commandSuffix}"/>
+                                </div>
+                                <div class="p-col-4 p-sm-3 p-md-3 p-lg-3 p-xl-1">
+                                    <h4 class="view-data-margin">Počet procesů: </h4>
+                                </div>
+                                <div class="p-col-8 p-sm-9 p-md-9 p-lg-9 p-xl-2">
+                                    <h:outputText class="view-data-margin" value="#{stepConfData.step.processes}"/>
+                                </div>
+
+                                <div class="p-col-12">
+                                    <p:separator/>
+                                </div>
+
+                                <div class="p-col-4 p-sm-3 p-md-3 p-lg-3 p-xl-1">
+                                    <h4 class="view-data-margin" >Timeout: </h4>
+                                </div>
+                                <div class="p-col-8 p-sm-9 p-md-9 p-lg-9 p-xl-11">
+                                    <h:outputText class="view-data-margin" value="#{stepConfData.timeoutStr}"/>
+                                </div>
+                                <div class="p-col-4 p-sm-3 p-md-3 p-lg-3 p-xl-1">
+                                    <h4 class="view-data-margin">Ověření: </h4>
+                                </div>
+
+                                <div class="p-col-8 p-sm-9 p-md-9 p-lg-9 p-xl-11">
+                                    <ul style="list-style-type: none; margin-left: -42px;" class="view-data-margin">
+                                        <ui:repeat value="#{stepConfData.checkOptions}" var="check">
+                                            <li> 
+                                                <ui:fragment rendered="#{check.value}">
+                                                    <i class="pi pi-check"></i>
+                                                </ui:fragment>
+                                                <ui:fragment rendered="#{!check.value}">
+                                                    <i class="pi pi-times"></i>
+                                                </ui:fragment>
+                                                <p:spacer width="10px"/>
+                                                #{check.key} 
+                                            </li>
+                                        </ui:repeat>
+                                    </ul>
+                                </div>
+
+                                <div class="p-col-12">
+                                    <p:separator/>
+                                </div>
+
+                                <div class="p-col-4 p-sm-3 p-md-3 p-lg-3 p-xl-1">
+                                    <h4 class="view-data-margin">Při chybě: </h4>
+                                </div>
+                                <div class="p-col-8 p-sm-9 p-md-9 p-lg-9 p-xl-11">
+                                    <ul style="list-style-type: none; margin-left: -42px;" class="view-data-margin">
+                                        <ui:repeat value="#{stepConfData.errorOptions}" var="check">
+                                            <li> 
+                                                <ui:fragment rendered="#{check.getValue()}">
+                                                    <i class="pi pi-check"></i>
+                                                </ui:fragment>
+                                                <ui:fragment rendered="#{!check.getValue()}">
+                                                    <i class="pi pi-times"></i>
+                                                </ui:fragment>
+                                                <p:spacer width="10px"/>
+                                                #{check.getKey()} 
+                                            </li>
+                                        </ui:repeat>
+                                    </ul>
+                                </div>
+
+                                <div class="p-col-12">
+                                    <p:separator/>
+                                </div>
+
+                                <div class="p-col-4 p-sm-3 p-md-3 p-lg-3 p-xl-1">
+                                    <h4 class="view-data-margin"> Synchronizace: </h4>
+                                </div>
+                                <div class="p-col-8 p-sm-9 p-md-9 p-lg-9 p-xl-11">
+                                    <ui:fragment rendered="#{stepConfData.step.synchronizedStep}">
+                                        <i class="pi pi-check"></i>
+                                    </ui:fragment>
+                                    <ui:fragment rendered="#{!stepConfData.step.synchronizedStep}">
+                                        <i class="pi pi-times"></i>
+                                    </ui:fragment>
+                                    <h:outputText class="view-data-margin" value="Tento krok #{stepConfData.step.synchronizedStep ? 'je' : 'není'} synchronizován." />
+                                </div>
+                            </div>
+                        </p:tab>
+                    </p:tabView>
+                </div>
+            </div>
+        </ui:composition>
+    </body>
+</html>

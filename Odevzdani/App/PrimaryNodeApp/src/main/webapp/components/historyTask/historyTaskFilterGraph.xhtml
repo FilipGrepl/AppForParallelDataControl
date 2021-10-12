@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui = "http://java.sun.com/jsf/facelets">
+    <body>
+        <ui:composition>
+            <div class="p-grid p-nogutter center-items">
+                <div style="width: 130px; margin-left: 100px;" class="p-col-1">
+                    <p:selectBooleanCheckbox widgetVar="#{PARAM_StepId}_#{PARAM_chartID}_minCheckbox" value="#{PARAM_minChartData}" itemLabel="Minimální">
+                        <p:ajax process="@this" event="change" listener="#{PARAM_bean[PARAM_listener](PARAM_chartIndex)}" 
+                                oncomplete="addMinMaxFileHandlers('#{PARAM_StepId}', '#{PARAM_chartID}');" update="@this #{PARAM_chartID}"/>
+                    </p:selectBooleanCheckbox>
+                </div>
+                <ui:fragment rendered="#{PARAM_avgChartData != null}">
+                    <div style="width: 130px;" class="p-col-1">
+                        <p:selectBooleanCheckbox widgetVar="#{PARAM_StepId}_#{PARAM_chartID}_avgCheckbox" value="#{PARAM_avgChartData}" itemLabel="Průměrná">
+                            <p:ajax process="@this" event="change" listener="#{PARAM_bean[PARAM_listener](PARAM_chartIndex)}" 
+                                    oncomplete="addMinMaxFileHandlers('#{PARAM_StepId}', '#{PARAM_chartID}');" update="@this #{PARAM_chartID}"/>
+                        </p:selectBooleanCheckbox>
+                    </div>
+                </ui:fragment>
+                <div style="width: 130px;" class='p-col-1'>
+                    <p:selectBooleanCheckbox widgetVar="#{PARAM_StepId}_#{PARAM_chartID}_maxCheckbox" value="#{PARAM_maxChartData}" itemLabel="Maximální">
+                        <p:ajax process="@this" event="change" listener="#{PARAM_bean[PARAM_listener](PARAM_chartIndex)}" 
+                                oncomplete="addMinMaxFileHandlers('#{PARAM_StepId}', '#{PARAM_chartID}');" update="@this #{PARAM_chartID}"/>
+                    </p:selectBooleanCheckbox>
+                </div>
+                <ui:fragment rendered='#{PARAM_isRenderFileLabel}'>
+                    <div class='p-col-11'></div>
+                    <div style="margin-left: 100px; margin-top: 20px;" class="p-col-1">
+                        <h4 class='view-data-margin'>Vstup: </h4>
+                    </div>
+                    <div id="#{PARAM_StepId}_#{PARAM_chartID}_outputDiv" style="margin-top: 20px;" class="p-col-10">
+                        -
+                    </div>
+                </ui:fragment>
+                <div class="p-col-12">
+                    <p:chart class="#{PARAM_StepId}_#{PARAM_chartID}" id="#{PARAM_chartID}" type="bar" responsive="true" model="#{PARAM_ChartModel}" style="height: 500px;"/>
+                </div>
+            </div>
+        </ui:composition>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:o="http://omnifaces.org/ui">
+    <h:head>
+        <title></title>    
+         <script type="text/javascript">
+            function socketListener(message, channel, event) {
+                document.getElementById("divId").innerHTML += message + "<br/>";
+            }
+        </script>  
+    </h:head>
+    <h:body>         
+        <h:form>            
+            <h:commandButton value="Push message" action="#{pushBean.eventAction()}">
+                <f:ajax />
+            </h:commandButton>
+        </h:form>
+        
+        <o:socket channel="eventChannel" onmessage="socketListener" />        
+
+        <hr/>
+        <div id="divId"></div>
+
+          
+    </h:body>
+</html>
+
